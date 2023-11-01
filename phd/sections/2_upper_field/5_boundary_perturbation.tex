@@ -1,0 +1,118 @@
+\section{Boundary Perturbation}
+\label{intro:boundary_perturbation}
+We now apply the change of variables from Appendix $C$ to $(2.5)$ and start by focusing on 
+\begin{equation}\Delta u +2i\alpha\partial_{x}u+(\gamma^u)^2 u=0. \end{equation}
+The transformation rules produce the following transformation in the upper field
+$$x'=x, \quad z'=a\left(\frac{z-g(x)}{a-g(x)}\right).$$
+This transformation maps the perturbed geometry $S_{g,a}$ to the separable geometry $S_{0,a}$. We will later show that the transformation enables not only a rigorous proof of analyticity and convergence, but also provides a stable and highly accurate numerical scheme.
+\newline
+\\
+We then invert the change of variables to find
+$$x=x',\quad z = \left(\frac{a-g(x')}{a}\right)z' + g(x'),$$
+which we use to define the transformed field as
+$$u(x',z'):=u'\left(x',\left(\frac{a-g(x')}{a}\right)z' + g(x')\right).$$
+In Appendix $C$ we discuss the effects of this change of variables on the Helmholtz equation, its derivatives, and the associated boundary conditions. In the upper layer we have a domain $S_{L,U}$, $(\text{C}.1)$, where
+$$\overline{\ell}=0,\quad \ell(x)=g(x), \quad \overline{u}=a, \quad u(x) \equiv 0,\quad \overline{h}=\overline{u}-\overline{\ell}=a.$$
+Therefore
+\bes
+C(x) = 1 + \frac{0-g(x)}{a}=1-\frac{g(x)}{a}, \quad
+D(x) = \frac{ag(x) - 0^2}{a}=g(x),
+\ees
+and
+\bes
+E=(\partial_x g)\left(\frac{a-z'}{a} \right), \quad Z_U = \frac{a-z'}{a}.
+\ees
+(We omit $Z_L$ since $u\equiv 0$). In Appendix $C$ we show that the change of variables changes the derivatives to
+\bes
+C\partial_x = C\partial_{x'} - E\partial_{z'},\quad C\partial_z = \partial_{z'},
+\ees
+and the upper layer Helmholtz equation becomes
+\begin{equation*}0=\text{div}'[A\nabla' u']+B\cdot \nabla' u' +2C^2i\alpha\partial_{x'}u'+C^2(\gamma^{u'})^2u',\end{equation*}
+where, for $S=C^2$,
+$$A=\begin{pmatrix}
+    S & -EC\\
+    -EC & 1+E^2
+  \end{pmatrix}, ~~~~~
+  B=(\partial_{x'}C)\begin{pmatrix}
+    -C\\
+    E
+  \end{pmatrix}.
+$$
+For simplicity we drop the primed variables to realize
+\bes 
+0=\text{div}[A\nabla u]+B\cdot \nabla u+2Si\alpha\partial_{x}u+S(\gamma^u)^2u,
+\ees
+and take a boundary perturbation approach by setting
+\begin{equation}g(x)=\varepsilon f(x),~\varepsilon\in\mathbb R, ~ \varepsilon \ll 1,\end{equation}
+where, by following Appendix $C$, discover
+\begin{align*}
+A&=A(\varepsilon)=A_0+A_1\varepsilon+A_2\varepsilon^2,\\
+B&=B(\varepsilon)=B_1\varepsilon+B_2\varepsilon^2,\\
+S&=S(\varepsilon)=S_0+S_1\varepsilon + S_2\varepsilon^2.
+\end{align*}
+Since $a=\overline{h}$ and $\ell(x)=\varepsilon f(x)$, we find
+\begin{subequations}
+\begin{align}
+A_0&=\begin{pmatrix}
+    1 & 0\\
+    0 & 1
+  \end{pmatrix},\\
+A_1&=\begin{pmatrix}
+    A_1^{xx} & A_1^{xz}\\
+    A_1^{zx} & A_1^{zz}
+  \end{pmatrix}=\frac{1}{a}
+  \begin{pmatrix}
+    -2f & -(a-z)(\partial_x f)\\
+    -(a-z)(\partial_x f) & 0
+  \end{pmatrix},\\
+A_2&=\begin{pmatrix}
+    A_2^{xx} & A_2^{xz}\\
+    A_2^{zx} & A_2^{zz}
+  \end{pmatrix}=\frac{1}{a^2}
+  \begin{pmatrix}
+    f^2 & (a-z)f(\partial_x f)\\
+    (a-z)f(\partial_x f) & (a-z)^2(\partial_x f)^2
+  \end{pmatrix},
+\end{align}
+and
+\begin{align}
+B_1&=\begin{pmatrix} B_1^x \\ B_1^z\end{pmatrix}=
+\frac{1}{a}\begin{pmatrix} \partial_x f \\0\end{pmatrix},\\
+B_2&=\begin{pmatrix} B_2^x \\ B_2^z\end{pmatrix}=
+\frac{1}{a^2}\begin{pmatrix} -f(\partial_x f) \\-(a-z)(\partial_x f)^2\end{pmatrix},
+\end{align}
+and
+\begin{align}
+S_0&=1,\quad S_1=-\frac{2}{a}f,\quad S_2=\frac{1}{a^2}f^2.
+\end{align}
+\end{subequations}
+So $(2.14)$ becomes
+\begin{equation}\Delta u +2i\alpha\partial_xu+\gamma^2u=F(x,z;f,u,\alpha,\gamma),\quad \text{$0<z<a$}, \end{equation}
+where
+\begin{align}
+\begin{split}
+F(x,z;f,u,\alpha,\gamma)&=-\text{div}[A_1\nabla u]-\text{div}[A_2\nabla u]-B_1\nabla u - B_2\nabla u \\&~~-2S_1i\alpha\partial_xu-S_1\gamma^2u-2S_2i\alpha\partial_xu-S_2\gamma^2u.
+\end{split}
+\end{align}
+By $(2.5\text{d})$ the Transparent Boundary Condition for our governing equations without phase is
+\begin{equation}\partial_z \left[u(x,a)\right] - T^u[u(x,a)]=0,\quad \text{at $z=a$}. \end{equation}
+For this boundary condition we begin with the top boundary and recall that such boundaries are flat for simplicity, i.e., $u\equiv 0$. Therefore, we can multiply $(2.19)$ by $C=C(x)$ to realize
+$$C\partial_{z} \left[u(x,a)\right] - CT^u[u(x,a)]=0.$$
+So by the transformation rules in Appendix $C$ for $\partial_z$ and $\partial_x$ (which induces the rule $T^u\to T^{u'}$ and $u \to u'$) with $u\equiv 0$ we find
+$$\partial_{z'} \left[u'(x',a)\right] - (1-\ell(x')/ \overline{h})T^{u'}[u'(x',a)]=0.$$
+We rearrange to form
+$$\partial_{z'} \left[u'(x',a)\right] - T^{u'}[u'(x',a)]=P(x';g,u'),$$
+where
+$$P(x';g,u')=-\frac{1}{a}g(x')T^{u'}\left[u'(x',a)\right].$$
+We then drop the primed variables and write the boundary condition as
+$$\partial_z \left[u(x,a)\right] - T^u[u(x,a)]=P(x;g,u).$$
+These changes transform the governing equations without phase in $(2.5)$ to
+\vspace{-1.5mm}
+\begin{subequations}
+\begin{align}
+\Delta u +2i\alpha\partial_xu+(\gamma^u)^2u&=F\left(x,z;f,u,\alpha,\gamma^u\right), &&\text{$0<z<a$}, \\
+u(x,0)&=\zeta^u(x), &&\text{at $z=0$},\\
+u(x+d,z)&=u(x,z), \\
+\partial_z \left[u(x,a)\right] - T^u[u(x,a)]&=P(x;g,u), &&\text{at $z=a$}.
+\end{align}
+\end{subequations}

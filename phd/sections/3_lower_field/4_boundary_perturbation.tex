@@ -1,0 +1,121 @@
+\section{Boundary Perturbation}
+\label{intro:boundary_perturbation in lower field}
+
+As in the upper field, we apply the change of variables from Appendix $C$ to $(3.2)$ and start by focusing on
+\begin{equation}\Delta w +2i\alpha\partial_{x }w+(\gamma^w)^2w=0. \end{equation}
+The transformation rules produce the following transformation in the lower field
+\bes
+x'=x,\quad z'=b\left(\frac{z-g(x)}{b+g(x)}\right).
+\ees
+This transformation maps the perturbed geometry $S_{\tiny{-} b,g}$ to the separable one $S_{\tiny{-} b,0}$. The change of variables can be inverted
+$$x=x',\quad z=\left(\frac{b+g(x')}{b}\right)z'+g(x'),$$
+which we use to define the transformed lower field
+$$w(x',z'):=w'\left(x',\left(\frac{b+g(x')}{b}\right)z'+g(x')\right).$$
+In Appendix $C$ we discuss the effects of this change of variables on the Helmholtz equation, its derivatives, and the associated boundary conditions. In the lower layer we have a domain $S_{L,U}$, $(\text{C}.1)$, where
+$$\overline{\ell}=-b,\quad \ell(x)\equiv 0, \quad \overline{u}=0, \quad u(x) = g(x),\quad \overline{h}=\overline{u}-\overline{\ell}=b.$$
+Therefore
+\bes
+C(x) = 1 + \frac{g(x)-0}{b}=1+\frac{g(x)}{b}, \quad
+D(x) = \frac{0^2 + bg(x)}{b}=g(x),
+\ees
+and
+\bes
+E=(\partial_x g)\left(\frac{z'+b}{b} \right), \quad Z_L = \frac{z'+b}{b}.
+\ees
+(We omit $Z_U$ since $\ell\equiv 0$). In Appendix $C$ we show that the change of variables changes the derivatives to
+\bes
+C\partial_x = C\partial_{x'} - E\partial_{z'},\quad C\partial_z = \partial_{z'},
+\ees
+and the lower layer Helmholtz equation becomes
+\be
+0=\text{div}'[A\nabla' w']+B\cdot \nabla' w' +2C^2i\alpha\partial_{x'}w'+C^2(\gamma^{w'})^2w',
+\ee
+where, for $S=C^2$,
+$$A=\begin{pmatrix}
+    S & -EC\\
+    -EC & 1+E^2
+  \end{pmatrix}, ~~~~~
+  B=(\partial_{x'}C)\begin{pmatrix}
+    -C\\
+    E
+  \end{pmatrix}.
+$$
+We drop the primed variables so that $(3.4)$ becomes
+\bes 
+0=\text{div}[A\nabla w]+B\cdot \nabla w+2Si\alpha\partial_{x}w+S(\gamma^w)^2w,
+\ees
+We then take a boundary perturbation approach by setting
+\begin{equation}g(x)=\varepsilon f(x),~\varepsilon\in\mathbb R, ~ \varepsilon \ll 1,\end{equation}
+where, by following Appendix $C$, discover
+\begin{align*}
+A&=A(\varepsilon)=A_0+A_1\varepsilon+A_2\varepsilon^2,\\
+B&=B(\varepsilon)=B_1\varepsilon+B_2\varepsilon^2,\\
+S&=S(\varepsilon)=S_0+S_1\varepsilon + S_2\varepsilon^2.
+\end{align*}
+Since $b=\overline{h}$ and $u(x)=\varepsilon f(x)$, we find
+\begin{subequations}
+\begin{align}
+A_0&=\begin{pmatrix}
+    1 & 0\\
+    0 & 1
+  \end{pmatrix},\\
+A_1&=\begin{pmatrix}
+    A_1^{xx} & A_1^{xz}\\
+    A_1^{zx} & A_1^{zz}
+  \end{pmatrix}=\frac{1}{b}
+  \begin{pmatrix}
+    2f & -(b+z)(\partial_x f)\\
+    -(b+z)(\partial_x f) & 0
+  \end{pmatrix},\\
+A_2&=\begin{pmatrix}
+    A_2^{xx} & A_2^{xz}\\
+    A_2^{zx} & A_2^{zz}
+  \end{pmatrix}=\frac{1}{b^2}
+  \begin{pmatrix}
+    f^2 & -(b+z)f(\partial_x f)\\
+    -(b+z)f(\partial_x f) & (b+z)^2(\partial_x f)^2
+  \end{pmatrix}.
+  \end{align}
+Also
+\begin{align}
+B_1&=\begin{pmatrix} B_1^x \\ B_1^z\end{pmatrix}=
+\frac{1}{b}\begin{pmatrix} -(\partial_x f) \\0\end{pmatrix},\\
+B_2&=\begin{pmatrix} B_2^x \\ B_2^z\end{pmatrix}=
+\frac{1}{b^2}\begin{pmatrix} -f(\partial_x f) \\(b+z)(\partial_x f)^2\end{pmatrix},
+\end{align}
+and
+\begin{align}
+S_0&=1,\quad 
+S_1=\frac{2}{b}f,\quad
+S_2=\frac{1}{b^2}f^2.
+\end{align}
+\end{subequations}
+As a result, $(3.3)$ becomes
+\begin{equation}\Delta w +2i\alpha\partial_xw+\gamma^2u=Y(x,z;g,w,\alpha,\gamma),\quad \text{$-b<z<0$}, \end{equation}
+where
+\begin{align}
+\begin{split}
+Y(x,z;g,w,\alpha,\gamma)&=-\text{div}[A_1\nabla w]-\text{div}[A_2\nabla w]-B_1\nabla w - B_2\nabla w\\&~~-2S_1i\alpha\partial_xw-S_1\gamma^2w-2S_2i\alpha\partial_xw-S_2\gamma^2w.
+\end{split}
+\end{align}
+By $(3.2\text{d})$ the Transparent Boundary Condition is
+\begin{equation}\partial_z \left[w(x,-b)\right] - T^w[w(x,-b)]=0,\quad \text{at $z=-b$}. \end{equation}
+For this boundary condition we begin with the lower boundary and recall that such boundaries are flat in the lower field, i.e., $\ell\equiv 0$. Therefore, we can multiply $(3.9)$ by $C=C(x)$ to realize
+$$C\partial_{z} \left[w(x,-b)\right] - CT^w[w(x,-b)]=0.$$
+So by the transformation rules for $\partial_z$ and $\partial_x$ (which induces the rule $T^w\to T^{w'}$ and $w \to w'$) with $\ell\equiv 0$ we find
+$$\partial_{z'} \left[w'(x',-b)\right] - (1+g(x')/ \overline{h})T^{w'}[w'(x',-b)]=0.$$
+We rearrange to form
+$$\partial_{z'} \left[w'(x',-b)\right] - T^{w'}[w'(x',-b)]=Q(x';g,w'),$$
+where
+$$Q(x';g,w')=\frac{1}{b}g(x')T^{w'}\left[w'(x',-b)\right].$$
+We then drop the primed variables and write the boundary condition as
+$$\partial_z \left[w(x,-b)\right] - T^w[w(x,-b)]=Q(x;g,w).$$
+These changes transform the governing equations without phase in $(3.2)$ to
+\begin{subequations}
+\begin{align}
+\Delta w +2i\alpha\partial_xw+(\gamma^w)^2w&=Y\left(x,z;g,w,\alpha,\gamma^w\right),&&\text{$-b<z<0$}, \\
+w(x,0)&=\zeta^w(x),&& \text{at $z=0$}, \\
+w(x+d,z)&=w(x,z), \\
+\partial_z \left[w(x,-b)\right] - T^w[w(x,-b)]&=Q(x;g,w),&& \text{at $z=-b$}.
+\end{align}
+\end{subequations}

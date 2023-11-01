@@ -1,0 +1,177 @@
+\section{Analyticity of the Boundary Perturbation}
+\label{intro:analyticity of the lower field}
+
+\vskip 0.1in
+\begin{theorem}
+Given any integer $s\ge 0$, if $f\in C^{s+2}([0,d])$ and $\zeta^w_{n,0}\in H^{s+3/2}([0,d])$ such that
+\be
+\|\zeta^w_{n,0}\|_{H^{s+3/2}} \le K_{\zeta}B_{\zeta}^n,  
+\ee
+for constants $K_{\zeta},B_{\zeta} > 0$, then $w_{n,0}\in H^{s+2}([0,d]\times[-b,0])$ and
+\begin{equation}\|w_{n,0}\|_{H^{s+2}} \le KB^n,  \end{equation}
+for constants $K,B>0$.
+\end{theorem}
+\begin{flushleft}
+To establish this result we work by induction. The key estimate is encapsulated in the following lemma.
+\end{flushleft}
+\vskip 0.1in
+\begin{lemma} Given an integer $s\ge 0$, if $f\in C^{s+2}([0,d])$ and
+
+\begin{equation}\|w_{n,0}\|_{H^{s+2}} \le KB^n, ~~\forall n < \overline{n},  \end{equation}
+for constants $K,B>0$, then there exists a constant $\overline{C}>0$ such that
+\begin{equation}\max\big\{\|\tilde{Y}_{\overline{n},0}\|_{H^s}, \|\tilde{Q}_{\overline{n},0}\|_{H^{s+1/2}}\big\}  \le K\overline{C}\Big\{ |f|_{C^{s+2}}B^{\overline{n}-1}+ |f|_{C^{s+2}}^2B^{\overline{n}-2}\Big\}.\end{equation}
+\end{lemma}
+
+\vskip 0.1in
+
+\begin{proof}{[Lemma 3.7.2]} We begin with $\tilde{Y}_{\overline{n},0}$ and recall from $(3.18)$ that
+\begin{align}
+\begin{split}
+\tilde{Y}_{\overline{n},0}\left(x,z;f,w,\underline{\alpha},\underline{\gamma}^w\right)&=-\text{div}[A_1\nabla w_{\overline{n}-1,0}]-\text{div}[A_2\nabla w_{\overline{n}-2,0}]-B_1\nabla w_{\overline{n}-1,0} 
+\\&~~- B_2\nabla w_{\overline{n}-2,0}-2S_1i\underline{\alpha}\partial_xw_{\overline{n}-1,0}-S_1(\underline{\gamma}^w)^2w_{\overline{n}-1,0}
+\\&~~-2S_2i\underline{\alpha}\partial_xw_{\overline{n}-2,0}-S_2(\underline{\gamma}^w)^2w_{\overline{n}-2,0}.
+\end{split}
+\end{align}
+Then from $(3.6)$ we have
+\begin{align*}
+\|\tilde{Y}_{\overline{n},0}\|_{H^{s}}^2&\le \|A_1^{xx}\partial_x w_{\overline{n}-1,0}\|_{H^{s+1}}^2 + \|A_1^{xz}\partial_z w_{\overline{n}-1,0}\|_{H^{s+1}}^2 + \|A_1^{zx}\partial_x w_{\overline{n}-1,0}\|_{H^{s+1}}^2 \\&+
+\|A_1^{zz}\partial_z w_{\overline{n}-1,0}\|_{H^{s+1}}^2 + \|A_2^{xx}\partial_x w_{\overline{n}-2,0}\|_{H^{s+1}}^2 + \|A_2^{xz}\partial_z w_{\overline{n}-2,0}\|_{H^{s+1}}^2 \\&+
+\|A_2^{zx}\partial_x w_{\overline{n}-2,0}\|_{H^{s+1}}^2 + \|A_2^{zz}\partial_z w_{\overline{n}-2,0}\|_{H^{s+1}}^2 + \|B_1^{x}\partial_x w_{\overline{n}-1,0}\|_{H^{s}}^2 \\&+
+\|B_1^{z}\partial_z w_{\overline{n}-1,0}\|_{H^{s}}^2 +
+\|B_2^{x}\partial_x w_{\overline{n}-2,0}\|_{H^{s}}^2 +
+\|B_2^{z}\partial_z w_{\overline{n}-2,0}\|_{H^{s}}^2 \\&+
+\|2S_1i\underline{\alpha}\partial_xw_{\overline{n}-1,0}\|_{H^{s}}^2 + \|S_1(\underline{\gamma}^w)^2w_{\overline{n}-1,0}\|_{H^{s}}^2+\|2S_2i\underline{\alpha}\partial_xw_{\overline{n}-2,0}\|_{H^{s}}^2\\&+
+\|S_2(\underline{\gamma}^w)^2w_{\overline{n}-2,0}\|_{H^{s}}^2.
+\end{align*}
+We now estimate each of these and apply Lemmas $2.8.1$ (with $u=w$), $3.6.1$, and $3.6.3$. We begin with
+\begin{align*}
+\|A_1^{xx}\partial_x w_{\overline{n}-1,0}\|_{H^{s+1}} &= 
+\|(2/b)f\partial_xw_{\overline{n}-1,0}\|_{H^{s+1}}\\&\le
+(2/b)\mathcal{M}|f|_{C^{s+1}}\|w_{\overline{n}-1,0}\|_{H^{s+2}}\\&\le
+(2/b)\mathcal{M}|f|_{C^{s+1}}KB^{\overline{n}-1},
+\end{align*}
+and in a similar fashion
+\begin{align*}
+\|A_1^{xz}\partial_z w_{\overline{n}-1,0}\|_{H^{s+1}} &= 
+\|-((b+z)/b)(\partial_x f)\partial_z w_{\overline{n}-1,0}\|_{H^{s+1}}\\&\le
+(Z_b/b)\mathcal{M}|\partial_x f|_{C^{s+1}}\|w_{\overline{n}-1, 0}\|_{H^{s+2}} \\&\le
+(Z_b/b)\mathcal{M}|f|_{C^{s+2}}KB^{\overline{n}-1}.
+\end{align*}
+Also,
+\begin{align*}
+\|A_1^{zx}\partial_x w_{\overline{n}-1,0}\|_{H^{s+1}} &= 
+\|-((b+z)/b)(\partial_x f)\partial_x w_{\overline{n}-1,0}\|_{H^{s+1}}\\&\le
+(Z_b/b)\mathcal{M}|\partial_x f|_{C^{s+1}}\|w_{\overline{n}-1, 0}\|_{H^{s+2}} \\&\le
+(Z_b/b)\mathcal{M}|f|_{C^{s+2}}KB^{\overline{n}-1},
+\end{align*}
+and we recall that $A_1^{zz}\equiv 0$. Moving to the second order
+\begin{align*}
+\|A_2^{xx}\partial_x w_{\overline{n}-2,0}\|_{H^{s+1}} &= 
+\|(1/b^2)f^2\partial_x w_{\overline{n}-2,0}\|_{H^{s+1}}\\&\le
+(1/b^2)\mathcal{M}^2|f|_{C^{s+1}}^2\|w_{\overline{n}-2, 0}\|_{H^{s+2}} \\&\le
+(1/b^2)\mathcal{M}^2|f|_{C^{s+1}}^2KB^{\overline{n}-2}.
+\end{align*}
+Also,
+\begin{align*}
+\|A_2^{xz}\partial_z w_{\overline{n}-2,0}\|_{H^{s+1}} &= 
+\|(-(b+z)/b^2)f(\partial_x f)\partial_x w_{\overline{n}-2,0}\|_{H^{s+1}}\\&\le
+(Z_b/b^2)\mathcal{M}^2|f|_{C^{s+1}}|\partial_x f|_{C^{s+1}}\|w_{\overline{n}-2, 0}\|_{H^{s+2}} \\&\le
+(Z_b/b^2)\mathcal{M}^2|f|_{C^{s+2}}^2KB^{\overline{n}-2},
+\end{align*}
+and
+\begin{align*}
+\|A_2^{zx}\partial_x w_{\overline{n}-2,0}\|_{H^{s+1}} &= 
+\|(-(b+z)/b^2)f(\partial_x f)\partial_z w_{\overline{n}-2,0}\|_{H^{s+1}}\\&\le
+(Z_b/b^2)\mathcal{M}^2|f|_{C^{s+1}}|\partial_x f|_{C^{s+1}}\|w_{\overline{n}-2, 0}\|_{H^{s+2}} \\&\le
+(Z_b/b^2)\mathcal{M}^2|f|_{C^{s+2}}^2KB^{\overline{n}-2},
+\end{align*}
+and
+\begin{align*}
+\|A_2^{zz}\partial_z w_{\overline{n}-2,0}\|_{H^{s+1}} &= 
+\|((b+z)^2/b^2)(\partial_x f)^2\partial_z w_{\overline{n}-2,0}\|_{H^{s+1}}\\&\le
+(Z_b^2/b^2)\mathcal{M}^2|\partial_x f|_{C^{s+1}}^2\|w_{\overline{n}-2, 0}\|_{H^{s+2}} \\&\le
+(Z_b^2/b^2)\mathcal{M}^2|f|_{C^{s+2}}^2KB^{\overline{n}-2}.
+\end{align*}
+Next for the $B_1$ terms
+\begin{align*}
+\|B_1^{x}\partial_x w_{\overline{n}-1,0}\|_{H^{s}} &= 
+\|(-1/b)(\partial_x f)\partial_x w_{\overline{n}-1,0}\|_{H^{s}}\\&\le
+(1/b)\mathcal{M}|\partial_x f|_{C^{s}}\|w_{\overline{n}-1, 0}\|_{H^{s+1}} \\&\le
+(1/b)\mathcal{M}|f|_{C^{s+1}}KB^{\overline{n}-1},
+\end{align*}
+and $B_1^z\equiv 0$. Moving to the second order
+\begin{align*}
+\|B_2^{x}\partial_x w_{\overline{n}-2,0}\|_{H^{s}} &= 
+\|(-1/b^2)f(\partial_x f)\partial_x w_{\overline{n}-2,0}\|_{H^{s}}\\&\le
+(1/b^2)\mathcal{M}^2|f|_{C^{s}}|\partial_x f|_{C^{s}}\|w_{\overline{n}-2, 0}\|_{H^{s+1}} \\&\le
+(1/b^2)\mathcal{M}^2|f|_{C^{s+1}}^2KB^{\overline{n}-2},
+\end{align*}
+and
+\begin{align*}
+\|B_2^{z}\partial_z w_{\overline{n}-2,0}\|_{H^{s}} &= 
+\|(1/b^2)(b+z)(\partial_x f)^2\partial_z w_{\overline{n}-2,0}\|_{H^{s}}\\&\le
+(Z_b/b^2)\mathcal{M}^2|\partial_x f|_{C^{s}}^2\|w_{\overline{n}-2, 0}\|_{H^{s+1}} \\&\le
+(Z_b/b^2)\mathcal{M}^2|f|_{C^{s+1}}^2KB^{\overline{n}-2}.
+\end{align*}
+To address the $S_0,S_1,S_2$ terms we have
+\begin{align*}
+\|2S_1i\underline{\alpha}\partial_xw_{\overline{n}-1,0}\|_{H^{s}}&=\|(4/b)i\underline{\alpha}f\partial_xw_{\overline{n}-1,0}\|_{H^{s}}\\&\le
+(4/b)\underline{\alpha}\mathcal{M}|f|_{C^{s}}\|w_{\overline{n}-1, 0}\|_{H^{s+1}}\\&\le
+(4/b)\underline{\alpha}\mathcal{M}|f|_{C^{s}}KB^{\overline{n}-1},
+\end{align*}
+and
+\begin{align*}
+\|S_1(\underline{\gamma}^w)^2w_{\overline{n}-1,0}\|_{H^{s}}&=\|(2/b)(\underline{\gamma}^w)^2fw_{\overline{n}-1,0}\|_{H^{s}}\\&\le
+(2/b)(\underline{\gamma}^w)^2\mathcal{M}|f|_{C^{s}}\|w_{\overline{n}-1, 0}\|_{H^{s}}\\&\le
+(2/b)(\underline{\gamma}^w)^2\mathcal{M}|f|_{C^{s}}KB^{\overline{n}-1},
+\end{align*}
+and
+\begin{align*}
+\|2S_2i\underline{\alpha}\partial_xw_{\overline{n}-2,0}\|_{H^{s}}&=\|(2/b^2)i\underline{\alpha}f^2\partial_xw_{\overline{n}-2,0}\|_{H^{s}}\\&\le
+(2/b^2)\underline{\alpha}\mathcal{M}^2|f|_{C^{s}}^2\|w_{\overline{n}-2, 0}\|_{H^{s+1}}\\&\le
+(2/b^2)\underline{\alpha}\mathcal{M}^2|f|_{C^{s}}^2KB^{\overline{n}-2},
+\end{align*}
+and
+\begin{align*}
+\|S_2(\underline{\gamma}^w)^2w_{\overline{n}-2,0}\|_{H^{s}}&=\|(1/b^2)(\underline{\gamma}^w)^2f^2w_{\overline{n}-2,0}\|_{H^{s}}\\&\le
+(1/b^2)(\underline{\gamma}^w)^2\mathcal{M}^2|f|_{C^{s}}^2\|w_{\overline{n}-2, 0}\|_{H^{s}}\\&\le
+(1/b^2)(\underline{\gamma}^w)^2\mathcal{M}^2|f|_{C^{s}}^2KB^{\overline{n}-2}.
+\end{align*}
+We satisfy the estimate for $\|\tilde{Y}_{\overline{n},0}\|_{H^{s}}$ provided that we choose
+$$\overline{C} > \max\left\{\left(\frac{3+2Z_b+4\underline{\alpha}+2(\underline{\gamma}^w)^2}{b}\right)\mathcal{M},\left(\frac{2+3Z_b+{Z^2_b}+2\underline{\alpha}+(\underline{\gamma}^w)^2}{b^2} \right)\mathcal{M}^2    \right\}.$$
+The estimate for $\tilde{Q}_{\overline{n},0}$ follows from Lemma $2.8.2$
+\begin{align*}
+\|\tilde{Q}_{\overline{n},0}\|_{H^{s+1/2}}&=\|(1/b)fT_0^w\left[w_{\overline{n}-1,0}\right]\|_{H^{s+1/2}}\\&\le
+(1/b)\mathcal{M}|f|_{C^{s+1/2+\sigma}}\|T_0^w\left[w_{\overline{n}-1,0}\right]\|_{H^{s+1/2}}\\&\le
+(1/b)\mathcal{M}|f|_{C^{s+1/2+\sigma}}C_{T_0^w}\|w_{\overline{n}-1,0}\|_{H^{s+3/2}}\\&\le
+(1/b)\mathcal{M}|f|_{C^{s+1/2+\sigma}}C_{T_0^w}KB^{\overline{n}-1},
+\end{align*}
+and provided that
+$$\overline{C} > (1/b)\mathcal{M}C_{T_0^w},$$
+we are done. 
+\end{proof}
+\begin{flushleft}
+With this information, we can now prove Theorem $3.7.1$.
+\end{flushleft}
+\vskip 0.1in
+\begin{proof}{[Theorem 3.7.1]} We proceed by induction in $n$. At order $n=m=0$ $(3.17)$ becomes
+\begin{subequations}
+\begin{align}
+\Delta w_{0,0} +2i\underline{\alpha}\partial_{x}w_{0,0}+(\underline{\gamma}^w)^2w_{0,0}&=0,&&\text{$-b<z<0$}, \\
+w_{0,0}(x,g)&=\zeta^w_{0,0}(x),&& \text{at $z=0$},\\
+w_{0,0}(x+d,z)&=w_{0,0}(x,z), \\
+\partial_z \left[w_{0,0}(x,-b)\right] - T_0^w[w_{0,0}(x,-b)]&=0,&& \text{at $z=-b$},
+\end{align}
+\end{subequations}
+and Theorem $3.6.2$ guarantees a unique solution such that 
+$$\|w_{0,0}\|_{H^{s+2}}\le C_e\|\zeta^w_{0,0}\|_{H^{s+3/2}}.   $$
+So we choose $K \ge C_e\|\zeta^w_{0,0}\|_{H^{s+3/2}} $. We now assume the estimate $(3.25)$ for all $n < \overline{n}$ and study $w_{\overline{n},0}$. From Theorem $3.6.2$ we have a unique solution satisfying 
+$$\|w_{\overline{n},0}\|_{H^{s+2}}\le C_e\{\|\tilde{Y}_{\overline{n},0}\|_{H^{s}}+\|\zeta^w_{\overline{n},0}\|_{H^{s+3/2}}+\|\tilde{Q}_{\overline{n},0}\|_{H^{s+1/2}}  \}, $$
+and appealing to Lemmas $2.8.3$ (with $\zeta^u=\zeta^w$ and the hypothesis $(3.24)$) and $3.7.2$ we find
+\bes
+\|w_{\overline{n},0}\|_{H^{s+2}}\le C_e\left\{K_{\zeta}B_{\zeta}^{\overline{n}} + 2K\overline{C}\Big[ |f|_{C^{s+2}}B^{\overline{n}-1}+ |f|_{C^{s+2}}^2B^{\overline{n}-2}\Big]  \right\}.
+\ees
+We are done provided we choose $K \ge 3C_eK_{\zeta}$ and
+$$ B > \max\Big\{B_{\zeta},6C_e\overline{C}|f|_{C^{s+2}},\sqrt{6C_e\overline{C}}|f|_{C^{s+2}} \Big\}.$$
+\end{proof}
+We can now establish the joint analyticity of the transformed field $w=w(x,z;\varepsilon,\delta)$ with respect to the perturbation parameters $\Eps$ and $\delta$.

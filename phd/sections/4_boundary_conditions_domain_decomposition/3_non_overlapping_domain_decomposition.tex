@@ -1,0 +1,109 @@
+\section{A Non--Overlapping Domain Decomposition Method}
+\label{Sec:DDM}
+
+We now restate our governing equations $(4.8)$ in terms
+ of surface quantities via a Non--Overlapping \gls{ddm} \cite{Lions90,DespresPhD,Despres91}. For this we define
+\begin{gather*}
+U(x) := u(x,g(x)),
+\quad
+\tilde{U}(x) := -\partial_N u(x,g(x)),
+\\
+W(x) := w(x,g(x)),
+\quad
+\tilde{W}(x) := \partial_N w(x,g(x)),
+\end{gather*}
+where $u$ is a $d$--periodic solution of $(4.8\text{a})$ and
+$(4.8\text{e})$, and $w$ is a $d$--periodic solution of
+$(4.8\text{b})$ and $(4.8\text{f})$. In terms of these
+our full governing equations $(4.8)$ are equivalent to the
+pair of boundary conditions, $(4.8\text{c})$ \&
+$(4.8\text{d})$,
+\be
+U - W = \zeta,
+\quad
+-\tilde{U} - (i \alpha) (\partial_x g) U 
+  - \tau^2 \left[ \tilde{W} - (i \alpha) (\partial_x g) W \right]
+  = \psi.
+\ee
+This set of two equations for four unknowns can be closed by noting that
+the pairs $\{ U, \tilde{U} \}$ and $\{ W, \tilde{W} \}$ are connected,
+e.g., by the DNOs
+\bes
+G: U \rightarrow \tilde{U},
+\quad
+J: W \rightarrow \tilde{W}.
+\ees
+\begin{definition} We recall the precise definition of the upper layer DNO
+\cite{Nicholls16b}:
+Given an integer $s \geq 0$, if 
+$g \in C^{s+2}$ the unique solution of
+
+\begin{subequations}
+\label{Eqn:Helm:Upper}
+\begin{align}
+& \Delta u + 2 i \alpha \partial_x u + (\gamma^u)^2 u = 0,
+  && g(x) < z < a, \\
+& u(x,g(x)) = U(x), 
+  && z = g(x), \\
+& \partial_z u(x,a) - T^u[ u(x,a) ] = 0,
+  && z = a, \\
+& u(x+d,z)=u(x,z),
+\end{align}
+\end{subequations}
+defines the Upper Layer DNO
+\be
+\label{Eqn:G}
+G(g): U \rightarrow \tilde{U} := -(\partial_N u)(x,g(x)).
+\ee
+\end{definition}
+
+
+\begin{definition} Similarly, we recall the definition of the lower layer DNO:
+Given an integer $s \geq 0$, if 
+$g \in C^{s+2}$ the unique solution of
+\begin{subequations}
+\label{Eqn:Helm:Lower}
+\begin{align}
+& \Delta w + 2 i \alpha \partial_x w + (\gamma^w)^2 w = 0,
+  && -b < z < g(x), \\
+& w(x,g(x)) = W(x), 
+  && z = g(x), \\
+& \partial_z w(x,-b) - T^w[ w(x,-b) ] = 0,
+  && z = -b,\\
+& w(x+d,z)=w(x,z),
+\end{align}
+\end{subequations}
+defines the Lower Layer DNO
+\be
+\label{Eqn:J}
+J(g): W \rightarrow \tilde{W} := (\partial_N w)(x,g(x)).
+\ee
+\end{definition}
+\begin{flushleft}
+We now write $(4.9)$ as
+\end{flushleft}
+\be
+\label{Eqn:AVR}
+\bA \bV = \bR,
+\ee
+where
+\be
+\label{Eqn:AVR:Def}
+\bA = \begin{pmatrix} I & -I \\ 
+  G + (\partial_x g) (i \alpha) & \tau^2 J - \tau^2 (\partial_x g) (i \alpha)
+  \end{pmatrix},
+\quad
+\bV = \begin{pmatrix} U \\ W \end{pmatrix},
+\quad
+\bR = \begin{pmatrix} \zeta \\ -\psi \end{pmatrix}.
+\ee
+For later use, the trivial flat--interface version of $(4.15)$ is $\bA_{0,0}\bV_{0,0}=\bR_{0,0}$ where
+\be
+\label{Eqn:AVR_Flat:Def}
+\bA_{0,0} = \begin{pmatrix}I & -I\\
+-G_{0,0} & -\tau^2J_{0,0}\end{pmatrix},
+\quad
+\bV_{0,0} = \begin{pmatrix} U_{0,0} \\ W_{0,0} \end{pmatrix},
+\quad
+\bR_{0,0} = \begin{pmatrix} \zeta_{0,0} \\ -\psi_{0,0} \end{pmatrix}.
+\ee

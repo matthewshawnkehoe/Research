@@ -1,0 +1,63 @@
+\section{Tranverse Electromagnetic (TEM) Polarization}
+\label{intro:tem_polarization}
+
+In the most restrictive case, we assume that both the electric and magnetic fields are transverse to the direction of propagation. Then both are composed entirely of a transverse component and we seek solutions satisfying
+
+\begin{equation}
+\textbf{E}=\textbf{E}(x,z)=\begin{pmatrix}
+0\\ \tilde{v}(x,z) \\ 0
+\end{pmatrix},\quad 
+\textbf{H}=\textbf{H}(x,z)=\begin{pmatrix}
+0\\ H^y(x,z)\\ 0
+\end{pmatrix}.
+\end{equation}
+In order to satisfy the time-harmonic Maxwell equations we calculate
+$$\nabla \times \textbf{E}= \begin{pmatrix}
+-\partial_z \tilde{v}\\ 0 \\ \partial_x \tilde{v}
+\end{pmatrix},$$
+which implies
+$$\textbf{H} = \frac{1}{i\omega\mu_0}\nabla \times \textbf{E} =\begin{pmatrix}
+-\partial_z \tilde{v}/(i\omega\mu_0)\\ 0 \\ \partial_x \tilde{v}/(i\omega\mu_0)
+\end{pmatrix}.$$
+Similarly,
+$$\nabla \times \textbf{H}=\begin{pmatrix}
+-\partial_z H^y\\ 0 \\ \partial_x H^y
+\end{pmatrix},$$
+implies
+$$\textbf{E} = \frac{-1}{i\omega\varepsilon_0\varepsilon}\nabla \times \textbf{H} =\frac{1}{\varepsilon}\begin{pmatrix}
+\partial_z H^y/(i\omega\varepsilon_0)\\ 0 \\ -\partial_x H^y/(i\omega\varepsilon_0)
+\end{pmatrix}.$$
+Upon reducing $(1.10\text{a})$ and $(1.10\text{c})$ componentwise
+$$i\omega\mu_0 \textbf{H} = \nabla \times \textbf{E},$$
+we find
+$$\nabla \times \textbf{E}=0.$$
+A similar procedure for $(1.10\text{b})$ and $(1.10\text{d})$
+$$-i\omega\varepsilon_0\varepsilon \textbf{E} = \nabla \times \textbf{H},$$
+gives
+$$\nabla \times \textbf{H}=0.$$
+The boundary conditions become
+\begin{equation}
+\textbf{N} \times \textbf{H} = \begin{pmatrix}
+-H^y \\ 0 \\ -(\partial_x g)H^y
+\end{pmatrix},
+\end{equation}
+and
+\begin{equation}
+\textbf{N} \times \textbf{E} = \begin{pmatrix}
+-\tilde{v} \\ 0 \\ -(\partial_x g)\tilde{v}
+\end{pmatrix}.
+\end{equation}
+These imply that both $\tilde{v}$ and $H^y$ are continuous across interfaces. Due to the restrictions of this mode, Maxwell's equations become
+\be
+\nabla \times \textbf{E} = 0, \quad \nabla \times \textbf{H} = 0, \quad \nabla \cdot \textbf{E} = 0,\quad  \nabla \cdot \textbf{H} = 0,
+\ee
+from which it is evident that $\textbf{E}=\textbf{H}=0$. Thus, in a doubly layered media the Transverse Electromagnetic (TEM) governing equations are
+\begin{subequations}
+\begin{align}
+\Delta \tilde{u} + (k^u)^2 \tilde{u} &=0,&& z > g(x),\\
+\Delta \tilde{w} + (k^w)^2 \tilde{w} &=0,&& z < g(x),\\
+\tilde{u}-\tilde{w} &= -\tilde{u}^{inc},&& z=g(x),\\
+\partial_N \tilde{u}-\partial_N \tilde{w} &= -\partial_N \tilde{u}^{inc},&& z=g(x),
+\end{align}
+\end{subequations}
+and the only solution is the trivial solution. This implies $k^u=k^w=0$, $\tilde{u}^{inc}=0$, and the solutions $\tilde{u}$ and $\tilde{w}$ represent the trivial solution $\tilde{u}=\tilde{w}=0$. As a result, the TEM mode is rarely studied in the context of grating structures.

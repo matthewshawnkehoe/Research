@@ -1,0 +1,16 @@
+\section{Alternatives to DNOs}
+\label{Sec: Alternatives to DNOs}
+In Chapter $4$ we wrote our scattering problem as a linear system
+\bes
+\bA \bV = \bR,
+\ees
+where, upon expanding $\{\bA,\bV,\bR\}$ in both $\varepsilon$ and $\delta$, we arrived at the flat--interface solution $\bA_{0,0}\bV_{0,0}=\bR_{0,0}$
+at order $\mathcal{O}(\varepsilon^0,\delta^0)$. We then saw it was necessary to invert
+\bes
+\bA_{0,0} = \begin{pmatrix}I & -I\\
+-G_{0,0} & -\tau^2J_{0,0}\end{pmatrix}, 
+\ees
+which features the two DNOs, $G_{0,0}$ and $J_{0,0}$, in order to show the existence and uniqueness of solutions. A primary feature of all HOPS schemes is the inversion of a single, sparse operator $\bA_{0,0}$ through the use of DNOs. However, one may ponder if a different technique could produce a more competitive algorithm that is comparable to our HOPS/AWE algorithm (or even better). Is it absolutely necessary to pass in transformed field data in order to efficiently compute and recover internal information stored at the grating surface?
+\\
+\newline
+\textbf{Predictions:} A primary advantage of our HOPS/AWE scheme is that for every perturbation order, it is only necessary to invert a single sparse operator corresponding to a flat--interface, order--zero approximation. There are a number of competing approaches in general perturbation theory within the context of layered media problems. In regards to electromagnetic wave scattering, Galerkin and boundary element methods are discussed in \cite{escapil2020helmholtz,silva2017quantifying,nakata1990boundary,elschner2012optimization,rathsfeld2006} and a high--order perturbation approach based on boundary integral equations in \cite{dolz2020higher}. High--order schemes for linear waves can be computed using level set methods \cite{sethian1999level} and fast marching methods, as well as other methods involving domain decomposition \cite{el2004comparing,benamou1997domain,larsson1999domain,gong2021convergence,perez2018domain,chan1994domain}. A holistic evaluation of these competing methods could potentially improve our HOPS/AWE algorithm if we found a faster method of inverting linear operators without the use of DNOs.

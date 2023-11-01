@@ -1,0 +1,49 @@
+\section{Frequency Perturbation}
+\label{intro:frequency_perturbation}
+We now perform an Asymptotic Waveform Evaluation by writing the illumination frequency as 
+\begin{equation}\omega=(1+\delta)\underline{\omega}=\underline{\omega}+\delta\underline{\omega},~\delta\in\mathbb R, ~ \delta \ll 1.\end{equation}
+With this we see that
+\begin{subequations}
+\begin{align} 
+k^u & = \omega/c^u = (1 + \delta) \uomega/c^u 
+  =: (1 + \delta) \uk^u = \uk^u + \delta \uk^u,\\
+\alpha & = k^u \sin(\theta) = (1 + \delta) \uk^u \sin(\theta)
+  =: (1 + \delta) \ualpha = \ualpha + \delta \ualpha,\\
+\gamma^u & = k^u \cos(\theta) = (1 + \delta) \uk^u \cos(\theta)
+  =: (1 + \delta) \ugamma^u = \ugamma^u + \delta \ugamma^u.
+\end{align}
+\end{subequations}
+We can relate the constants in the underscore variables by the relationship
+\begin{align}\underline{\alpha}^2 + (\underline{\gamma}^u)^2 = (\underline{k}^u)^2.
+\end{align}
+Then, since $({\gamma}^u)^2=(\delta+1)^2\left((\underline{k}^u)^2-\underline{\alpha}^2\right)=(\delta+1)^2(\underline{\gamma}^u)^2$, $(2.18)$ becomes
+\begin{align*}F\left(x,z;f,u,\underline{\alpha},\underline{\gamma}^u\right)&=-\text{div}[A_1\nabla u]-\text{div}[A_2\nabla u]-B_1\nabla u - B_2\nabla u\nonumber \\&~~-2S_1i\underline{\alpha}\partial_xu-2S_1i\underline{\alpha}\delta\partial_xu-S_1\delta^2(\underline{\gamma}^u)^2u-2S_1\delta(\underline{\gamma}^u)^2u-S_1(\underline{\gamma}^u)^2u\nonumber
+\\&~~-2S_2i\underline{\alpha}\partial_xu-2S_2i\underline{\alpha}\delta\partial_xu-S_2\delta^2(\underline{\gamma}^u)^2u-2S_2\delta(\underline{\gamma}^u)^2u-S_2(\underline{\gamma}^u)^2u.
+\end{align*}
+Also, the left-hand side of $(2.20\text{a})$ becomes
+\begin{equation*}\Delta u +2i\underline{\alpha}\partial_xu+2i\underline{\alpha}\delta\partial_xu+\delta^2(\underline{\gamma}^u)^2u+2\delta(\underline{\gamma}^u)^2u+(\underline{\gamma}^u)^2u,\end{equation*}
+and the boundary condition for $(2.20\text{a})$ becomes
+\begin{equation}\Delta u +2i\underline{\alpha}\partial_{x}u+(\underline{\gamma}^u)^2u=\tilde{F}\left(x,z;f,u,\underline{\alpha},\underline{\gamma}^u\right),\quad\text{$0<z<a$}. \end{equation}
+We move all terms with $\delta$ to the right--hand side to form
+\begin{align*}\tilde{F}\left(x,z;f,u,\underline{\alpha},\underline{\gamma}^u\right)&=-\text{div}[A_1\nabla u]-\text{div}[A_2\nabla u]-B_1\nabla u - B_2\nabla u\nonumber
+\\&~~-2i\underline{\alpha}\delta\partial_xu-\delta^2(\underline{\gamma}^u)^2u-2\delta(\underline{\gamma}^u)^2u\nonumber
+\\&~~-2S_1i\underline{\alpha}\partial_xu-2S_1i\underline{\alpha}\delta\partial_xu-S_1\delta^2(\underline{\gamma}^u)^2u-2S_1\delta(\underline{\gamma}^u)^2u-S_1(\underline{\gamma}^u)^2u\nonumber
+\\&~~-2S_2i\underline{\alpha}\partial_xu-2S_2i\underline{\alpha}\delta\partial_xu-S_2\delta^2(\underline{\gamma}^u)^2u-2S_2\delta(\underline{\gamma}^u)^2u-S_2(\underline{\gamma}^u)^2u.
+\end{align*}
+The boundary condition $(2.20\text{d})$ becomes
+$$\partial_z \left[u(x,a)\right] - T_0^u[u(x,a)]=\tilde{P}(x;f,u),$$
+where $T_0^u = i \ugamma_D^u$
+corresponds to the case where $\delta=0$ and
+\bes
+\tilde{P}(x;f,u) = -\frac{1}{a} (\Eps f(x)) T^u \left[ u(x,a) \right]
++ (T^u-T_0^u) \left[ u(x,a) \right].
+\ees
+Our governing equations are now
+\begin{subequations}
+\begin{align}
+\Delta u +2i\underline{\alpha}\partial_{x}u+(\underline{\gamma}^u)^2u&=\tilde{F}\left(x,z;g,u,\underline{\alpha},\underline{\gamma}^u\right),  &&\text{$0<z<a$}, \\
+u(x,0)&=\zeta^u(x),&& \text{at $z=0$},\\
+u(x+d,z)&=u(x,z),\\
+\partial_z \left[u(x,a)\right] - T_0^u[u(x,a)]&=\tilde{P}(x;f,u),&& \text{at $z=a$}.
+\end{align}
+\end{subequations}

@@ -1,0 +1,31 @@
+% 04/26/22 - MSK REMOVED SECTION!
+
+\section{Change of Variables}
+\label{intro:change_of_variables in lower field}
+In order to construct a well-conditioned Boundary Pertubation algorithm,
+we once again perform a domain-flattening change of variables (also known as $\sigma$-coordinates \cite{Phillips57} in the geophysical
+literature and the C--method \cite{CDCM82,CMR80} in the electromagnetics community). We start with the geometry
+$$S_{\tiny{-} b,g}=\{-b<z<g(x)\},$$
+where the $\sigma-$coordinates are
+\begin{equation}x''=x,\quad z''=-b\left(\frac{g(x)-z}{b+g(x)}\right)=b\left(\frac{z-g(x)}{b+g(x)}\right).\end{equation}
+This transformation maps the perturbed geometry $S_{\tiny{-} b,g}$ to the separable one $S_{\tiny{-} b,0}$. As in the upper field, we will show that the ``flattened domain" not only  enables a rigorous proof of analyticity and convergence, but also delivers a stable and highly accurate numerical scheme.
+\newline
+\newline
+The change of variables can be inverted
+$$x=x'',\quad z=\left(\frac{b+g(x'')}{b}\right)z''+g(x''),$$
+which we use to define the transformed lower field
+$$w(x'',z''):=v\left(x'',\left(\frac{b+g(x'')}{b}\right)z''+g(x'')\right).$$
+In $\S 2.4$ and $\S 2.5$ we discussed the effects of this change of variables on derivatives, the Helmholtz equation, and our related boundary conditions. To distinguish from the upper field, we will simply denote the transformed variable as $w$ instead of $u$. Starting from the doubly--perturbed domain
+\begin{equation}
+S_{L,W}:=\{L(x)<z<W(x)\}=\{\overline{\ell}+\ell(x)<z<\overline{w}+w(x)\},    
+\end{equation}
+it is not hard to show
+$$\overline{{\ell}}=-b,\quad w(x)=g(x),\quad\overline{w}=0,\quad {\ell}(x)\equiv 0,$$
+which gives
+$$\overline{h}=b,\quad C(x)=1+\frac{g(x)-0}{b}=1+\frac{g(x)}{b},\quad D(x)=\frac{0^2-(-b)g(x)}{b}=g(x),$$
+and
+$$E(x)=\left(\partial_x g\right)\left(\frac{z''+b}{b}\right), \quad Z_L=\frac{z''+b}{b}.$$
+We omit $Z_W$ because ${\ell}(x)\equiv 0$. As in $\S2.4$, we arrive at an equivalent form for the change of derivatives
+\begin{equation}
+C\partial_x = C\partial_{x''} - E\partial_{z''}, \quad C\partial_z = \partial_{z''}.  
+\end{equation}

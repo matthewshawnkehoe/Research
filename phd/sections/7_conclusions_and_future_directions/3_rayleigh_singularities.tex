@@ -1,0 +1,10 @@
+\section{Rayleigh Singularities}
+\label{Sec: Rayleigh Singularities}
+A fundamental equation in the HOPS/AWE algorithm is
+$$\alpha_p^2 + (\gamma_p^q(\delta))^2 = (k^q)^2,$$
+where $k^q$ represents the wavenumber, $q\in\{u,w\}$, and $\alpha=k^q\sin(\theta), \gamma=k^q\cos(\theta),$ are parameters corresponding to refraction/reflection of the incidence angle $\theta$. As shown in $\S 5.4$, a Rayleigh singularity (or Wood's anomaly) occurs when $\ualpha_p^2 = (\uk^q)^2$ for any integer $p\neq 0$. That is, if $\ugamma_p^q(\delta) =0$ for $p\neq 0$ then the Taylor series expansion of $\gamma_p^q(\delta)$ is invalid. In \cite{Nicholls16}, the author investigated changing the Taylor expansion to a Puiseux expansion \cite{basu2007algorithms}:
+$$\gamma_p^q(\delta)=\sum_{m=0}^{\infty}\gamma_{p,m}^q\delta^{m+1/2}=\delta^{1/2}\sum_{m=0}^{\infty}\gamma_{p,m}^q\delta^m.$$
+However, he found that this approach ran into external difficulties ($\S$6 of \cite{Nicholls16}) simplifying explicit forms of the Dirichlet and Neumann trace operators.
+\newline
+\\
+\textbf{Predictions:} Rayleigh singularities are a central obstruction to the convergence of our HOPS/AWE algorithm. In all of our numerical tests, we select custom frequency ranges which maximize the radius of convergence of our algorithm by expanding away from the singularities (cf. $\S 5.6$). Alternative methods such as Padé summation also fail to be analytic in a neighborhood of a Rayleigh singularity. General perturbation theory provides a variety of known techniques \cite{suslov2005divergent,convfromdiv,Heinz2020,dienes1957taylor,arteca1984summation} for expanding around divergent perturbation series. We suspect that adding these techniques to our HOPS/AWE algorithm will allow us perform a series expansion of $\ugamma_p^q(\delta)$ that does not diverge when $\ugamma_p^q(\delta)=0.$

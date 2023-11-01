@@ -1,0 +1,23 @@
+\section{Governing Equations Without Phase}
+\label{intro:governing_equations_without_phase in lower field}
+In the lower field, we defined the geometry $S_{\tiny{-} b,g}:=\{-b<z<g(x)\}$ where $z$ is bounded between a constant imposed by the Artificial Boundary $\{z=-b\}$ and the upper surface $g(x)$. By the boundary value problem $(1.35)$ defined in $\S1.8$, we arrive at the governing equations of linear wave propagation in a single homogeneous material layer
+\begin{subequations}
+\begin{align}
+\Delta \tilde{w} + (k^w)^2\tilde{w}&=0, && \text{$-b<z<g(x)$,}\\
+\tilde{w}(x,g(x))&=\tilde{\zeta}^w(x), && \text{at $z=g(x)$,}\\
+\tilde{w}(x+d,z)&=e^{i\alpha d}\tilde{w}(x,z),\\
+\partial_z \tilde{w} - \tilde{T}^w[\tilde{w}]&=0,&&  \text{at $z=b$.}
+\end{align}
+\end{subequations}
+Following the analysis performed in $\S2.2$ we define phase extraction
+$$w(x,z):= e^{-i\alpha x}\tilde{w}(x,z),$$
+and consider periodic unknowns. Following the same procedure as the upper field, our governing equations become
+
+\begin{subequations}
+\begin{align}
+\Delta w +2i\alpha\partial_xw+(\gamma^w)^2w&=0,&&\text{$-b<z<g(x)$}, \\
+w(x,g(x))&={\zeta}^w(x),&& \text{at $z=g(x)$,}\\
+w(x+d,z)&=w(x,z), \\
+\partial_z \left[w(x,-b)\right] - T^w[w(x,-b)]&=0,&&\text{at $z=-b$}.
+\end{align}
+\end{subequations}

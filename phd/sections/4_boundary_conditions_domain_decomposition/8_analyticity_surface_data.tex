@@ -1,0 +1,144 @@
+%
+% Section: Analyticity of the Surface Data
+%
+
+\section{Analyticity of the Surface Data}
+\label{Sec:AnalData}
+
+To establish the analyticity of the Dirichlet and Neumann data obeying suitable estimates, we begin by defining
+\bes
+\cE(x;\Eps,\delta) := e^{-i (1+\delta) \ugamma^u \Eps f(x)},
+\ees
+and note that we can write $(4.2\text{e})$ and $(4.2\text{f})$ as
+\begin{align*}
+\zeta(x) & = \zeta(x;\Eps,\delta) = -\cE(x;\Eps,\delta), \\
+\psi(x) & = \psi(x;\Eps,\delta) = \left\{ i (1+\delta) \ugamma^u 
+  + i (1+\delta) \ualpha (\Eps \partial_x f) \right\}
+  \cE(x;\Eps,\delta).
+\end{align*}
+We will now demonstrate that the function $\cE$ is jointly 
+analytic in $\Eps$ and $\delta$, and subject to appropriate estimates, which clearly demonstrates the joint 
+analytic dependence of the data, $\zeta(x;\Eps,\delta)$ and
+$\psi(x;\Eps,\delta)$.
+
+\begin{lemma}
+\label{Lemma:E:Anal}
+Given any integer $s \geq 0$, if $f \in C^{s+2}([0,d])$ then the
+function $\cE(x;\Eps,\delta)$ is jointly analytic in $\Eps$ and
+$\delta$. Therefore
+\be
+\label{Eqn:cE:Exp}
+\cE(x;\Eps,\delta) = \sumn \summ \cE_{n,m}(x) \Eps^n \delta^m,
+\ee
+and, for constants $C_{\cE}, B_{\cE}, D_{\cE} > 0$,
+\be
+\label{Eqn:cE:Est}
+\SobNorm{\cE_{n,m}}{s+3/2} \leq C_{\cE} B_{\cE}^n D_{\cE}^m,
+\ee
+for all $n, m \geq 0$.
+\end{lemma}
+\begin{proof}{[Lemma 4.7.1]} We begin by observing the classical fact that the composition of jointly (real) analytic functions is also  jointly (real) analytic \cite{KrantzParks02} so that $(4.23)$ holds, and move to expressions and estimates for the $\cE_{n,m}$.
+By evaluating at $\Eps=0$ we find that
+\bes
+\cE(x;0,\delta) = 1,
+\ees
+so that
+\bes
+\cE_{0,m}(x) = \begin{cases} 1, & m = 0, \\
+  0, & m > 0. \end{cases}
+\ees
+For $\Eps>0$ we use the straightforward computation
+\bes
+\partial_{\Eps} \cE = \left\{ -i (1+\delta) \ugamma^u f \right\} \cE,
+\ees
+and the expansion $(4.23)$ to learn that, for $m = 0$,
+\be
+\label{Eqn:cE:n:0:Recur}
+\cE_{n+1,0} = \left( \frac{-i \ugamma^u f}{n+1} \right) \cE_{n,0},
+\ee
+and, for $m>0$,
+\be
+\label{Eqn:cE:n:m:Recur}
+\cE_{n+1,m} = \left( \frac{-i \ugamma^u f}{n+1} \right) 
+  \left\{ \cE_{n,m} + \cE_{n,m-1} \right\}.
+\ee
+We work by induction in $n$ and begin by establishing $(4.24)$ at $n=0$ for all $m \geq 0$. This is immediate as
+\bes
+\SobNorm{\cE_{0,0}}{s+3/2} = 1,
+\quad
+\SobNorm{\cE_{0,m}}{s+3/2} = 0.
+\ees
+We now assume $(4.24)$ for all $n < \bar{n}$ and
+all $m \geq 0$, and seek this estimate in the case $n = \bar{n}$
+and all $m \geq 0$.
+For this we conduct another induction on $m$, and for $m=0$ we
+use $(4.25)$ (together with Lemma~$2.7.1$
+with $\tilde{s}=s+1$) to discover
+\begin{align*}
+\SobNorm{\cE_{\bar{n},0}}{s+3/2} 
+  & \leq \cM \left( 
+    \frac{\Abs{\ugamma^u} \HolderNorm{f}{s+3/2+\eta}}{\bar{n}} \right)
+    \SobNorm{\cE_{\bar{n}-1,0}}{s+3/2} \\
+  & \leq \cM \left( \frac{\Abs{\ugamma^u} 
+    \HolderNorm{f}{s+2}}{\bar{n}} \right)
+    C_{\cE} B_{\cE}^{\bar{n}-1}
+  \leq C_{\cE} B_{\cE}^{\bar{n}},
+\end{align*}
+provided that
+\bes
+B_{\cE} \geq \cM \Abs{\ugamma^u} \HolderNorm{f}{s+2}
+  \geq \cM \left( \frac{\Abs{\ugamma^u} \HolderNorm{f}{s+2}}{\bar{n}} \right).
+\ees
+Finally, we assume the estimate $(4.24)$ for $n = \bar{n}$
+and $m < \bar{m}$, and use $(4.26)$ to learn that
+\begin{align*}
+\SobNorm{\cE_{\bar{n},\bar{m}}}{s+3/2} 
+  & \leq \cM \left( 
+    \frac{\Abs{\ugamma^u} \HolderNorm{f}{s+3/2+\eta}}{\bar{n}} \right)
+    \left\{ \SobNorm{\cE_{\bar{n}-1,\bar{m}}}{s+3/2} 
+    + \SobNorm{\cE_{\bar{n}-1,\bar{m}-1}}{s+3/2} \right\} \\
+  & \leq \cM \left( 
+    \frac{\Abs{\ugamma^u} \HolderNorm{f}{s+2}}{\bar{n}} \right) 
+    C_{\cE} \left\{ B_{\cE}^{\bar{n}-1} D_{\cE}^{\bar{m}} 
+    + B_{\cE}^{\bar{n}-1} D_{\cE}^{\bar{m}-1} \right\} \\
+  & \leq C_{\cE} B_{\cE}^{\bar{n}} D_{\cE}^{\bar{m}},
+\end{align*}
+provided that
+\bes
+\cM \left( \frac{\Abs{\ugamma^u} \HolderNorm{f}{s+2}}{\bar{n}} \right)
+  \leq \frac{B_{\cE}}{2},
+\quad
+\cM \left( \frac{\Abs{\ugamma^u} \HolderNorm{f}{s+2}}{\bar{n}} \right)
+  \leq \frac{B_{\cE} D_{\cE}}{2},
+\ees
+which can be accomplished, e.g., with
+\bes
+B_{\cE} \geq 2 \cM \Abs{\ugamma^u} \HolderNorm{f}{s+2}
+  \geq 2 \cM \left( \frac{\Abs{\ugamma^u} 
+  \HolderNorm{f}{s+2}}{\bar{n}} \right),
+\quad
+D_{\cE} \geq 1.
+\ees
+\end{proof}
+With Lemma~$4.7.1$ it is straightforward to prove the following
+analyticity result for the Dirichlet and Neumann data.
+\begin{lemma}
+\label{Lemma:zetapsi:Anal}
+Given any integer $s \geq 0$, if $f \in C^{s+2}([0,d])$ then the
+functions $\zeta(x;\Eps,\delta)$ and $\psi(x;\Eps,\delta)$ are jointly 
+analytic in $\Eps$ and $\delta$. Therefore
+\be
+\label{Eqn:zetapsi:Exp}
+\{ \zeta, \psi \}(x;\Eps,\delta) 
+  = \sumn \summ \{ \zeta_{n,m}, \psi_{n,m} \}(x) \Eps^n \delta^m
+\ee
+and, for constants $C_{\zeta}, B_{\zeta}, D_{\zeta} > 0$, and
+$C_{\psi}, B_{\psi}, D_{\psi} > 0$,
+\be
+\label{Eqn:zetapsi:Est}
+\SobNorm{\zeta_{n,m}}{s+3/2} \leq C_{\zeta} B_{\zeta}^n D_{\zeta}^m,
+\quad
+\SobNorm{\psi_{n,m}}{s+1/2} \leq C_{\psi} B_{\psi}^n D_{\psi}^m,
+\ee
+for all $n, m \geq 0$.
+\end{lemma}

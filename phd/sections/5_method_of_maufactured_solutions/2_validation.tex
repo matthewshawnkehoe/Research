@@ -1,0 +1,29 @@
+\section{The Method of Manufactured Solutions}
+\label{intro:validation}
+
+To validate our numerical scheme we utilized the MMS \cite{Burggraf66,Roache02,Roy05}.
+To summarize, we considered a general system of
+partial differential equations subject to generic boundary conditions
+\begin{align*}
+& \mathcal{P} v = 0, && \text{in $\Omega$}, \\
+& \mathcal{B} v = 0, && \text{at $\partial \Omega$}.
+\end{align*}
+It is typically easy to implement a numerical algorithm to solve
+the nonhomogeneous version of this set of equations
+\begin{align*}
+& \mathcal{P} v = \mathcal{F}, && \text{in $\Omega$}, \\
+& \mathcal{B} v = \mathcal{J}, && \text{at $\partial \Omega$}.
+\end{align*}
+To test an implementation we began with the ``manufactured solution,''
+$\tilde{v}$, and set
+\begin{equation*}
+\mathcal{F}_v := \mathcal{P} \tilde{v},
+\quad
+\mathcal{J}_v := \mathcal{J} \tilde{v}.
+\end{equation*}
+Thus, given the pair $\{ \mathcal{F}_v, \mathcal{J}_v \}$ we had an exact
+solution of the nonhomogeneous problem, namely $\tilde{v}$. While this
+does not prove an implementation to be correct, if the function $\tilde{v}$
+is chosen to imitate the behavior of anticipated solutions (e.g.,
+satisfying the boundary conditions exactly) then this gives us
+confidence in our algorithm. 

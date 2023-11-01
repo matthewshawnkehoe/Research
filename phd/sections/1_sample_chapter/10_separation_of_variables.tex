@@ -1,0 +1,57 @@
+\section{Separation of Variables}
+\label{intro:sov}
+We are interested in finding a representation of the solution $\tilde{u}$ to the boundary value problem
+\begin{subequations}
+\begin{align}
+\Delta \tilde{u} + k^2 \tilde{u} &=0,&& \text{in $S^{(u)}$},\\
+\tilde{u}(x,g(x))&=-\tilde{u}^{i}(x,g(x))=\tilde{\zeta}(x),&& \text{at $z=g(x)$},\\
+\tilde{u}(x+d,z)&=e^{i\alpha d}\tilde{u}(x,z),
+\end{align}
+\end{subequations}
+through the classical method of Separation of Variables. We split $(1.42\text{a})$ into a set of ordinary differential equations by considering 
+$$\tilde{u}(x,z)=X(x)Z(z).$$
+Substituting this product into the Helmholtz equation, we obtain 
+$$X''Z + XZ'' + k^2XZ=0.$$
+Dividing by $\tilde{u} = XZ$ and rearranging terms, we get 
+\begin{align}
+\frac{X''}{X}= -k^2 - \frac{Z''}{Z}.
+\end{align}
+Equation $(1.43)$ exhibits one Separation of Variables. The left--hand side is a function of $x$ alone, whereas the right--hand side depends only on $z$ and not on $x$. But $x$ and $z$ are independent coordinates. The equality of both sides depending on different variables means that the behavior of $x$ as an independent variable is not determined by $z$. Therefore, each side must be equal to a constant which is known as the constant of separation. We choose 
+\begin{align}
+  \frac{X''}{X}&=\lambda^2, \\ 
+  -k^2 - \frac{Z''}{Z}&=\lambda^2.
+\end{align}
+Now, turning our attention to $(1.45)$, we obtain 
+\begin{align}
+ \frac{Z''}{Z} = -\left(\lambda^2 +k^2\right).  
+\end{align}
+Our goal is to solve the ODEs $(1.44)$ and $(1.46)$ through our boundary conditions. Rearranging $(1.44)$ as $X''-\lambda^2 X=0$ and solving the auxiliary equation gives
+\begin{align}
+\quad X_n(x)=a_ne^{\lambda x} + b_ne^{-\lambda x}.
+\end{align}
+Similarly, we write $(1.46)$ as $Z'' + Z\left(\lambda^2+k^2\right)=0$ and solve the auxiliary equation to find
+\begin{align}
+\quad Z_n(z)=c_ne^{i\sqrt{\lambda^2+k^2}z} + d_ne^{-i\sqrt{\lambda^2+k^2}z}.
+\end{align}
+We first analyze $(1.47)$ in combination with the boundary condition $(1.42\text{c})$ for quasiperiodic $\tilde{u}(x+d,z)=e^{i\alpha d}\tilde{u}(x,z)$. The case $d=0$ gives the trivial solution so we will assume $d\neq 0$. Now we analyze $(1.47)$ and focus on the case where $x=0$ and $d\neq 0$. The boundary condition $(1.42\text{c})$ becomes $X(d)=e^{i\alpha d}X(0)$ which, upon invoking the definition of the complex logarithm and simplifying, delivers
+$$ \lambda = i\alpha+i\left(\frac{2\pi }{d}\right)p,\quad p\in\mathbb  Z, \quad d\neq 0.$$
+It is clear from the left-hand side of $(1.33)$ that we may represent $\alpha_p$ by
+$$ \lambda = i\alpha+i\left(\frac{2\pi }{d}\right)p=i\alpha_p,\quad p\in\mathbb  Z, \quad d\neq 0.$$
+Next, we analyze the auxiliary equations when $z=0.$ The boundary condition $(1.42\text{c})$ becomes $X(x+d)=e^{i\alpha d}X(x)$ which, after some elementary computations, gives the same representation for $\lambda$. Therefore no further simplifications are necessary for $(1.47)$ and $(1.48)$. In light of this, the auxiliary equation $(1.47)$ becomes
+\begin{align}
+\quad X_n(x)=a_ne^{i\alpha_p x} + b_ne^{-i\alpha_p x}.
+\end{align}
+Inserting $\lambda=i\alpha_p$ into $(1.48)$ forms
+\begin{align}
+\quad Z_n(z)=c_ne^{i\sqrt{k^2-\alpha_p^2}z} + d_ne^{-i\sqrt{k^2-\alpha_p^2}z}.
+\end{align}
+By the right--hand side of $(1.33)$, we see that $(1.50)$ is equivalent to
+\begin{align}
+\quad Z_n(z)=c_ne^{i\gamma_p z} + d_ne^{-i\gamma_p z}.
+\end{align}
+By $(1.49),(1.51),$ and the superposition principle, the general solution is
+\begin{align*}
+\tilde{u}(x,z)&=\sum_{p=-\infty}^{\infty}\Big( a_pe^{i\alpha_p x} + b_pe^{-i\alpha_p x}\Big)\Big(c_pe^{i\gamma_p z} + d_pe^{-i\gamma_p z}\Big)\\&=
+\sum_{p=-\infty}^{\infty}e_pe^{i\alpha_p x + i\gamma_p z} + \sum_{p=-\infty}^{\infty}f_pe^{i\alpha_p x - i\gamma_p z}.
+\end{align*}
+A similar calculation was made by Lord Rayleigh whose initial focus was investigating the electromagnetic problem of the diffraction of a plane wave at normal incidence \cite{rayleigh1881x,rayleigh1894theory,rayleigh1907dynamical} in a periodic structure.

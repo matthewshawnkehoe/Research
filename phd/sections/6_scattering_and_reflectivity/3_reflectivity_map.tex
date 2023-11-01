@@ -1,0 +1,43 @@
+\section{The Reflectivity Map}
+\label{Sec: Reflectivity Map}
+
+Recalling the solution $(4.3)$ to the Helmholtz equation in the upper layer
+$$u(x,z) = \sump a_p e^{i \tilde{p} x + i \gamma^u_p z},$$
+we note the
+very different character of the solution for wavenumbers $p$
+in the set
+\bes
+\mathcal{U}^u := \left\{ p \in \mathbb{Z}\ |\ \alpha_p^2 < 
+  (k^u)^2 \right\},
+\ees
+and those that are not. From our choice of the branch of the square
+root, components of $u(x,z)$ corresponding to $p \in \mathcal{U}^u$
+propagate away from the layer interface, while those not in this set
+decay exponentially from $z=g(x)$. The latter are called evanescent
+waves while the former are propagating (defining the set of propagating
+modes $\mathcal{U}^u$) and carry energy away from
+the grating. With this in mind we define the efficiencies \cite{Petit80}
+\bes
+e^u_p := (\gamma^u_p/\gamma^u) \Abs{a_p}^2,
+\quad
+p \in \mathcal{U}^u,
+\ees
+and the Reflectivity Map
+\vspace{4mm}
+\be
+\label{Eqn:R}
+R := \sum_{p \in \mathcal{U}^u} e^u_p.
+\ee
+Similar quantities can be defined in the lower layer \cite{Petit80}, and
+with these the principle of conservation of energy can be stated for
+structures composed entirely of dielectrics
+\bes
+\sum_{p \in \mathcal{U}^u} e^u_p + \tau^2 \sum_{p \in \mathcal{U}^w} e^w_p = 1.
+\ees
+In this situation a useful diagnostic of convergence for a numerical scheme
+(which we will utilize in our simulations) is the Energy Defect
+\be
+\label{Eqn:EnergyDefect}
+D := 1 - \sum_{p \in \mathcal{U}^u} e^u_p - \tau^2 \sum_{p \in \mathcal{U}^w} e^w_p,
+\ee
+which should be zero for a purely dielectric structure.

@@ -1,0 +1,38 @@
+\begin{section}{Taylor Series for \texorpdfstring{$\gamma_p^q(\delta)$}{Frequency Perturbation}}
+
+A key step in the development of our algorithm is to derive the Taylor series expansion for $\gamma_p^q$, where
+\begin{align}
+\gamma_p^q=\gamma_p^q(\delta)=\sum_{m=0}^{\infty}\gamma_{p,m}^q\delta^m.
+\end{align}
+We started with the relationship
+$$\alpha_p^2 + (\gamma_p^q)^2 = (k^q)^2,$$
+which implies
+$$\left(\sum_{m=0}^{\infty}\gamma_{p,m}^q\delta^m\right)\left(\sum_{r=0}^{\infty}\gamma_{p,r}^q\delta^r\right)=(1+\delta^2)(\underline{k}^q)^2 -(\underline{\alpha}_p+\delta\underline{\alpha})^2.$$
+This gives
+\begin{align*}
+\sum_{m=0}^{\infty}\delta^m\sum_{r=0}^m \gamma_{p,m-r}^q\gamma_{p,r}^q &=\{(\underline{k}^q)^2-(\underline{\alpha}_p)^2\}+2\delta~\{(\underline{k}^q)^2-\underline{\alpha}~\underline{\alpha}_p\}+\delta^2~\{(\underline{k}^q)^2-(\underline{\alpha})^2\}\\&=
+(\underline{\gamma}_p^q)^2 + 2\delta~\{(\underline{k}^q)^2 - \underline{\alpha}~\underline{\alpha}_p\} + \delta^2(\underline{\gamma}^q)^2.
+\end{align*}
+Therefore at order $\mathcal{O}(\delta^0)$ we required
+\begin{align}
+\gamma_{p,0}^q = \pm \underline{\gamma}_p^q,    
+\end{align}
+and at order $\mathcal{O}(\delta^1)$ we required
+\begin{align}
+\gamma_{p,1}^q = \frac{2((\underline{k}^q)^2 - \underline{\alpha}~\underline{\alpha}_p)}{2\gamma_{p,0}^q},\quad \gamma_{p,0}^q \neq 0.
+\end{align}
+This implies that it is crucial that $\ugamma_p^q \neq 0$ for all $p$ in order to have a valid expansion of $(5.8)$. The $\ugamma_p^q$ satisying $\ugamma_p^q =0$ are known as a Rayleigh singularity (or Wood's anomaly). So we made this assumption, $\ugamma_p^q \neq 0$, and continued our development to $\mathcal{O}(\delta^2)$ where
+\begin{align}
+\gamma_{p,2}^q = \frac{(\underline{\gamma}^q)^2 - (\gamma_{p,1}^q)^2}{2\gamma_{p,0}^q},\quad \gamma_{p,0}^q \neq 0,
+\end{align}
+and for $\mathcal{O}(\delta^m)$, $m>2$, we required
+\begin{align}
+\gamma_{p,2}^q=\frac{-\sum_{r=1}^{m-1}\gamma_{p,m-r}^q\gamma_{p,r}^q}{2\gamma_{p,0}^q},\quad \gamma_{p,0}^q \neq 0.    
+\end{align}
+\begin{remark}
+As discussed in \cite{Nicholls16} we must be away from a Rayleigh
+singularity, $\ugamma_p^q = 0$, for all $p$ in order for our
+expansion to be valid. See the final section of \cite{Nicholls16} for
+a discussion of the behavior of the function $\gamma_p^q(\delta)$ in the
+neighborhood of a Rayleigh singularity.
+\end{remark}

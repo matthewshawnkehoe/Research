@@ -1,0 +1,129 @@
+\vspace{-1.8mm}
+\section{Maxwell Equations}
+\label{intro:maxwell}
+\vspace{-1mm}
+Following \cite{Jackson75,BillinghamKing00,HOPS_Notes,Petit80,maier2007plasmonics}, we consider a region $S$ and take as a starting point Maxwell's equations of macroscopic electromagnetism in the following form:
+\begin{subequations}
+\begin{align}
+\nabla \times \textbf{\underline{E}} &= -\frac{\partial \textbf{\underline{B}}}{\partial t}, &&\text{(Faraday's Law of Induction)}\\
+\nabla \times \textbf{\underline{H}} &= \textbf{J} + \frac{\partial \textbf{\underline{D}}}{\partial t},&&\text{(Ampère's Law)}\\
+\nabla\cdot \textbf{\underline{D}} &= \rho,&&\text{(Gauss's Law)}\\
+\nabla\cdot \textbf{\underline{B}}&=0, &&\text{(Gauss's Law  for Magnetism)}
+\end{align}
+\end{subequations}
+where $\textbf{J}$ is the current density and $\rho$ is the charge density. These equations link the four (time dependent) macroscopic fields
+\begin{itemize}
+    \item $\textbf{\underline{E}}=\textbf{\underline{E}}(x,y,z,t)$: The Electric field.
+    \item $\textbf{\underline{H}}=\textbf{\underline{H}}(x,y,z,t)$: The Magnetic field.
+    \item $\textbf{\underline{D}}=\textbf{\underline{D}}(x,y,z,t)$: The Electric Displacement field.
+    \item $\textbf{\underline{B}}=\textbf{\underline{B}}(x,y,z,t)$: The Magnetic Induction field.
+\end{itemize}
+The four fields are further linked via the polarization \textbf{P} and magnetization \textbf{M} by
+\begin{align*}
+\textbf{\underline{D}} & = \epsilon_0\textbf{\underline{E}} + \textbf{P}, \\
+\textbf{\underline{H}} & = \frac{1}{\mu_0}\textbf{\underline{B}} - \textbf{M},
+\end{align*}
+where $\epsilon_0$ and $\mu_0$ are the electric permittivity and magnetic permeability of vacuum. The connections between the fields depend on material properties that are defined by the quantities
+\begin{itemize}
+\item Polarization \textbf{P}: The electric dipole moment per unit volume.
+\item  Magnetization \textbf{M}: The magnetic dipole moment per unit volume.
+\end{itemize}
+Limiting ourselves to linear, isotropic, homogenuous, nonmagnetic media, we define the constitutive relations
+\begin{subequations}
+\begin{align}
+\textbf{\underline{D}}&= \epsilon_0\epsilon_r\textbf{\underline{E}},\\
+\textbf{\underline{B}}&= \mu_0\mu_r\textbf{\underline{H}},
+\end{align}
+\end{subequations}
+where $\epsilon_r$ is a dielectric constant representing the relative permittivity and $\mu_r = 1$ is relative
+permeability of the nonmagnetic medium. The linear relationship between \textbf{\underline{D}} and \textbf{\underline{E}} is often implicitly defined using the dielectric susceptibility $\chi$, which describes the linear relationship between \textbf{P} and \textbf{\underline{E}} via
+\bes
+\textbf{P} = \epsilon_0\chi\textbf{\underline{E}}.
+\ees
+From here, one finds
+\begin{align*}
+\textbf{\underline{D}} = \epsilon_0\textbf{\underline{E}} + \textbf{P} = \epsilon_0(1+\chi)\textbf{\underline{E}},
+\end{align*}
+which from $(1.2\text{a})$ yields $\epsilon_r = 1+\chi.$ Substituting $(1.2)$ into $(1.1)$ produces
+
+\begin{subequations}
+\begin{align}
+\nabla \times \textbf{\underline{E}} &= -\mu_0\frac{\partial \textbf{\underline{H}}}{\partial t}, \\
+\nabla \times \textbf{\underline{H}} &= \textbf{J} + \epsilon_0\epsilon_r\frac{\partial \textbf{\underline{E}}}{\partial t},\\
+\nabla\cdot \textbf{\underline{E}} &= \rho/(\epsilon_0\epsilon_r),\\
+\nabla\cdot \textbf{\underline{H}}&=0.
+\end{align}
+\end{subequations}
+In consideration of our particular scenario, we assume there are no free charges (requiring $\rho\equiv 0$). We model the current density with the linear relationship
+$$\textbf{J}=\sigma \textbf{\underline{E}},$$
+which is known as Ohm's law. The scalar $\sigma$ represents the conductivity of an isotropic material. To work in the frequency domain and obtain time-harmonic solutions of the form
+\begin{equation}\textbf{\underline{E}}(x,y,z,t)=\textbf{E}(x,y,z)e^{-i\omega t},\quad \textbf{\underline{H}}(x,y,z,t)= \textbf{H}(x,y,z)e^{-i\omega t},\end{equation}
+we insert $(1.4)$ into $(1.3)$ to obtain
+\begin{subequations}
+\begin{align}
+\nabla \times \textbf{E} &= i\omega\mu_0 \textbf{H},\\
+\nabla \times \textbf{H} &= -i\omega\epsilon_0\epsilon \textbf{E},\\
+\nabla\cdot \textbf{E} &= 0,\\
+\nabla\cdot \textbf{H}&=0,
+\end{align}
+\end{subequations}
+where 
+$$\epsilon:=\epsilon'+i\epsilon'', \quad \epsilon'=\epsilon_r, \quad \epsilon''= \sigma/(\omega\epsilon_0),$$ 
+is the complex permittivity. A dielectric (or insulator) is the name given to a material for which
+$$\sigma/(\omega\epsilon_0)\ll \epsilon' \implies \text{Im}(\epsilon)\approx 0,$$
+and a perfect insulator is a material where $\sigma =0$ which implies $\text{Im}(\epsilon)=0$. An example is vacuum where $\epsilon =1$. A metal (or conductor) is the name given to a material which satisfies
+$$\epsilon'' = \sigma/(\omega\epsilon_0)\approx \epsilon_r.$$
+Examples of good conductors are copper and silver. We call a material a perfect conductor if $\sigma \to \infty$.
+To arrive at the governing equations for scattered grating, we also demand that solutions are quasiperiodic
+
+\begin{subequations}
+\begin{align}
+\textbf{E}(x+d_1,y+d_2,z)&=e^{i\alpha d_1 + i\beta d_2}\textbf{E}(x,y,z),\\
+\textbf{H}(x+d_1,y+d_2,z)&=e^{i\alpha d_1 + i\beta d_2}\textbf{H}(x,y,z),
+\end{align}
+\end{subequations}
+and outgoing. Then at the material interface \cite{BillinghamKing00} we have continuity of both the tangential components of the electric field and the normal components of the magnetic field. Finally, we recognize that jumps in the normal electric field and tangential magnetic field are specified by
+\begin{equation}
+\textbf{N}\times \textbf{E}=0, \quad \textbf{N}\times \textbf{H} = \textbf{j}_s,\quad \textbf{N}\cdot (\epsilon \textbf{E})=\rho_s, \quad \textbf{N}\cdot \textbf{H} =0,
+\end{equation}
+where $\textbf{N}$ is normal to the interface, $\textbf{j}_s$ represents the surface current density, and $\rho_s$ is the surface charge density. In the case that all of the permittivities and permeabilities are finite, the surface current density is zero. This allows us to enforce tangential continuity of the fields $\textbf{E}$ and $\textbf{H}$ as 
+\begin{equation}
+    \textbf{N}\times \textbf{E} = 0, \quad \textbf{N}\times \textbf{H} = 0.
+\end{equation}
+In the setting of grating structures, we choose an interface shaped by $z=g(x,y)$ and define the normal of the interface as $\textbf{N}:=(-\partial_x g, -\partial_y g,1)^T$. Therefore in a doubly layered medium our governing equations become
+\vspace{-2.74mm}
+\begin{subequations}
+\begin{align}
+\nabla \times \textbf{E}^{(u)} &= i\omega\mu_0 \textbf{H}^{(u)}, && z>g(x,y),\\
+\nabla \times \textbf{H}^{(u)} &= -i\omega\epsilon_0\epsilon^{(u)} \textbf{E}^{(u)},&& z>g(x,y),\\
+\nabla \times \textbf{E}^{(w)} &= i\omega\mu_0 \textbf{H}^{(w)},&& z<g(x,y),\\
+\nabla \times \textbf{H}^{(w)} &= -i\omega\epsilon_0\epsilon^{(w)}  \textbf{E}^{(w)},&& z<g(x,y),\\
+\textbf{N}\times \left[\textbf{E}^{(u)}-\textbf{E}^{(w)}\right]&=-\textbf{N}\times \textbf{E}^{\text{inc}},&& z=g(x,y),\\
+\textbf{N}\times \left[\textbf{H}^{(u)}-\textbf{H}^{(w)}\right]&=-\textbf{N}\times \textbf{H}^{\text{inc}},&& z=g(x,y).
+\end{align}
+\end{subequations}
+Here, $\{\textbf{E}^{(u)},\textbf{H}^{(u)}\}$ and $\{\textbf{E}^{(w)},\textbf{H}^{(w)}\}$ represent outgoing, quasiperiodic, divergence free electric and magnetic fields defined in the upper $\big(S^{(u)}=\{z > g\}\big)$ and lower $\big(S^{(w)}=$ $\{z<g\}\big)$ media. The constants  $\epsilon^{(u)}$ and $\epsilon^{(w)}$ represent the permittivities which fill the two material layers. 
+
+To simplify future developments, we make two assumptions which allow us to focus on scalar solutions in two dimensions. Our first assumption is that the grating structure is invariant in the $y$--direction so that the interface shape becomes
+\begin{align*}z=g(x).\end{align*}
+This implies that $-\partial_y g=0$ and the interface normal becomes
+\vspace{-0.2mm}
+\begin{equation}
+\textbf{N}=\begin{pmatrix}
+-\partial_x g\\ 0 \\ 1
+\end{pmatrix}.
+\end{equation}
+The second assumption is that the incident radiation is aligned with the invariant grooves of the grating structure. In this case, in \gls{te} polarization the electric field takes the form
+\begin{equation}
+\textbf{E}^{\text{inc}}=\textbf{E}^{\text{inc}}(x,z)=\textbf{A}e^{i\alpha x - i\gamma z},\quad \textbf{A}= 
+\begin{pmatrix}
+0\\ A \\ 0
+\end{pmatrix},
+\end{equation}
+while in \gls{tm} polarization the magnetic field can be written as
+\begin{equation}
+\textbf{H}^{\text{inc}}=\textbf{H}^{\text{inc}}(x,z)=\textbf{B}e^{i\alpha x - i\gamma z},\quad \textbf{B}= 
+\begin{pmatrix}
+0\\ B \\ 0
+\end{pmatrix}.
+\end{equation}

@@ -1,0 +1,161 @@
+\section{Governing Equations and Propagating Conditions}
+\label{intro:governing equations}
+The two--layer scattering problem is composed of outgoing, quasiperiodic solutions to
+\begin{subequations}
+\label{Eqn:Govern_With_Phase}
+\begin{align}
+& \Delta \tilde{u} + (k^u)^2 \tilde{u} = 0,&& z > g(x),
+  \label{Eqn:Govern_With_Phase:a} \\
+& \Delta \tilde{w} + (k^w)^2 \tilde{w} = 0,&& z < g(x),
+  \label{Eqn:Govern_With_Phase:b} \\
+& \tilde{u} - \tilde{w} = \tilde{\zeta}, && \text{at $z = g(x)$},
+  \label{Eqn:Govern_With_Phase:c} \\
+& \partial_N \tilde{u}-\tau^2\partial_N \tilde{w}=\tilde{\psi}, &&\text{at $z=g(x)$.}
+  \label{Eqn:Govern_With_Phase:d}
+\end{align}
+The Dirichlet and Neumann data are
+
+\begin{align}
+\tilde{\zeta}(x) & := -e^{i\alpha x -i \gamma^u g(x)}, 
+  \label{Eqn:Govern_With_Phase:e} \\
+\tilde{\psi}(x) & := (i \gamma^u + i \alpha (\partial_x g)) e^{i\alpha x -i \gamma^u g(x)},
+  \label{Eqn:Govern_With_Phase:f}
+\end{align}
+\end{subequations}
+and
+\bes
+\tau^2 = \begin{cases} 1, & \text{TE}, \\
+  (k^u/k^w)^2 = (n^u/n^w)^2, & \text{TM}.
+  \end{cases}
+\ees
+Following our analysis in Chapters 2 and 3, we start by removing the phase in $(4.1)$ through the relationship $v(x,z)=e^{-i\alpha x}\tilde{v}(x,z)$, $v\in\{u,w\}$, and $\zeta(x)=e^{-i\alpha x}\tilde{\zeta}(x)$, $\psi(x)=e^{-i\alpha x}\tilde{\psi}(x)$. This yields outgoing, $d$--periodic solutions of
+\begin{subequations}
+\label{Eqn:Govern}
+\begin{align}
+& \Delta u + 2 i \alpha \partial_x u + (\gamma^u)^2 u = 0,&& z > g(x),
+  \label{Eqn:Govern:a} \\
+& \Delta w + 2 i \alpha \partial_x w + (\gamma^w)^2 w = 0,&& z < g(x),
+  \label{Eqn:Govern:b} \\
+& u - w = \zeta, && \text{at $z = g(x)$},
+  \label{Eqn:Govern:c} \\
+& \partial_N u - i \alpha (\partial_x g) u
+  - \tau^2 \left[ \partial_N w - i \alpha (\partial_x g) w \right]
+  = \psi, && \text{at $z = g(x)$},
+  \label{Eqn:Govern:d}
+\end{align}
+where 
+\begin{align}
+\zeta(x) & := -e^{-i \gamma^u g(x)}, 
+  \label{Eqn:Govern:e} \\
+\psi(x) & := (i \gamma^u + i \alpha (\partial_x g)) e^{-i \gamma^u g(x)},
+  \label{Eqn:Govern:f}
+\end{align}
+\end{subequations}
+and the left--hand side of $(4.2\text{d})$ follows from
+\begin{align*}
+\partial_N \tilde{u}-\tau^2\partial_N \tilde{w}&=\partial_N \left(e^{i\alpha x}u\right) - \tau^2\partial_N\left(e^{i\alpha x}w\right) \\&=
+e^{i\alpha x}\Big(\partial_z u + (-\partial_xg)\partial_xu-(i\alpha)(\partial_xg)u ~-\\& \qquad \qquad\tau^2\Big[\partial_zw + (-\partial_xg)\partial_xw - (i\alpha)(\partial_xg)w\Big]\Big)\\&=
+e^{i\alpha x}\Big(\partial_N u - i \alpha (\partial_x g) u
+  - \tau^2 \left[ \partial_N w - i \alpha (\partial_x g) w \right]\Big).
+\end{align*}
+The \gls{upc} and \gls{dpc}
+\cite{ArensHab} rigorously enforce the Outgoing Wave Conditions which we mentioned in $\S 1.8$. We now demonstrate how these can be stated in terms of Transparent
+Boundary Conditions which also truncate the bi--infinite problem domain to one
+of finite size. As discussed in $\S 1.8$, we choose values $a$ and $b$ such that
+\bes
+a > \SupNorm{g},
+\quad
+-b < -\SupNorm{g},
+\ees
+and define the artificial boundaries $\{ z = a \}$ and $\{ z = -b \}$. In 
+$\{ z > a \}$ the Rayleigh expansions \cite{Petit80} tell us that upward propagating
+solutions of $(4.2\text{a})$ are
+\be
+\label{Eqn:Rayleigh:u}
+u(x,z) = \sump a_p e^{i \tilde{p} x + i \gamma^u_p z},
+\ee
+where, for $p\in\mathbb Z$ and $q \in \{ u, w \}$,
+\be
+\label{Eqn:p:alphap:gammap:Def}
+\tilde{p} := \frac{2 \pi p}{d},
+\quad
+\alpha_p := \alpha + \tilde{p},
+\quad
+\gamma^q_p := \sqrt{ (k^q)^2 - \alpha_p^2 },
+\quad
+\text{Im} \left\{ \gamma^q_p \right\} \geq 0.
+\ee
+In a similar fashion, downward propagating solutions of $(4.2\text{b})$ in
+$\{ z < -b \}$ can be expressed as
+\be
+w(x,z) = \sump d_p e^{i \tilde{p} x - i \gamma^w_p z}.
+\ee
+With these we can define the Transparent Boundary Conditions in the following way:
+Focusing on the UPC we rewrite $(4.3)$ as
+\bes
+u(x,z) = \sump \left( a_p e^{i \gamma^u_p a} \right) e^{i \tilde{p} x + i \gamma^u_p (z-a)}
+  = \sump \hat{\xi}_p e^{i \tilde{p} x + i \gamma^u_p (z-a)},
+\ees
+and note that,
+\bes
+u(x,a) = \sump \hat{\xi}_p e^{i \tilde{p} x} =: \xi(x),
+\ees
+and
+\bes
+\partial_z u(x,a) = \sump (i \gamma^u_p) \hat{\xi}_p e^{i \tilde{p} x} =: T^u[\xi(x)],
+\ees
+which defines the order--one Fourier multiplier $T^u$. For the DPC we rewrite $(4.5)$ as
+\bes
+w(x,z) = \sump \left( d_p e^{i \gamma^w_p b} \right) e^{i \tilde{p} x - i \gamma^w_p (z+b)}
+  = \sump \hat{\psi}_p e^{i \tilde{p} x - i \gamma^w_p (z+b)},
+\ees
+and keep in mind,
+\bes
+w(x,-b) = \sump \hat{\psi}_p e^{i \tilde{p} x} =: \psi(x),
+\ees
+and
+\bes
+\partial_z w(x,-b) = \sump (-i \gamma^w_p) \hat{\psi}_p e^{i \tilde{p} x} =: T^w[\psi(x)],
+\ees
+which defines the order--one Fourier multiplier $T^w$. From this we state that
+upward--propagating solutions of $(4.2\text{a})$ satisfy the Transparent Boundary
+Condition at $z = a$
+\be
+\label{Eqn:TransBC:u}
+\partial_z u(x,a) - T^u[u(x,a)] = 0,
+\quad
+z = a.
+\ee
+Similarly, downward--propagating solutions of $(4.2\text{b})$ satisfy the Transparent Boundary
+Condition at $z = -b$
+\be
+\label{Eqn:TransBC:w}
+\partial_z w(x,-b) - T^w[w(x,-b)] = 0,
+\quad
+z = -b.
+\ee
+We also point out that solutions which satisfy $(4.6)$ and 
+$(4.7)$ equivalently satisfy the UPC and DPC, respectively
+\cite{ArensHab}. With these we now state the full set of governing equations as
+\begin{subequations}
+\label{Eqn:Govern:Full}
+\begin{align}
+& \Delta u + 2 i \alpha \partial_x u + (\gamma^u)^2 u = 0,&& z > g(x), 
+  \label{Eqn:Govern:Full:a} \\
+& \Delta w + 2 i \alpha \partial_x w + (\gamma^w)^2 w = 0,&& z < g(x), 
+  \label{Eqn:Govern:Full:b} \\
+& u - w = \zeta, && z = g(x), 
+  \label{Eqn:Govern:Full:c} \\
+& \partial_N u - i \alpha (\partial_x g) u
+  - \tau^2 \left[ \partial_N w - i \alpha (\partial_x g) w \right]
+  = \psi, && z = g(x), 
+  \label{Eqn:Govern:Full:d} \\
+& \partial_z u(x,a) - T^u[u(x,a)] = 0, && z = a, 
+  \label{Eqn:Govern:Full:e} \\
+& \partial_z w(x,-b) - T^w[w(x,-b)] = 0, && z = -b, 
+  \label{Eqn:Govern:Full:f} \\
+& u(x+d,z) = u(x,z), \\
+& w(x+d,z) = w(x,z).
+\end{align}
+\end{subequations}
+

@@ -1,0 +1,59 @@
+\section{Sobolev Spaces and Elliptic Theory}
+\label{intro:sobolev_spaces_elliptic_theory}
+We summarize the characterization of the Sobolev spaces $H^s = W^{s,2}$ applied in laterally $d$--periodic functions relevant to scattering problems of interest to us. We know that any $d$--periodic $L^2$ function
+$$\mu(x+d)=\mu(x),$$
+can be expressed as
+$$\mu(x) = \sum_{p=-\infty}^{\infty}\hat{\mu}_p e^{i\tilde{p} x},$$
+where 
+$$\tilde{p}:= \left(\frac{2\pi}{d}\right)p,\quad \hat{\mu}_p = \frac{1}{d}\int_0^d \mu(x) e^{-i\tilde{p} x}\diff x.$$
+We then define our $x$--periodic norms. For any $L^2$ function $\mu=\mu(x)$, we recall the classical Sobolev norm for any real $s\geq 0$:
+$$\| \mu\|_{H_x^s}^2:=\sum_{p=-\infty}^{\infty}\langle \tilde{p} \rangle^{2s}|\hat{\mu}_p|^2,\quad \langle \tilde{p} \rangle^2 := 1 + |\tilde{p}|^2.$$
+For the $L^2$ function $u=u(x,z)$ we require the classical Sobolev norm for any integer $s\geq 0$ and $a > 0$
+\bes
+\| u\|_{H_{x,z}^s}^2 := \sum_{\ell=0}^{s} \sump \Angle{\tilde{p}}^{2(s-\ell)}
+  \int_0^a \Abs{\hat{u}_p(z)}^2  \diff z
+  = \sum_{\ell=0}^{s} \sump \Angle{\tilde{p}}^{2(s-\ell)}
+  \Norm{\hat{u}_p}{L^2([0,a])}^2.
+\ees
+With these norms, we define the following function spaces. First, for real $s\geq 0$,
+\bes
+H^s\big([0,d]\big):=\left\{\mu(x)\in L^2\big([0,d]\big)~\big|~\|\mu\|_{H_x^s}< \infty\right\}.
+\ees
+Also, for any integer $s\geq 0$,
+\bes
+H^s\big([0,d]\times[0,a]\big):=\left\{u(x)\in L^2\big([0,d]\times[0,a]\big)~\big|~\|u\|_{H_{x,z}^s}< \infty\right\}.
+\ees
+With these we can now establish the following three properties based on classical elliptic theory. The first property is the ``Algebra Property" of Sobolev spaces which allows us to estimate products of functions in our function classes. The second property is a theorem which gives a rigorous statement of the ``Elliptic Estimate." The final property provides a method of bounding translated elements in our function spaces.
+\vskip 0.1in
+\begin{lemma}
+Given an integer $s \ge 0$ and any $\sigma > 0$, there exists a constant $\mathcal{M}=\mathcal{M}(s)$ such that if $f\in C^s([0,d]),u\in H^s([0,d]\times [0,a])$ then
+\begin{equation}
+\|fu\|_{H^s} \le \mathcal{M}|f|_{C^s}\|u\|_{H^s},
+\end{equation}
+and if $\tilde{f}\in C^{s+1/2+\sigma}([0,d]),\tilde{u}\in H^{s+1/2}([0,d])$ then there exists a constant $\tilde{\mathcal{M}}=\tilde{\mathcal{M}}(s)$ such that
+\begin{equation}
+ \|\tilde{f}\tilde{u}\|_{H^{s+1/2}} \le \tilde{\mathcal{M}}|\tilde{f}|_{C^{s+1/2+\sigma}}\|\tilde{u}\|_{H^{s+1/2}}.   
+\end{equation}
+\end{lemma}
+\vskip 0.1in
+\begin{theorem} Given an integer $s\ge 0$, if $F\in H^s([0,d])\times [0,a]),$ $\zeta^u \in H^{s+3/2}([0,d]),$ $P\in H^{s+1/2}([0,d])$, then there exists a unique solution $u\in H^{s+2}([0,d])\times [0,a])$ of 
+\begin{subequations}
+\begin{align}
+\Delta u(x,z) +2i\underline{\alpha}\partial_{x}u(x,z)+(\underline{\gamma}^u)^2u(x,z)&=F(x,z), && \text{$0<z<a$},\\
+u(x,0)&=\zeta^u(x,0), && \text{at $z=0$},\\
+u(x+d,z)&=u(x,z),\\
+\partial_z u(x,a)-T_0^u[u(x,a)] &= P(x), && \text{at $z=a$},
+\end{align}
+\end{subequations}
+satisfying
+\begin{equation}\|u\|_{H^{s+2}}\le C_e\{\|F\|_{H^{s}}+\|\zeta^u\|_{H^{s+3/2}}+\|P\|_{H^{s+1/2}}  \}, \end{equation}
+for some constant $C_e = C_e(s) > 0$.
+\end{theorem}
+\vskip 0.1in
+\begin{lemma}
+Given an integer $s\ge 0$, if $F\in H^s([0,d])\times [0,a])$, then $(a-z)F \in$ $H^s([0,d])\times [0,a])$ and there exists a positive constant $Z_a = Z_a(s)$ such that
+$$\|(a-z)F\|_{H^s} \le Z_a \|F\|_{H^s}.$$
+\end{lemma}
+\begin{flushleft}
+The proof of these three properties is established in Appendix B.
+\end{flushleft}

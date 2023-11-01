@@ -1,0 +1,97 @@
+\section{Rayleigh Expansions}
+\label{intro:rayleigh}
+In order to make precise the far--field boundary conditions we desire, we study solutions of the following boundary value problem
+\begin{subequations}
+\begin{align}
+\Delta \tilde{u} + (k^u)^2 \tilde{u} &=0,&& \text{in $S^{(u)}$},\\
+\tilde{u}(x,g(x))&=\tilde{\zeta}^u(x),&& \text{at $z=g(x)$},\\
+\tilde{u}(x+d,z)&=e^{i\alpha d}\tilde{u}(x,z),\\
+\text{OWC}[\tilde{u}]&=0,&& z \to\infty,
+\end{align}
+\end{subequations}
+which are outgoing, bounded, and quasiperiodic. The fourth condition $(1.24\text{d})$ mandates that solutions are both outgoing and bounded and is known as the Outgoing Wave Condition. To make these boundary conditions more precise, we first observe that for $z > a > \left| g \right|_{\infty}$ the solution to $(1.24)$ in $S^{(u)}$ is given by
+\begin{align}
+\tilde{u}(x,z)=\sum_{p=-\infty}^{\infty}a_pe^{i\alpha_px + i\gamma_p^u z}+ \sum_{p=-\infty}^{\infty}b_pe^{i\alpha_px - i\gamma_p^w z}.  
+\end{align}
+In this setting (and in many other places in this thesis), we let $p\in\mathbb Z, ~q\in\{u,w\},$ and define
+\begin{align}
+\alpha_p := \alpha + \left(\frac{2\pi}{d}\right)p, \quad \gamma_p^q:= \begin{cases} 
+      \sqrt{(k^q)^2-\alpha_p^2}, & p\in\mathcal{U}^q, \\
+      i\sqrt{\alpha_p^2-(k^q)^2}, & p\not\in\mathcal{U}^q,
+   \end{cases}
+\end{align}
+and
+\begin{align}
+\mathcal{U}^q:=\{p\in\mathbb Z ~|~ \alpha_p^2 < (k^q)^2\}.
+\end{align}
+To enforce the requirement that our solution $(1.25)$ is outgoing and bounded, we require $b_p\equiv 0$. If $b_p\not\equiv 0$ then solutions will be inward propagating for $p\in \mathcal{U}^u$, and unbounded for $p\not \in \mathcal{U}^u$. To clarify what is meant by the Outgoing Wave Condition, we observe that for $p\in\mathcal{U}^u$, solutions are outgoing and the modes are ``propagating.'' In contrast, if $p\not\in\mathcal{U}^u$, then solutions decay exponentially and the modes are known as ``evanescent.'' Therefore the solutions of $(1.24\text{a})$ which satisfy the Outgoing Wave Condition, $(1.24\text{d})$, are
+\begin{align}
+\tilde{u}(x,z)=\sum_{p=-\infty}^{\infty}a_pe^{i\alpha_px + i\gamma_p^u z}.   
+\end{align}
+A similar argument for $z < -b < -\left| g \right|_{\infty}$ will show that solutions in the lower field which satisfy the Outgoing Wave Condition are given by
+\begin{align}
+\tilde{w}(x,z)=\sum_{p=-\infty}^{\infty}b_pe^{i\alpha_px - i\gamma_p^w z}.   
+\end{align}
+This leads to a domain decomposition of $S^{(u)}$ where we introduce an ``Artificial Boundary'' at $\{z=a\}$ and define the truncated domain 
+$$S_{g,a}:= \{g(x) < z < a\}.$$
+We similarly define an ``Artificial Boundary'' in the lower field, $S^{(w)}$, at $\{z=-b\}$ and define the truncated domain 
+$$S_{g,-b}:= \{-b < z < g(x)\}.$$
+We can now state a new boundary value problem that is equivalent to $(1.24)$ as
+
+\begin{subequations}
+\begin{align}
+\Delta \tilde{u} + (k^u)^2 \tilde{u} &=0,&& \text{in $S_{g,a}$},\\
+\tilde{u}(x,g(x))&=\tilde{\zeta}^u(x),&& \text{at $z=g(x)$},\\
+\tilde{u}(x+d,z)&=e^{i\alpha d}\tilde{u}(x,z),\\
+\Delta \tilde{v} + (k^u)^2 \tilde{v} &=0, && z>a,\\
+\tilde{u}&=\tilde{v}, && \text{at $z=a$},\\
+\partial_z \tilde{u} &= \partial_z \tilde{v},&& \text{at $z=a$},\\
+\tilde{v}(x+d,z)&=e^{i\alpha d}\tilde{v}(x,z),\\
+\text{OWC}[\tilde{v}]&=0,&& z\to\infty,
+\end{align}
+\end{subequations}
+By the same analysis leading to $(1.28),$ solutions to $(1.30\text{d})$ are of the form
+\begin{align}
+\tilde{v}(x,z)=\sum_{p=-\infty}^{\infty}c_pe^{i\alpha_px + i\gamma_p^u z}.   
+\end{align}
+From $(1.30\text{e})$ it is clear that if we define $\psi(x):=\tilde{u}(x,a)$ and use $\tilde{v}(x,a)=\tilde{u}(x,a)$ then
+$$
+\tilde{v}(x,z)=\sum_{p=-\infty}^{\infty}\left(c_pe^{i\gamma_p^ua}\right)e^{i\alpha_px + i\gamma_p^u (z-a)}=\sum_{p=-\infty}^{\infty}\hat{\psi}_pe^{i\alpha_px + i\gamma_p^u (z-a)},
+$$
+where $\hat{\psi}_p$ are the Fourier coefficients of $\psi$. To enforce $(1.30\text{f})$ we compute
+$$\partial_z \tilde{v}(x,a)=\sum_{p=-\infty}^{\infty}\left(i\gamma_p^u\right)\hat{\psi}_pe^{i\alpha_px},$$
+and define the \gls{dno}
+\begin{align}
+\tilde{T}^u:\tilde{v}(x,a) \to \left(\partial_z \tilde{v}\right)(x,a),    
+\end{align}
+Equation $(1.30\text{f})$ now implies, at $z=a$,
+$$0=\partial_z \tilde{u} - \partial_z \tilde{v} = \partial_z \tilde{u} - \tilde{T}^u[\tilde{v}] = \partial_z \tilde{u} - \tilde{T}^u[\tilde{u}],$$
+where $$\tilde{T}^u[\psi(x)] := \sum_{p=-\infty}^{\infty}\left(i\gamma_p^u\right)\hat{\psi}_pe^{i\alpha_px}.$$ A similar calculation can be performed in the lower field. At $z=-b$ and $\psi(x):=\tilde{v}(x,-b)$ we find
+$$
+\tilde{v}(x,z)=\sum_{p=-\infty}^{\infty}\left(d_pe^{i\gamma_p^wb}\right)e^{i\alpha_px - i\gamma_p^w (z+b)}=\sum_{p=-\infty}^{\infty}\hat{\psi}_pe^{i\alpha_px - i\gamma_p^w (z+b)},
+$$
+where $\hat{\psi}_p$ are the Fourier coefficients of $\psi.$ For $z=-b$ and an equivalent representation of $(1.30)$ in the lower field, we deduce
+\begin{align}
+\partial_z \tilde{v}(x,-b)=\sum_{p=-\infty}^{\infty}\left(-i\gamma_p^w\right)\hat{\psi}_pe^{i\alpha_px}.
+\end{align}
+Hence, we may state the boundary value problem in $(1.24)$ and $(1.30)$ equivalently as
+\begin{subequations}
+\begin{align}
+\Delta \tilde{u} + (k^u)^2 \tilde{u} &=0,&& \text{in $S_{g,a}$},\\
+\tilde{u}(x,g(x))&=\tilde{\zeta}^u(x),&& \text{at $z=g(x)$},\\
+\tilde{u}(x+d,z)&=e^{i\alpha d}\tilde{u}(x,z),\\
+\partial_z \tilde{u} - \tilde{T}^u[\tilde{u}]&=0,&&  \text{at $z=a$.}
+\end{align}
+\end{subequations}
+The final condition $(1.34\text{d})$ is known as a Transparent Boundary Condition at the Artificial Boundary $\{z=a\}$. A similar analysis in the lower field shows that downward propagating solutions which satisfy the Outgoing Wave Condition satisfy
+$$\partial_z \tilde{w} - \tilde{T}^w[\tilde{w}]=0,\quad \text{at $z=-b$},$$
+where $$\tilde{T}^w[\psi(x)] := \sum_{p=-\infty}^{\infty}\left(-i\gamma_p^w\right)\hat{\psi}_pe^{i\alpha_px},$$
+and the corresponding boundary value problem becomes 
+\begin{subequations}
+\begin{align}
+\Delta \tilde{w} + (k^w)^2 \tilde{w} &=0,&& \text{in $S_{g,-b}$},\\
+\tilde{w}(x,g(x))&=\tilde{\zeta}^w(x),&& \text{at $z=g(x)$},\\
+\tilde{w}(x+d,z)&=e^{i\alpha d}\tilde{w}(x,z),\\
+\partial_z \tilde{w} - \tilde{T}^w[\tilde{w}]&=0,&&  \text{at $z=-b$.}
+\end{align}
+\end{subequations}

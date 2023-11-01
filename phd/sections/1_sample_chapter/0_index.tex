@@ -1,0 +1,31 @@
+\chapter{Introduction}
+\label{sec:intro}
+
+% Add Fancy Headers to future pages
+\pagestyle{fancy}
+%\renewcommand{\sectionmark}[1]{\markright{#1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad \ #1}}
+\fancyhead{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% The paper headers
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\text{Chapter 1} \quad   {Introduction}}
+\fancyhead[RE]{\sectionmark \quad \rightmark } %Even page header and number at left top
+\fancyfoot[L,R,C]{}
+\renewcommand{\headrulewidth}{1pt}% disable the underline of the header part
+
+The theory of waves and wave propagation in periodic media has influenced many fields in the physical sciences, dating back to the influential work of Lord Rayleigh. The advancement of information and communication technologies was made possible by the use of various manifestations of waves, most notably electromagnetic waves to transmit information around the world and electrons to process information in computers. The role of wave phenomena will continue to grow in the future, especially in emerging fields of science and technology such as cryptography, medical imaging, and quantum computing. Because of the increased availability of parallel processing and high-performance computing, computer simulation has become an essential component of wave simulation, supplementing both theory and experiment. As a result, this thesis aims to extend a class of fast and robust numerical methods (known as HOPS) to simulate certain wave phenomena in a regime that is characterized by a periodic structure.
+
+The remainder of this introductory chapter will give a brief history of the field of wave scattering and discuss early achievements of scientists and practitioners. The mathematical notation used in later sections will be introduced alongside the geometry of a two--layer periodic structure. We will also introduce the Rayleigh expansions, electromagnetic waves, TE polarization, TM polarization, and discuss the motivation behind our \gls{hops} schemes.
+
+\input{sections/1_sample_chapter/1_history}
+\input{sections/1_sample_chapter/2_motivation}
+\input{sections/1_sample_chapter/3_preliminaries_notation}
+\input{sections/1_sample_chapter/4_electromagnetics_polarization}
+\input{sections/1_sample_chapter/5_maxwell}
+\input{sections/1_sample_chapter/6_te_polarization}
+\input{sections/1_sample_chapter/7_tm_polarization}
+%\input{sections/1_sample_chapter/8_tem_polarization}
+\input{sections/1_sample_chapter/9_rayleigh_expansions}
+%\input{sections/1_sample_chapter/10_separation_of_variables}
+%\input{sections/1_sample_chapter/11_two_layer_scattering_and_domain_decomposition}
+\input{sections/1_sample_chapter/12_thesis_outline}

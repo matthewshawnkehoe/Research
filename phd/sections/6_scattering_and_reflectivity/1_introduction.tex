@@ -1,0 +1,23 @@
+\section{Introduction}
+\label{intro:chapter 6 introduction}
+
+We can
+now define one of our primary objects of study, the Reflectivity
+Map. The Reflectivity Map ($R$) measures the response (reflected energy) of a periodically
+corrugated grating structure as
+a function of illumination frequency, $\omega$, and corrugation
+amplitude, $h$. A HOPS method
+takes a perturbative view towards the geometric dependence of $R$
+on $h = \Eps$, $\Eps \ll 1$, by seeking the terms in the expansion
+about $\Eps = 0$,
+\bes
+R = R(\Eps) = \sumn R_n \Eps^n.
+\ees
+With this, we realize an enormous savings in computational effort by conducting a new computation only for each choice of $\omega$ and then summing the formula above for any desired value of $\Eps$. Taking this philosophy to its natural conclusion, we consider $\omega = (1 + \delta) \uomega = \uomega + \delta \uomega$
+and perform a joint
+expansion of this map about $(\Eps=0,\omega=\uomega)$
+\bes
+R = R(\Eps,\delta) = \sumn \summ R_{n,m} \Eps^n \delta^m.
+\ees
+One would assume that a single computation, recovering all of the $R_{n,m}$, should be sufficient to compute the entire Reflectivity Map. However, the situation is not so simple as these expansions are not valid for all values of $(\Eps,\delta)$ and we found in $\S 5.4$
+that the Rayleigh singularities (often called Wood's anomalies) enforced finite--size domains of convergence in $\delta$. Nonetheless, we now undertake a more in--depth investigation and will focus on applying our HOPS/AWE algorithm based on the TFE methodology to the TE and TM polarizations. In $\S 6.2$ we state the mathematical meaning of the Reflectivity Map. Then in $\S 6.3$, $\S 6.4$, and $\S 6.5$ we perform an extensive series of numerical simulations to test the fidelity of the Reflectivity Map in both the TE and TM polarizations.

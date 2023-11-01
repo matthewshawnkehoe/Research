@@ -1,0 +1,39 @@
+\section{Elliptic Theory}
+\label{intro:elliptic_theory}
+
+To prove the joint analyticity of the lower field, $w$, we require minor modifications to the Elliptic Estimate and Algebra Property of Sobolev spaces presented in $\S 2.7$.
+\vskip 0.1in
+\begin{lemma}
+Given an integer $s \ge 0$ and any $\sigma > 0$, there exists a constant $\mathcal{M}=\mathcal{M}(s)$ such that if $f\in C^s([0,d]),w\in H^s([0,d]\times [-b,0])$ then
+\begin{equation}
+\|fw\|_{H^s} \le \mathcal{M}|f|_{C^s}\|w\|_{H^s},
+\end{equation}
+and if $\tilde{f}\in C^{s+1/2+\sigma}([0,d]),\tilde{w}\in H^{s+1/2}([0,d])$ then there exists a constant $\tilde{\mathcal{M}}=\tilde{\mathcal{M}}(s)$ such that
+\begin{equation}
+ \|\tilde{f}\tilde{w}\|_{H^{s+1/2}} \le \tilde{\mathcal{M}}|\tilde{f}|_{C^{s+1/2+\sigma}}\|\tilde{w}\|_{H^{s+1/2}}.   
+\end{equation}
+\end{lemma}
+\vskip 0.1in
+\begin{theorem}
+Given an integer $s\ge 0$, if $Y\in H^s([0,d])\times [-b,0]),$ $\zeta^w \in H^{s+3/2}([0,d]),$ $Q\in H^{s+1/2}([0,d])$, then there exists a unique solution of $w\in H^{s+2}([0,d]\times [-b,0])$ of
+\begin{subequations}
+\begin{align}
+\Delta w(x,z) +2i\underline{\alpha}\partial_{x}w(x,z)+(\underline{\gamma}^w)^2w(x,z)&=Y(x,z), && \text{$-b<z<0$},\\
+w(x,0)&=\zeta^w(x,0), && \text{at $z=0$},\\
+w(x+d,z)&=w(x,z),\\
+\partial_z w(x,-b)-T_0^w[w(x,-b)] &= Q(x), && \text{at $z=-b$},
+\end{align}
+\end{subequations}
+satisfying
+\begin{equation}\|w\|_{H^{s+2}}\le C_e\{\|Y\|_{H^{s}}+\|\zeta^w\|_{H^{s+3/2}}+\|Q\|_{H^{s+1/2}}  \}, \end{equation}
+for some constant $C_e = C_e(s) > 0$.
+\end{theorem}
+\vskip 0.1in
+\begin{lemma}
+Given an integer $s\ge 0$, if $Y\in H^s([0,d])\times [-b,0])$, then $(b+z)Y \in$ $H^s([0,d])\times [-b,0])$ and there exists a positive constant $Z_b = Z_b(s)$ such that
+$$\|(b+z)Y\|_{H^s} \le Z_b \|Y\|_{H^s}.$$
+\end{lemma}
+\hspace{-6mm}With these, we now have everything we need to prove our desired result on the analyticity of the lower transformed field $w=w(x,z;\varepsilon)$ with respect to the single perturbation parameter $\Eps$.
+
+
+

@@ -1,0 +1,60 @@
+\section{Tranverse Electric (TE) Polarization}
+\label{intro:te_polarization}
+
+Suppose that the electric field is transverse to the direction of propagation while the magnetic field is parallel to the direction of propagation. Then the electric field has only a transverse component and we seek solutions satisfying
+\begin{equation}
+\textbf{E}=\textbf{E}(x,z)=\begin{pmatrix}
+0\\ \tilde{v}(x,z) \\ 0
+\end{pmatrix},\quad 
+\textbf{H}=\textbf{H}(x,z)=\begin{pmatrix}
+H^x(x,z)\\ 0 \\ H^z(x,z)
+\end{pmatrix}.
+\end{equation}
+In order to satisfy the time--harmonic Maxwell equations we calculate
+$$\nabla \times \textbf{E}= \begin{pmatrix}
+-\partial_z \tilde{v}\\ 0 \\ \partial_x \tilde{v}
+\end{pmatrix},$$
+which implies
+$$\textbf{H} = \frac{1}{i\omega\mu_0}\nabla \times \textbf{E} =\begin{pmatrix}
+-\partial_z \tilde{v}/(i\omega\mu_0)\\ 0 \\ \partial_x \tilde{v}/(i\omega\mu_0)
+\end{pmatrix}.$$
+Similarly,
+$$\nabla \times \textbf{H}=\begin{pmatrix}
+0\\ \partial_z H^x - \partial_x H^z \\ 0
+\end{pmatrix},$$
+so that we can reduce $(1.9\text{b})$ and $(1.9\text{d})$ from
+$$-i\omega\epsilon_0\epsilon \textbf{E} = \nabla \times \textbf{H},$$
+to one equation in the $y$--component
+$$\text{div}\left[-\frac{1}{i\omega \mu_0}\nabla \tilde{v}\right]= - i\omega \epsilon_0\epsilon \tilde{v}.$$
+As the divergence of the gradient is the Laplacian and $\mu_0$ is constant, we obtain
+\begin{equation}
+ 0=\Delta \tilde{v} + \omega^2\mu_0\epsilon_0\epsilon \tilde{v} = \Delta \tilde{v}+\frac{\omega^2}{c_0^2}\epsilon \tilde{v}=\Delta \tilde{v}+k_0^2\epsilon \tilde{v} = \Delta \tilde{v}+k^2\tilde{v}. 
+\end{equation}
+The boundary conditions become
+\begin{equation}
+0=\textbf{N} \times \textbf{E} = \begin{pmatrix}
+-\tilde{v} \\ 0 \\ -(\partial_x g)\tilde{v}
+\end{pmatrix},
+\end{equation}
+and
+\begin{equation}
+0=\textbf{N} \times \textbf{H} = \begin{pmatrix}
+0 \\ (\partial_x g)H^z + H^x \\ 0 
+\end{pmatrix}=\frac{1}{i\omega\mu_0}\begin{pmatrix}
+0 \\ (\partial_x g)\partial_x \tilde{v} - \partial_z \tilde{v} \\ 0
+\end{pmatrix}.
+\end{equation}
+The first boundary condition $(1.15)$ shows that $\tilde{v}$ is continuous across interfaces while the second boundary condition $(1.16)$ warrants that $\partial_N \tilde{v}$ is also continuous across interfaces. This follows from the fact that $\mu_0$ is a constant equal to the permeability of vacuum in all media and is therefore constant across boundaries. As a consequence, in a doubly layered medium the TE governing equations are
+\begin{subequations}
+\begin{align}
+\Delta \tilde{u} + (k^u)^2 \tilde{u} &=0,&& z > g(x),\\
+\Delta \tilde{w} + (k^w)^2 \tilde{w} &=0,&& z < g(x),\\
+\tilde{u}-\tilde{w} &= -\tilde{u}^{inc},&& z=g(x),\\
+\partial_N \tilde{u}-\tau^2\partial_N \tilde{w} &= -\partial_N \tilde{u}^{inc},&& z=g(x),
+\end{align}
+\end{subequations}
+where
+\bes
+\tau^2=\frac{\varepsilon^u}{\varepsilon^w}=\frac{(k^u)^2}{(k^w)^2}=\frac{(n^u)^2}{(n^w)^2},
+\ees
+and $\tilde{u}$ and $\tilde{w}$ are defined as outgoing, quasiperiodic solutions (in the $y$--component) of the electric field in the upper and lower layers. To clarify what is meant by solutions that are bounded, outgoing, and quasiperiodic, we will introduce an \gls{owc} in $\S 1.8$.

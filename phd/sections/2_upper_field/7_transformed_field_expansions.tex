@@ -1,0 +1,36 @@
+\section{Transformed Field Expansions}
+\label{intro:transformed_field_expansions}
+
+In the previous two sections we made two smallness assumptions:
+\begin{enumerate}
+\item Boundary Perturbation: $g(x) = \varepsilon f(x)$,
+  $\varepsilon \in \mathbb R,$ $\varepsilon \ll 1$,
+\item Frequency Perturbation: 
+  $\omega = (1 + \delta) \underline{\omega} 
+  = \underline{\omega} + \delta \underline{\omega}$,
+  $\delta \in \mathbb R$, $\delta \ll 1$.
+\end{enumerate}
+We now apply both of these assumptions and seek solutions of the form
+\begin{equation}u=u(x,z;\varepsilon,\delta)=\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}u_{n,m}(x,z)\varepsilon^n\delta^m. \end{equation}
+We will later show that these solutions are strongly convergent in Theorems $2.8.4$ and $2.9.2$. Inserting these into $(2.25)$ produces the Transformed Field Expansions (TFE) recursions 
+\begin{subequations}
+\begin{align}
+\Delta u_{n,m} +2i\underline{\alpha}\partial_{x}u_{n,m}+(\underline{\gamma}^u)^2u_{n,m}&=\tilde{F}_{n,m}\left(x,z;f,u,\underline{\alpha},\underline{\gamma}^u\right),&&\text{$0<z<a$}, \\
+u_{n,m}(x,0)&=\zeta_{n,m}^u(x),&&\text{at $z=0$},\\
+u_{n,m}(x+d,z)&=u_{n,m}(x,z), \\
+\partial_z \left[u_{n,m}(x,a)\right] - T_0^u[u_{n,m}(x,a)]&=\tilde{P}_{n,m}(x;f,u),&&\text{at $z=a$},
+\end{align}
+\end{subequations}
+where
+\begin{align}
+\tilde{F}_{n,m}\left(x,z;f,u,\underline{\alpha},\underline{\gamma}^u\right)&=-\text{div}[A_1\nabla u_{n-1,m}]-\text{div}[A_2\nabla u_{n-2,m}]-B_1\nabla u_{n-1,m} \nonumber
+\\&~~- B_2\nabla u_{n-2,m}-2i\underline{\alpha}\partial_xu_{n,m-1}-(\underline{\gamma}^u)^2u_{n,m-2}\nonumber
+\\&~~-2(\underline{\gamma}^u)^2u_{n,m-1}-2S_1i\underline{\alpha}\partial_xu_{n-1,m}-2S_1i\underline{\alpha}\partial_xu_{n-1,m-1}
+\\&~~-S_1(\underline{\gamma}^u)^2u_{n-1,m-2}-2S_1(\underline{\gamma}^u)^2u_{n-1,m-1}-S_1(\underline{\gamma}^u)^2u_{n-1,m}\nonumber
+\\&~~-2S_2i\underline{\alpha}\partial_xu_{n-2,m}-2S_2i\underline{\alpha}\partial_xu_{n-2,m-1}-S_2(\underline{\gamma}^u)^2u_{n-2,m-2}\nonumber
+\\&~~-2S_2(\underline{\gamma}^u)^2u_{n-2,m-1}-S_2(\underline{\gamma}^u)^2u_{n-2,m}\nonumber,
+\end{align}
+and
+\begin{equation}\tilde{P}_{n,m}(x;f,u) = -\frac{f}{a} \sum_{r=0}^m T^u_{m-r}[u_{n-1,r}(x,a)] + \sum_{r=0}^{m-1}T_{m-r}^u[u_{n,r}(x,a)].
+\end{equation}
+This is a method for computing the transformed corrections to the scattered field, $u_{n,m}$, with respect to both interfacial and frequency deformations. A major advantage of the TFE recursions is that $(2.27)$ never takes derivatives of $u_{n,m}$ higher than second order. This allows us to take advantage of the classical theory of elliptic boundary value problems where we will carefully  show that our solutions, $u$, are jointly analytic in the appropriate Sobolev space.

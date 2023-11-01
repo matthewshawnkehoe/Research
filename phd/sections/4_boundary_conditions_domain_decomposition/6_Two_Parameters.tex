@@ -1,0 +1,146 @@
+\section{Rigorous Regular Perturbation Theory}
+\label{Sec:Two Params}
+
+To begin, we assume
+\bes
+    \bA(\Eps,\delta)=\sumn \summ \bA_{n,m}\Eps^n\delta^m, \quad \bR(\Eps,\delta) = \sumn \summ \bR_{n,m}\Eps^{n}\delta^m,
+\ees
+in $(4.17)$ and seek a solution of the form
+\be
+\label{Eqn:Soln:Two_Param}
+\bV(\Eps,\delta) = \sumn \summ \bV_{n,m}\Eps^{n}\delta^m.
+\ee
+From $(4.17)$ we find at order $\mathcal{O}(\Eps^n,\delta^m)$
+\begin{align*}
+\bA_{0,0}\bV_{n,m}=&~\bR_{n,m}-\sum_{\ell=0}^{n-1}\bA_{n-\ell,0}\bV_{\ell,m}-\sum_{r=0}^{m-1}\bA_{0,m-r}\bV_{n,r}\\&
+-\sum_{\ell=0}^{n-1}\sum_{r=0}^{m-1}\bA_{n-\ell,m-r}\bV_{\ell,r},
+\end{align*}
+or
+\begin{align}
+\begin{split}
+\label{Eqn:Expansion:Two_Param}
+\bV_{n,m}=\bA_{0,0}^{-1}\Bigg(&\bR_{n,m}-\sum_{\ell=0}^{n-1}\bA_{n-\ell,0}\bV_{\ell,m}-\sum_{r=0}^{m-1}\bA_{0,m-r}\bV_{n,r}\\&  
+-\sum_{\ell=0}^{n-1}\sum_{r=0}^{m-1}\bA_{n-\ell,m-r}\bV_{\ell,r}\Bigg).
+\end{split}
+\end{align}
+With these we can establish an existence theorem \cite{Nicholls16b} for this problem depending on two parameters.
+\vskip 0.1in
+\begin{theorem}
+\label{Theorem:Two_Param}
+Given two Banach spaces $X$ and $Y$, suppose that
+\begin{enumerate}[label={\upshape[\arabic*]}]
+    \item $\bR_{n,m} \in Y$ for all $n,m\ge 0$, and there exists constants $B_R > 0,C_{R,N}> 0, C_{R,M} > 0, D_R > 0$ such that
+    \bes
+    \norm{\bR_{n,m}}_Y \le C_{R,N}C_{R,M}B_R^nD_R^m,
+    \ees
+    \item $\bA_{n,m}:X\to Y$ for all $n,m\ge 0$, and there exists constants $B_A> 0, C_{A,N} > 0, C_{A,M} > 0, D_A > 0$ such that
+    \bes
+    \norm{\bA_{n,m}}_{X\to Y} \le C_{A,N}C_{A,M}B_A^nD_A^m,
+    \ees
+    \item $\bA_{0,0}^{-1}:Y\to X$ for all $n,m\ge 0$, and there exists a constant $C_e > 0$ such that
+    \bes
+    \norm{\bA_{0,0}^{-1}}_{Y\to X} \le C_e.
+    \ees
+\end{enumerate}
+Then the equation $(4.17)$ has a unique solution, $(4.18)$, and there exists constants $B_V > 0,C_{V,N} > 0,C_{V,M}>0,$ and $D_V > 0$ such that
+\be
+\label{Eqn:Est:Two_Param}
+\norm{\bV_{n,m}}_X\le C_{V,N}C_{V,M}B_V^nD_V^m,
+\ee
+for all $n,m\ge 0$ and any
+\begin{align*}
+&C_{V,N} \geq 2C_eC_{R,N},\quad C_{V,M} \geq 2C_eC_{R,M},\\&  B_V\geq\operatorname{max}\{B_R, 2B_A,8C_eC_{A,N}B_A\},\quad D_V\geq\operatorname{max}\{D_R, 2D_A,8C_eC_{A,M}D_A\}.
+\end{align*}
+This implies that, for any $0\leq\rho,\sigma < 1$, $(4.18)$ converges for all $\Eps$ such that $B \Eps<\rho,$ i.e., $\Eps < \rho/B$ and all $\delta$ such that $D\delta < \sigma$, i.e., $\delta < \sigma/D$.
+\end{theorem}
+\vskip 0.1in
+\begin{proof}{[Theorem 4.5.1]} We work by induction, where we want to establish
+\bes
+\norm{\bV_{n,m}}_X\le C_{V,N}C_{V,M}B_V^nD_V^m, \quad \forall n,m \geq 0.
+\ees
+We start by an induction on $m$. The base case $m=0$:
+\be
+\norm{\bV_{n,0}}_X \leq C_{V,N}B_V^n, \quad \forall n\geq 0,
+\ee
+is established through an induction on $n$. We start with $n=0$ where $(4.19)$ becomes
+\bes
+\bV_{0,0} = \bA_{0,0}^{-1}\bR_{0,0},
+\ees
+and, from the properties of $\bA_{0,0}^{-1}$, we have
+\bes
+\norm{\bV_{0,0}}_X = \norm{\bA_{0,0}^{-1}\bR_{0,0}}_X\leq C_e\norm{\bR_{0,0}}_Y =:C_V.
+\ees
+Now, assuming estimate $(4.20)$ for all $n < \bar{n}$ we use $(4.19)$ and the mapping properties of $\bA_{0,0}^{-1}$ to find
+\bes
+\norm{\bV_{\bar{n},0}}_X \leq C_e\left\{\norm{\bR_{\bar{n},0}}_Y + \sum_{\ell=0}^{\bar{n}-1}
+\norm{\bA_{\bar{n}-\ell,0}\bV_{\ell,0}}_Y\right\}.
+\ees
+Now, using the estimates on $\bR_{n,0}$ and $\bA_{n,0}$ (for all $n$) and $\bV_{n,0}$ $(n < \bar{n})$ we have
+\begin{align*}
+    \norm{\bV_{\bar{n},0}}_X &\leq C_e\left\{C_RB_R^{\bar{n}} + \sum_{\ell=0}^{\bar{n}-1}C_AB_A^{\bar{n}-\ell}C_VB_V^{\ell}\right\}\\&
+    = C_eC_RB_R^{\bar{n}}+C_eC_AC_V\left(\frac{B_A}{B_V}\right)B_V^{\bar{n}}\sum_{\ell=0}^{\bar{n}-1}\left(\frac{B_A}{B_V}\right)^{\bar{n}-\ell-1}\\& \leq 
+    C_eC_RB_R^{\bar{n}} + C_eC_AC_V\left(\frac{B_A}{B_V}\right)B_V^{\bar{n}}\left(\frac{1}{1-1/2}\right),
+\end{align*}
+if $B_A/B_V \leq 1/2$ (implying $B_V \geq 2B_A$). We are done if we demand that
+\bes
+B_V \geq B_R, \quad C_eC_R \leq C_V/2,\quad 2C_eC_AC_V(B_A/B_V)\leq C_V/2.
+\ees
+All of this can be achieved provided
+\begin{align*}
+C_V \geq 2C_eC_R, \quad B_V \geq \operatorname{max}\{B_R,2B_A,4C_eC_AB_A\},  
+\end{align*}
+which establishes $(4.21)$. We now assume
+\bes
+\norm{\bV_{n,m}}_X \leq  C_{V,N}C_{V,M}B_V^nD_V^m, \quad \forall n\geq 0,\quad \forall m < \bar{m},
+\ees
+and seek
+\bes
+\norm{\bV_{n,\bar{m}}}_X \leq  C_{V,N}C_{V,M}B_V^nD_V^{\bar{m}}, \quad \forall n\geq 0.
+\ees
+This can be obtained through a second induction on $n$. The base case $n=0$:
+\bes
+\norm{\bV_{0,\bar{m}}}_X \leq C_{V,M}D_V^{\bar{m}}, \quad \forall \bar{m}\geq 0,
+\ees
+is established through an induction on $\bar{m}$ analogous to $
+(4.21)$. Finally, we assume
+\bes
+\norm{\bV_{n,\bar{m}}}_X \leq C_{V,N}C_{V,M}B_V^nD_V^{\bar{m}},\quad \forall n \leq \bar{n}, \quad \forall \bar{m}\geq 0,
+\ees
+and seek
+\bes
+\norm{\bV_{\bar{n},\bar{m}}}_X \leq C_{V,N}C_{V,M}B_V^{\bar{n}}D_V^{\bar{m}}.
+\ees
+We now use $(4.19)$ and the mapping properties of $\bA_{0,0}^{-1}$ to find
+\begin{align*}
+\norm{\bV_{\bar{n},\bar{m}}}_X\leq C_e\Bigg\{&\norm{\bR_{\bar{n},\bar{m}}}_Y+\sum_{\ell=0}^{\bar{n}-1}\norm{\bA_{\bar{n}-\ell,0}\bV_{\ell,\bar{m}}}_Y+\sum_{r=0}^{\bar{m}-1}\norm{\bA_{0,\bar{m}-r}\bV_{\bar{n},r}}_Y\\&
++\sum_{\ell=0}^{\bar{n}-1}\sum_{r=0}^{\bar{m}-1}\norm{\bA_{\bar{n}-\ell,\bar{m}-r}\bV_{\ell,r}}_Y\Bigg\}.
+\end{align*}
+Using the estimates on $\bR_{n,m}$ and $\bA_{n,m}$ (for all $n,m$) and $\bV_{n,m}$ ($n<\bar{n},m<\bar{m}$) we define
+$$\tilde{C}_A := C_{A,N}C_{A,M}, \quad \tilde{C}_R := C_{R,N}C_{R,M}, \quad \tilde{C}_V := C_{V,N}C_{V,M},$$
+% MSK 12/30/21 Added display break in below equation
+to form
+\begin{align*}
+\norm{\bV_{\bar{n},\bar{m}}}_X&\leq
+C_e\Bigg\{\tilde{C}_RB_R^{\bar{n}}D_R^{\bar{m}}+\sum_{\ell=0}^{\bar{n}-1}C_{A,N}B_A^{\bar{n}-\ell}C_{V,N}B_V^{\ell} +\sum_{r=0}^{\bar{m}-1}C_{A,M}D_A^{\bar{m}-\ell}C_{V,M}D_V^{\ell}
+\\&\quad +\sum_{\ell=0}^{\bar{n}-1}\sum_{r=0}^{\bar{m}-1}\tilde{C}_AB_A^{\bar{n}-\ell}D_A^{\bar{m}-\ell}\tilde{C}_VB_V^{\ell}D_V^r\Bigg\} \\&=
+C_e\tilde{C}_RB_R^{\bar{n}}D_R^{\bar{m}} + C_eC_{A,N}C_{V,N}\left(\frac{B_A}{B_V}\right)B_V^{\bar{n}}\sum_{\ell=0}^{\bar{n}-1}\left(\frac{B_A}{B_V}\right)^{\bar{n}-\ell - 1} \\&+
+C_eC_{A,M}C_{V,M}\left(\frac{D_A}{D_V}\right)D_V^{\bar{m}}\sum_{r=0}^{\bar{m}-1}\left(\frac{D_A}{D_V}\right)^{\bar{m}-r - 1}\\& 
++C_e\tilde{C}_A\tilde{C}_V
+\left(\frac{B_A}{B_V}\right)B_V^{\bar{n}}\left(\frac{D_A}{D_V}\right)D_V^{\bar{m}}\sum_{\ell=0}^{\bar{n}-1}\left(\frac{B_A}{B_V}\right)^{\bar{n}-\ell - 1}\sum_{r=0}^{\bar{m}-1}\left(\frac{D_A}{D_V}\right)^{\bar{m}-r - 1}\\& \leq
+C_e\tilde{C}_RB_V^{\bar{n}}D_V^{\bar{m}} +
+C_eC_{A,N}C_{V,N}\left(\frac{B_A}{B_V}\right)B_V^{\bar{n}}\left(\frac{1}{1-1/2}\right) \\&+
+C_eC_{A,M}C_{V,M}\left(\frac{D_A}{D_V}\right)D_V^{\bar{m}}\left(\frac{1}{1-1/2}\right) \\&+ 
+C_e\tilde{C}_A\tilde{C}_V\left(\frac{B_A}{B_V}\right)B_V^{\bar{n}}\left(\frac{D_A}{D_V}\right)D_V^{\bar{m}}\left(\frac{1}{1-1/2}\right)^2,
+\end{align*}
+if $B_A/B_V \leq 1/2$ and $D_A/D_V \leq 1/2$ (implying $B_V \geq 2B_A$ and $D_V \geq 2D_A$). We are done if we demand that
+\begin{align*}
+  &B_V \geq B_R, \quad D_V \geq D_R, \quad C_eC_{R,N}\leq C_{V,N}/2,\quad C_eC_{R,M}\leq C_{V,M}/2,\\&
+  4C_eC_{A,N}C_{V,N}(B_A/B_V) \leq C_{V,N}/2,\quad 
+  4C_eC_{A,M}C_{V,M}(D_A/D_V) \leq C_{V,M}/2.
+\end{align*}
+This can be realized if
+\begin{align*}
+&C_{V,N}\geq 2C_eC_{R,N}, \quad B_V \geq \operatorname{max}\{B_R,2B_A,8C_eC_{A,N}B_A\},\\&
+C_{V,M}\geq 2C_eC_{R,M}, \quad D_V \geq \operatorname{max}\{D_R,2D_A,8C_eC_{A,M}D_A\}.
+\end{align*}
+\end{proof}

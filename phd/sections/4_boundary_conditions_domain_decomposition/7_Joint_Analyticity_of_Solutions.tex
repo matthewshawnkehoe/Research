@@ -1,0 +1,61 @@
+\section{Joint Analyticity of Solutions of the Two--Layer Problem}
+\label{Sec:Joint Analyticity Solutions}
+We recall the surface formulation of our scattering problem,
+$$\bA\bV=\bR,$$
+cf. $(4.14)$, where the operator $\bA$ and vector $\bR$ are given in $(4.15)$. As discussed in $\S 4.3$, $\bV$ is a vector of unknowns which contains solutions $U$ and $W$ to the scattering problem. As mentioned in the Introduction, our solution procedure is perturbative in nature and we can directly invoke Theorem $4.5.1$ from  $\S 4.5$ to obtain our desired result. For this we may formally expand
+\bes
+\bA(\Eps,\delta)=\sumn \summ \bA_{n,m}\Eps^n\delta^m, \quad 
+\bR(\Eps,\delta)=\sumn \summ \bR_{n,m}\Eps^n\delta^m,
+\ees
+which we will justify rigorously, and seek a solution to $(4.14)$ in the form
+\be
+\label{Eqn:Soln:Main_Theorem}
+\bV(\Eps,\delta)=\sumn \summ \bV_{n,m}\Eps^n\delta^m,
+\ee
+where $\Eps,\delta\in\mathbb R$. Recalling our definitions from $\S 2.7$, we define the vector--valued spaces for $s \geq 0$
+\bes
+X^s := \left\{ \left. 
+  \bV = \begin{pmatrix} U \\ W \end{pmatrix} \right| 
+  U, W \in H^{s+3/2}([0,d]) \right\},
+\ees
+and
+\bes
+Y^s := \left\{ \left. 
+  \bR = \begin{pmatrix} \zeta \\ -\psi \end{pmatrix} \right|
+  \zeta \in H^{s+3/2}([0,d]), \psi \in H^{s+1/2}([0,d])  \right\}.
+\ees
+These have the norms
+\begin{align*}
+\Norm{\bV}{X^s}^2 & = 
+  \Norm{\begin{pmatrix} U \\ W \end{pmatrix}}{X^s}^2 
+  := \SobNorm{U}{s+3/2}^2 + \SobNorm{W}{s+3/2}^2, \\
+\Norm{\bR}{Y^s}^2 & = 
+  \Norm{\begin{pmatrix} \zeta \\ -\psi \end{pmatrix}}{Y^s}^2 
+  := \SobNorm{\zeta}{s+3/2}^2 + \SobNorm{\psi}{s+1/2}^2.
+\end{align*}
+We now state our main result.
+
+\begin{theorem} 
+\label{Theorem:Main}
+Given an integer $s \geq 0$, if $f \in C^{s+2}([0,d])$ then the 
+equation $(4.14)$ has a unique solution, $(4.22)$,
+and there exist constants $B, C, D > 0$ such that
+\bes
+\Norm{\bV_{n,m}}{X^s} \leq C B^n D^m,
+\ees
+for all $n, m \geq 0$. This implies that for any $0 \leq \rho, \sigma < 1$,
+$(4.22)$ converges for all $\Eps$ such that $B \Eps < \rho$, i.e., 
+$\Eps < \rho/B$ and all $\delta$ such that $D \delta < \sigma$, i.e.,
+$\delta < \sigma/D$.
+\end{theorem}
+
+\begin{proof}{[Theorem 4.6.1]} As mentioned above, our strategy is to invoke Theorem $4.5.1$, thus we must verify the relevant hypotheses. To begin, we consider the spaces 
+\bes
+    X=X^{s},\quad Y=Y^s.
+\ees
+In $\S 4.7$ we will show that the vector $\bR_{n,m}$, consisting of $\zeta_{n,m}$ and $\psi_{n,m}$, is bounded in $Y^s$ for any $s\ge 0$ provided that $f\in C^{s+2}([0,d])$. This implies that the $\bR_{n,m}$ satisfies the estimates of Item $1$ in Theorem $4.5.1$.
+
+In $\S 2.10$ (Theorem $2.10.2$) and $\S 3.9$ (Theorem $3.9.2$), we have previously shown that the operators $G_{n,m}$ and $J_{n,m}$ in the Taylor series expansions of the DNOs satisfy appropriate bounds provided that $f\in C^{s+2}([0,d])$. With these, it is clear that the $\bA_{n,m}$ satisfy the estimates of Item $2$ in Theorem $4.5.1$.
+
+Finally, in $\S 4.8$ we show that the estimates and mapping properties of $\bA_{0,0}^{-1}$ for Item $3$ in Theorem $4.5.1$ hold where $\bA_{0,0}$ is defined in $(4.16)$ as the flat--interface version of our governing equations.
+\end{proof}

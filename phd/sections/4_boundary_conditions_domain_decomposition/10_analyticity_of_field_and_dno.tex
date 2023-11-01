@@ -1,0 +1,63 @@
+\section{Analyticity of the Transformed Fields and DNOs}
+\label{Sec:Analyticity of Fields and DNO}
+To finish the proof of our joint analyticity result, we combine the results of Theorems $2.9.4$ and $3.8.1$ to establish the single, geometric, analyticity result for the fields $u=u(x,z;\varepsilon)$ and $w=w(x,z;\varepsilon)$
+under a boundary perturbation, $\Eps$,
+alone.
+
+\begin{theorem}
+\label{Thm:u,w:Anal:n:0}
+Given any integer $s \geq 0$, if $f \in C^{s+2}([0,d])$ and 
+$U_{n,0} \in H^{s+3/2}([0,d])$, $W_{n,0}\in H^{s+3/2}([0,d])$ such that 
+\bes
+\SobNorm{U_{n,0}}{s+3/2} \leq K_U B_U^n, \quad \|W_{n,0}\|_{H^{s+3/2}} \le K_W B_W^n,
+\ees
+for constants $K_U, B_U,K_W, B_W > 0$, then 
+$u_{n,0} \in H^{s+2}([0,d]\times[0,a])$, $w_{n,0}\in H^{s+2}([0,d]\times[-b,0])$ and
+\be
+\label{Eqn:u,w:Est:n:0}
+\SobNorm{u_{n,0}}{s+2} \leq K B^n, \quad
+\|w_{n,0}\|_{H^{s+2}} \le \tilde{K}\tilde{B}^n,
+\ee
+for constants $K , B, \tilde{K}, \tilde{B} > 0$.
+\end{theorem}
+\vspace{1mm}
+The combined results of Theorems $2.10.2$ and $3.9.1$ establish the analyticity of the transformed fields $u=u(x,z;\Eps,\delta)$ and $w=w(x,z;\Eps,\delta)$ under a boundary and frequency perturbation, $\Eps$ and $\delta$.
+
+\begin{theorem} 
+\label{Thm:u,w:Anal:n:m}
+Given any integer $s \geq 0$, if $f \in C^{s+2}([0,d])$ and 
+$U_{n,m} \in H^{s+3/2}([0,d])$, $W_{n,m}\in H^{s+3/2}([0,d])$ such that
+\bes
+\|U_{n,m}\|_{H^{s+3/2}} \le K_U B_U^n D_U^m , \quad
+\|W_{n,m}\|_{H^{s+3/2}} \le K_W B_W^n D_W^m,
+\ees
+for constants $K_U, B_U, D_U, K_W, B_W, D_W > 0$, then 
+$u_{n,m} \in H^{s+2}([0,d]\times[0,a])$, $w_{n,m}\in H^{s+2}([0,d]\times[-b,0])$ and
+\be
+\label{Eqn:u,w:Est:n:m}
+\|u_{n,m}\|_{H^{s+2}} \le K B^n D^m, \quad
+\|w_{n,m}\|_{H^{s+2}} \le \tilde{K}\tilde{B}^n\tilde{D}^m ,
+\ee
+for constants $K, B , D, \tilde{K}, \tilde{B}, \tilde{D} > 0$.
+\end{theorem}
+\vspace{1mm}
+Finally, the analyticity of the upper layer and lower layer DNOs follow from Theorems $2.11.2$ and $3.10.2$.
+
+\begin{theorem} 
+\label{Thm:G,J:Anal:n:m}
+Given any integer $s \geq 0$, if $f \in C^{s+2}([0,d])$ and 
+$U_{n,m} \in H^{s+3/2}([0,d])$, $W_{n,m} \in H^{s+3/2}([0,d])$ such that
+\bes
+\SobNorm{U_{n,m}}{s+3/2} \leq K_U B_U^n D_U^m, \quad
+\SobNorm{W_{n,m}}{s+3/2} \leq K_W B_W^n D_W^m,
+\ees
+for constants $K_U, B_U, D_U, K_W, B_W, D_W > 0$, then $G_{n,m} \in H^{s+1/2}([0,d])$, $J_{n,m} \in H^{s+1/2}([0,d])$ and
+\be
+\label{Eqn:G,J:Est:n:m} 
+\|G_{n,m}\|_{H^{s+1/2}} \le \tilde{K}\tilde{B}^{n}\tilde{D}^{m}, \quad
+\|J_{n,m}\|_{H^{s+1/2}} \le \dbtilde{K} \dbtilde{B}^{n} \dbtilde{D}^{m},
+\ee
+for constants $\tilde{K},\tilde{B},\tilde{D},\dbtilde{K},\dbtilde{B},\dbtilde{D}  > 0$.
+\end{theorem}
+\vspace{1mm}
+With these, it is clear that the $\bA_{n,m}$ satisfy the estimates of Item $2$ in Theorem $4.6.1.$

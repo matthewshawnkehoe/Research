@@ -1,0 +1,171 @@
+\chapter{Change of Variables}
+\label{Appendix C: Change of Variables}
+\thispagestyle{pageonbottom}
+
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% The paper headers
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\text{Appendix C} \quad   {Change of Variables}}
+\fancyhead[RE]{\text{Appendix C} \quad   {Change of Variables}} %Even page header and number at left top
+\fancyfoot[L,R,C]{}
+\renewcommand{\headrulewidth}{1pt}% disable the underline of the header part
+
+This appendix covers a fundamental step in our Boundary Perturbation algorithm. One of the primary objectives in Chapters $2$ and $3$ is to show that both the upper/lower fields and the upper/lower layer DNOs are analytic with respect to two small perturbation parameters. In order to do this, we perform a domain--flattening change of variables (known as $\sigma$--coordinates in oceanography \cite{Phillips57} and the C--method in the dynamical theory of gratings \cite{CDCM82,CMR80}). We will present the theory in Cartesian coordinates and will later state the effects on the Helmholtz equation and the overall impact on our governing equations. The bulk of our analysis is based on Appendix E in \cite{HOPS_Notes}.
+\vspace{3mm}
+\begin{flushleft}
+We begin by considering the doubly--perturbed domain
+\end{flushleft}
+\begin{equation}
+S_{L,U}:=\{L(x)<z<U(x)\}=\{\overline{\ell}+\ell(x)<z<\overline{u}+u(x)\},    
+\end{equation}
+where the change of variables 
+\begin{equation}
+    x'=x,\quad z'=\overline{\ell}\left(\frac{U-z}{U-L}\right)+\overline{u}\left(\frac{z-L}{U-L}\right),
+\end{equation}
+maps $S_{L,U}$ to $S_{\overline{\ell},\overline{u}}$. As discussed in Chapter $1$, the variables $u$ and $U$ both refer to the upper boundary while $\ell$ and $L$ reference the lower boundary. In the upper layer, the upper boundary is the artificial boundary at $\{z=a\}$ while the lower boundary is the surface $z=g(x)$. In the lower layer, the upper boundary is the surface $z=g(x)$ and the lower boundary is the artificial boundary at $\{z=-b\}$.  Defining the height of the layer to be
+$$\overline{h}:=\overline{u}-\overline{\ell},$$
+and using the formulas for $L$ and $U$, we find
+
+$$\left(1+\frac{u(x)-\ell(x)}{\overline{h}}\right)z'= z-\left(\frac{\overline{u}\ell(x)-\overline{\ell}u(x)}{\overline{h}}\right), $$
+or
+$$C(x)z'=z-D(x),$$
+where
+\be
+C(x):=1+\frac{u(x)-\ell(x)}{\overline{h}},\quad D(x):=\frac{\overline{u}\ell(x)-\overline{\ell} u(x)}{\overline{h}}.
+\ee
+In the upper layer we have
+$$\overline{\ell}=0,\quad \ell=g, \quad \overline{u}=a, \quad u = 0,\quad \overline{h}=\overline{u}-\overline{\ell}=a.$$
+Similarly, in the lower layer we have
+$$\overline{\ell}=-b,\quad \ell=0, \quad \overline{u}=0, \quad u = g,\quad \overline{h}=\overline{u}-\overline{\ell}=b.$$
+For a function $v=v(x,z)$, $v\in\{u,w\}$, which is transformed to
+$$v'=v'(x',z')=v(x(x',z'),z(x',z')), \quad v=v(x,z)=v'(x'(x,z),z'(x,z)),$$
+and $v'\in \{u',w'\},$ we apply the chain rule
+$$\frac{\partial v}{\partial x}=\frac{\partial v'}{\partial x'}\frac{\partial x'}{\partial x}+\frac{\partial v'}{\partial z'}\frac{\partial z'}{\partial x},\quad  \frac{\partial v}{\partial z}=\frac{\partial v'}{\partial x'}\frac{\partial x'}{\partial z}+\frac{\partial v'}{\partial z'}\frac{\partial z'}{\partial z}.$$
+Then
+$$\frac{\partial x'}{\partial x}=1,\quad \frac{\partial x'}{\partial z}=0,\quad \frac{\partial z'}{\partial z}=\frac 1C,$$
+where differentiating $Cz'=z-D$ with respect to $x$ yields
+$$\left(\partial_x C\right)z'+C\left(\frac{\partial z'}{\partial x}\right)=-\left(\partial_x D\right),$$
+and
+$$\frac{\partial z'}{\partial x}=-\left(\frac{\left(\partial_x C\right)z'+\left(\partial_x D\right)}{C}\right)=-\frac EC.$$
+We define
+$$E(x,z'):=\left(\partial_x C\right)z'+\left(\partial_x D\right),$$
+and observe that
+$$\partial_x C=\frac{\partial_x u - \partial_x \ell}{\overline{h}},\quad \partial_x D=\frac{\overline{u}\partial_x \ell - \overline{\ell}\partial_x u}{\overline{h}}.   $$
+This implies
+\be
+E=\frac{(\partial_x u - \partial_x \ell)z'+\overline{u}\partial_x \ell - \overline{\ell}\partial_x u}{\overline{h}}=(\partial_x u)Z_L + (\partial_x\ell)Z_U,
+\ee
+for the definitions
+$$Z_L:=\frac{z'-\overline{\ell}}{\overline{h}},\quad Z_U:=\frac{\overline{u}-z'}{\overline{h}}.$$
+We will later realize that it is more convenient to express our differentiation rules when premultiplied by $C$ (either $C(x)$ or $C(x')$ as appropriate) by which we settle upon the following differentiation rules under the change of variables in $(\text{C}.2)$
+\be
+C\partial_x = C\partial_{x'} - E\partial_{z'},\quad C\partial_z = \partial_{z'}.
+\ee
+\vspace{-10mm}
+\begin{flushleft}In $\S 2.2$ and $\S 3.2$ we showed that the Helmholtz equation in the upper and lower layers can be represented by
+\end{flushleft}
+\vspace{-1mm}
+\begin{equation}\Delta v +2i\alpha\partial_{x}v+(\gamma^v)^2 v=0.\end{equation}
+We restate $(\text{C}.6)$ as
+\begin{align*}0&=C^2\left\{\Delta v +2i\alpha\partial_{x}v+(\gamma^v)^2v\right\}\\&=
+C^2\left\{\partial_{x}[\partial_{x} v]+ \partial_{z}[\partial_{z} v]+ +2i\alpha\partial_{x}v+(\gamma^v)^2v\right\}\\&=
+C\partial_{x}[C\partial_{x} v]-C(\partial_{x} C)\partial_{x} v + C\partial_{z}[C\partial_{z} v] + 2C^2i\alpha\partial_{x}v+C^2(\gamma^v)^2v.
+\end{align*}
+By our transformation rules
+\begin{align*}0&=
+[C\partial_{x'}-E\partial_{z'}][C\partial_{x'}v' - E\partial_{z'}v']-(\partial_{x'}C)[C\partial_{x'}v' - E\partial_{z'}v']+\partial_{z'}[\partial_{z'}v'] + 2C^2i\alpha\partial_{x'}v'\\&~~~+C^2(\gamma^{v'})^2v'\\&=
+C\partial_{x'}[C\partial_{x'}v']-E\partial_{z'}[C\partial_{x'}v']-C\partial_{x'}[E\partial_{z'}v']+E\partial_{z'}[E\partial_{z'}v']-(\partial_{x'}C)C\partial_{x'}v' \\&
+~~~+(\partial_{x'}C)E\partial_{z'}v'+\partial_{z'}^2v'+2C^2i\alpha\partial_{x'}v'+C^2(\gamma^{v'})^2v'\\&=
+\partial_{x'}[C^2\partial_{x'}v']-(\partial_{x'}C)C\partial_{x'}v'-\partial_{z'}[EC\partial_{x'}v']+(\partial_{z'}E)C\partial_{x'}v'-\partial_{x'}[CE\partial_{z'}v']\\&~~~+(\partial_{x'}C)E\partial_{z'}v'
++\partial_{z'}[E^2\partial_{z'}v']-(\partial_{z'}E)E\partial_{z'}v'-(\partial_{x'}C)C\partial_{x'}v' + (\partial_{x'}C)E\partial_{z'}v'\\&~~~+\partial_{z'}^2v'+2C^2i\alpha\partial_{x'}v'+C^2(\gamma^{v'})^2v',
+\end{align*}
+where
+$$(\partial_{x'}C)E\partial_{z'}v' -(\partial_{z'}E)E\partial_{z'}v'-(\partial_{x'}C)C\partial_{x'}v' + (\partial_{x'}E)C\partial_{z'}v' = 0,$$ 
+because
+$$\partial_{z'}E=\partial_{x'}C=\partial_x C.$$
+The second, forth, eight, and tenth terms cancel so that
+\begin{align*}0=\partial_{x'}[C^2\partial_{x'}v']-\partial_{z'}[EC\partial_{x'}v']-\partial_{x'}[CE\partial_{z'}v']+(\partial_{x'}C)E\partial_{z'}v' \\+\partial_{z'}[E^2\partial_{z'}v']-(\partial_{x'}C)C\partial_{x'}v' +\partial_{z'}^2v'+2C^2i\alpha\partial_{x'}v'+C^2(\gamma^{v'})^2v'.\end{align*}
+This may be written more compactly as
+\begin{equation*}0=\text{div}'[A\nabla' v']+B\cdot \nabla' v' +2C^2i\alpha\partial_{x'}v'+C^2(\gamma^{v'})^2v',\end{equation*}
+where for $S=C^2$
+$$A=\begin{pmatrix}
+    S & -EC\\
+    -EC & 1+E^2
+  \end{pmatrix}, ~~~~~
+  B=(\partial_{x'}C)\begin{pmatrix}
+    -C\\
+    E
+  \end{pmatrix}.
+$$
+By the definitions of $C$ and $E$, $(\text{C}.3)$ and $(\text{C}.4)$, we have 
+\begin{align*}
+S&=1 + \frac{2}{\overline{h}}u-\frac{2}{\overline{h}}\ell+\frac{1}{\overline{h}^2}u^2+\frac{1}{\overline{h}^2}\ell^2-\frac{2}{\overline{h}^2}\ell u,\allowdisplaybreaks\\
+CE&=Z_L(\partial_x u)+Z_U(\partial_x \ell) + \frac{Z_L}{\overline{h}}u(\partial_x u)-\frac{Z_U}{\overline{h}}\ell(\partial_x \ell)-\frac{Z_L}{\overline{h}}\ell(\partial_x u)+\frac{Z_U}{\overline{h}}u(\partial_x \ell),\\
+E^2&=Z_L^2(\partial_x u)^2 + Z_U^2(\partial_x \ell)^2 + 2Z_LZ_U(\partial_x \ell)(\partial_x u).
+\end{align*}
+
+If $\ell=\delta\tilde{\ell}$ and $u=\Eps\tilde{u}$ then
+\begin{align*}
+A&=A(\delta,\Eps)=A_{0,0}+A_{1,0}\delta +A_{0,1}\Eps + 
++A_{2,0}\delta^2 + A_{0,2}\Eps^2 + A_{1,1}\delta\Eps,\\
+B&=B(\delta,\Eps)=B_{1,0}\delta +B_{0,1}\Eps + 
++B_{2,0}\delta^2 + B_{0,2}\Eps^2 + B_{1,1}\delta\Eps,\\
+S&=S(\delta,\Eps)=S_{0,0}+S_{1,0}\delta +S_{0,1}\Eps + 
++S_{2,0}\delta^2 + S_{0,2}\Eps^2 + S_{1,1}\delta\Eps,
+\end{align*}
+where
+\begin{align*}
+A_{0,0}&=\begin{pmatrix}
+    1 & 0\\
+    0 & 1
+  \end{pmatrix},\quad
+A_{1,0}=\frac{1}{\overline{h}}
+  \begin{pmatrix}
+    -2\tilde{\ell} & -\overline{h}Z_U(\partial_x \tilde{\ell})\\
+    -\overline{h}Z_U(\partial_x \tilde{\ell}) & 0
+  \end{pmatrix},\\
+A_{0,1}&=\frac{1}{\overline{h}}
+  \begin{pmatrix}
+    -2\tilde{u} & -\overline{h}Z_L(\partial_x \tilde{u})\\
+    -\overline{h}Z_L(\partial_x \tilde{u}) & 0
+  \end{pmatrix},\\
+A_{2,0}&=\frac{1}{\overline{h}^2}
+  \begin{pmatrix}
+    \tilde{\ell}^2 & \overline{h}Z_U\tilde{\ell}(\partial_x \tilde{\ell})\\
+    \overline{h}Z_U\tilde{\ell}(\partial_x \tilde{\ell}) & \overline{h}^2 Z_U^2(\partial_x \tilde{\ell})^2
+  \end{pmatrix},\\
+A_{0,2}&=\frac{1}{\overline{h}^2}
+  \begin{pmatrix}
+    \tilde{u}^2 & -\overline{h}Z_L\tilde{u}(\partial_x \tilde{u})\\
+    -\overline{h}Z_L\tilde{u}(\partial_x \tilde{u}) & \overline{h}^2 Z_L^2(\partial_x \tilde{u})^2
+  \end{pmatrix},\\
+A_{1,1}&=\frac{1}{\overline{h}^2}
+  \begin{pmatrix}
+    -2\tilde{\ell}\tilde{u} & \overline{h}\left(Z_L\tilde{\ell}(\partial_x \tilde{u})-Z_U\tilde{u}(\partial_x \tilde{\ell})\right)\\
+    \overline{h}\left(Z_L\tilde{\ell}(\partial_x \tilde{u})-Z_U\tilde{u}(\partial_x \tilde{\ell})\right) & 2\overline{h}^2 Z_U Z_L(\partial_x \tilde{\ell})(\partial_x \tilde{u})
+  \end{pmatrix},
+\end{align*}
+and 
+\begin{align*}
+B_{1,0}&=
+\frac{1}{\overline{h}}\begin{pmatrix} (\partial_x \tilde{\ell}) \\0\end{pmatrix},\quad
+B_{0,1}=
+\frac{1}{\overline{h}}\begin{pmatrix} -(\partial_x \tilde{u}) \\0\end{pmatrix},\\
+B_{2,0}&=
+\frac{1}{\overline{h}^2}\begin{pmatrix} -\tilde{\ell}(\partial_x \tilde{\ell}) \\
+-\overline{h}Z_U(\partial_x \tilde{\ell})^2\end{pmatrix},\\
+B_{0,2}&=
+\frac{1}{\overline{h}^2}\begin{pmatrix} -\tilde{u}(\partial_x \tilde{u}) \\
+\overline{h}Z_L(\partial_x \tilde{u})^2\end{pmatrix},\\
+B_{1,1}&=
+\frac{1}{\overline{h}^2}\begin{pmatrix} \tilde{u}(\partial_x \tilde{\ell}) + \tilde{\ell}(\partial_x \tilde{u}) \\
+\overline{h}(Z_U-Z_L)(\partial_x \tilde{\ell})(\partial_x \tilde{u})\end{pmatrix},
+\end{align*}
+and
+\begin{align*}
+S_{0,0}&=1,\quad S_{1,0}=-\frac{2}{\overline{h}}\tilde{\ell},\quad S_{0,1}=\frac{2}{\overline{h}}\tilde{u},\\
+S_{2,0}&=\frac{1}{\overline{h}^2}\tilde{\ell}^2,\quad S_{0,2}=\frac{1}{\overline{h}^2}\tilde{u}^2,\quad S_{1,1}=-\frac{2}{\overline{h}^2}\tilde{\ell}\tilde{u}.
+\end{align*}
+\clearpage

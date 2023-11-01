@@ -1,0 +1,178 @@
+\section{The Flat--Interface Problem}
+\label{Sec:Flat Interface}
+As we outlined in Theorem $4.6.1$, the key to our developments (as with all regular perturbation arguments) is the flat--interface version of $(4.14)$
+\bes
+\bA_{0,0}\bV_{0,0}=\bR_{0,0},
+\ees
+in particular the invertibility of $\bA_{0,0}$ and the mapping properties of $\bA_{0,0}^{-1}$. From $(4.15)$, it is not hard to see that the formulas for $\bA$ and $\bR$ are 
+\begin{subequations}
+\label{Eqn:An:Rn}
+\begin{align}
+\bA_{0,0} & = \begin{pmatrix} I & -I \\ G_{0,0} & \tau^2 J_{0,0} \end{pmatrix}, \\
+\bA_{n,m} & = \begin{pmatrix} 0 & 0 \\ G_{n,m} & \tau^2 J_{n,m} \end{pmatrix} 
+  \notag \\
+  & \quad + \delta_{n,1} \left\{ 1 + \delta_{m,1} \right\} (\partial_x f) (i \ualpha)  
+  \begin{pmatrix} 0 & 0 \\ 1 & -\tau^2 \end{pmatrix},
+  && \text{$n \neq 0$ or $m \neq 0$}, \\
+\bR_{n,m} & = \begin{pmatrix} \zeta_{n,m} \\ -\psi_{n,m} \end{pmatrix},
+\end{align}
+\end{subequations}
+where $\delta_{n,m}$ is the Kronecker delta function. We note that $\bA_{0,0}$ is diagonalized by
+the Fourier transform so that $\bA_{0,0} \bV_{n,m} = \bR_{n,m}$
+can be expressed as
+
+\bes
+\sump \widehat{\bA}_{0,0}(p) \widehat{\bV}_{n,m}(p) e^{i \tilde{p} x}
+  = \sump \widehat{\bR}_{n,m}(p) e^{i \tilde{p} x},
+\ees
+which implies
+\bes
+\widehat{\bV}_{n,m}(p) = \left[ \widehat{\bA}_{0,0}(p) \right]^{-1}
+  \widehat{\bR}_{n,m}(p).
+\ees
+It is not difficult to see 
+\bes
+\widehat{\bA}_{0,0}(p) = \begin{pmatrix} 1 & -1 \\
+  (-i \gamma^u_p) & \tau^2 (-i \gamma^w_p) \end{pmatrix},
+\ees
+cf.\ $(4.29)$, implying 
+\bes
+\left[ \widehat{\bA}_{0,0}(p) \right]^{-1} 
+  = \frac{1}{\hat{\Delta}_p}
+  \begin{pmatrix} \tau^2 (-i \gamma^w_p) & 1 \\
+  (i \gamma^u_p) & 1 \end{pmatrix},
+\quad
+\hat{\Delta}_p := -(i \gamma^u_p + \tau^2 (i \gamma^w_p)).
+\ees
+\begin{remark}
+From these formulas it becomes obvious that the operator
+$\bA_{0,0}$ is always invertible and our algorithm is 
+well--defined. Recalling that we assume
+a dielectric in the upper layer (so that the incident radiation
+propagates) we have that $\gamma^u_p$ is either real and positive
+or purely imaginary (with positive imaginary part). If a
+dielectric fills the lower layer then we have the same state of
+affairs for $\gamma^w_p$ so that, given that $\tau^2$ will be
+positive and real, $\Delta_p \neq 0$. Alternatively, if a metal
+fills the lower layer then $\gamma^w_p$ will be complex with
+positive imaginary part. While it is less obvious, this ensures
+that, once again, $\Delta_p \neq 0$.
+\end{remark}
+
+We now verify Item $3$ in Theorem $4.5.1$. By the analysis above, we know that
+\be
+\bA_{0,0} = \begin{pmatrix} I & -I \\ G_{0,0} & \tau^2 J_{0,0} \end{pmatrix},
+\ee
+where
+\be
+G_{0,0} = -i \gamma^u_D,
+\quad
+J_{0,0} = -i \gamma^w_D,
+\ee
+are order--one Fourier multipliers defined by
+\be
+G_{0,0}[U] = \sump (-i \gamma^u_p) \hat{U}_p e^{i \tilde{p} x},
+\quad
+J_{0,0}[W] = \sump (-i \gamma^w_p) \hat{W}_p e^{i \tilde{p} x}.
+\ee
+
+\begin{lemma}
+The linear operator $\bA_{0,0}$ maps $X^s$ to $Y^s$ boundedly, is invertible, and its inverse maps $Y^s$ to $X^s$ boundedly.
+\end{lemma}
+\begin{proof}{[Lemma 4.8.1]}
+We begin by defining the operator
+\bes
+\Delta := G_{0,0} + \tau^2 J_{0,0} 
+  = (-i \gamma^u_D) + \tau^2 (-i \gamma^w_D),
+\ees
+which has Fourier symbol
+\bes
+\hat{\Delta}_p = (-i \gamma^u_p) + \tau^2 (-i \gamma^w_p),
+\ees
+and noting that there exist positive constants
+$C_G$, $C_J$, and $C_{\Delta}$ such that
+\bes
+\Abs{-i \gamma^u_p} \leq C_G \Angle{\tilde{p}},
+\quad
+\Abs{-i \gamma^w_p} \leq C_J \Angle{\tilde{p}},
+\quad
+\Abs{\hat{\Delta}_p} \leq C_{\Delta} \Angle{\tilde{p}}.
+\ees
+Importantly, provided that $n^u \neq n^w$, it is
+not difficult to establish the crucial fact that $\hat{\Delta}_p \neq 0$. Finally, one
+can also find a positive constant $C_{\Delta^{-1}}$ such that
+\bes
+\Abs{\frac{1}{\hat{\Delta}_p}} \leq 
+  C_{\Delta^{-1}} \Angle{\tilde{p}}^{-1}.
+\ees
+With this it is a simple matter to realize that $\Delta^{-1}$ exists
+and that
+\bes
+\Delta: H^{s+3/2} \rightarrow H^{s+1/2},
+\quad
+\Delta^{-1}: H^{s+1/2} \rightarrow H^{s+3/2}.
+\ees
+Next, we write generic elements of $X^s$ and $Y^s$ as
+\bes
+\bV = \begin{pmatrix} U \\ W \end{pmatrix} \in X^s,
+\quad
+\bR = \begin{pmatrix} \zeta \\ -\psi \end{pmatrix} \in Y^s.
+\ees
+Using the definitions of the norms of $X^s$ and $Y^s$, 
+and the facts
+\bes
+2 a b \leq a^2 + b^2,
+\quad
+\Norm{A+B}{}^2 \leq (\Norm{A}{} + \Norm{B}{})^2,
+\ees
+we find that
+\begin{align*}
+\Norm{\bA_{0,0} \bV}{Y^s}^2
+  & = \SobNorm{U - W}{s+3/2}^2 
+    + \SobNorm{G_{0,0} U + \tau^2 J_{0,0} W}{s+1/2}^2 \\
+  & \leq 2 \SobNorm{U}{s+3/2}^2 
+    + 2 \SobNorm{W}{s+3/2}^2
+    + C_G^2 \SobNorm{U}{s+3/2}^2 \\
+  & \quad
+    + \tau^2 C_G C_J \left(\SobNorm{U}{s+3/2}^2 + \SobNorm{W}{s+3/2}^2 \right)
+    + C_J^2 \tau^4 \SobNorm{W}{s+3/2}^2 \\
+  & \leq \max \{ 2, C_G^2, \tau^2 C_G C_J, \tau^4 C_J^2 \} 
+    \left( \SobNorm{U}{s+3/2}^2 + \SobNorm{W}{s+3/2}^2 \right) \\
+  & = \max \{ 2, C_G^2, \tau^2 C_G C_J, \tau^4 C_J^2 \}
+  \Norm{\bV}{X^s}^2,
+\end{align*}
+so that $\bA_{0,0}$ does indeed map $X^s$ to $Y^s$ boundedly.
+We define the operator
+\bes
+\bB := \Delta^{-1} \begin{pmatrix} \tau^2 J_{0,0} & I \\
+  -G_{0,0} & I \end{pmatrix},
+\ees
+and note that
+\bes
+\bB \bA_{0,0} = \bA_{0,0} \bB 
+  = \begin{pmatrix} I & 0 \\ 0 & I \end{pmatrix},
+\ees
+so that the inverse of $\bA_{0,0}$ exists and 
+$\bA_{0,0}^{-1} = \bB$. Furthermore, as above,
+\begin{align*}
+\Norm{\bA_{0,0}^{-1} \bR}{X^s}^2
+  & = \SobNorm{\Delta^{-1} (\tau^2 J_{0,0} \zeta - \psi)}{s+3/2}^2 
+    + \SobNorm{\Delta^{-1} (-G_{0,0} \zeta - \psi)}{s+3/2}^2 \\
+  & \leq C_{\Delta^{-1}}^2 \tau^4 C_J^2 \SobNorm{\zeta}{s+3/2}^2 
+    + C_{\Delta^{-1}}^2 \tau^2 C_J 
+    \left( \SobNorm{\zeta}{s+3/2}^2 + 
+    \SobNorm{\psi}{s+1/2}^2 \right) \\
+  & \quad 
+    + C_{\Delta^{-1}}^2 C_G^2 \SobNorm{\zeta}{s+3/2}^2 
+    + C_{\Delta^{-1}}^2 C_G \left( \SobNorm{\zeta}{s+3/2}^2 + 
+    \SobNorm{\psi}{s+1/2}^2 \right) \\
+  & \quad  + 2 C_{\Delta^{-1}}^2 \SobNorm{\psi}{s+1/2}^2  \\
+  & \leq C_{\Delta^{-1}}^2 \max \{ 2, C_G, C_G^2,
+    \tau^2 C_J, \tau^4 C_J^2 \}
+    \left( \SobNorm{\zeta}{s+3/2}^2 + \SobNorm{\psi}{s+1/2}^2 \right) \\
+  & = C_{\Delta^{-1}}^2 \max \{ 2, C_G, C_G^2,
+    \tau^2 C_J, \tau^4 C_J^2 \}
+    \Norm{\bR}{Y^s}^2,
+\end{align*}
+and $\bA_{0,0}^{-1}$ maps $Y^s$ to $X^s$ boundedly.
+\end{proof}

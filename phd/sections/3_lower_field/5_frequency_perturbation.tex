@@ -1,0 +1,46 @@
+\section{Frequency Perturbation}
+\label{intro:frequency_perturbation in lower field}
+
+We now write the illumination frequency as
+\begin{equation}\omega=(1+\delta)\underline{\omega}=\underline{\omega}+\delta\underline{\omega},~\delta\in\mathbb R, ~ \delta \ll 1,\end{equation}
+where
+\begin{subequations}
+\begin{align} 
+k^w & = \omega/c^w = (1 + \delta) \uomega/c^w 
+  =: (1 + \delta) \uk^w = \uk^w + \delta \uk^w,\\
+\alpha & = k^u \sin(\theta) = (1 + \delta) \uk^u \sin(\theta)
+  =: (1 + \delta) \ualpha = \ualpha + \delta \ualpha,\\
+\gamma^w & = k^w \cos(\theta) = (1 + \delta) \uk^w \cos(\theta)
+  =: (1 + \delta) \ugamma^w = \ugamma^w + \delta \ugamma^w.
+\end{align}
+\end{subequations}
+These form the following relationship between the underscore variables
+\begin{align} 
+\underline{\alpha}^2 + (\underline{\gamma}^w)^2 = (\underline{k}^w)^2.
+\end{align}
+As the transformation rules between the upper and lower fields do not change $(\text{C}.5),$ we may follow the analysis done in $\S2.5$. It is not hard to show that $(3.10\text{a})$ becomes 
+\begin{equation}\Delta w +2i\underline{\alpha}\partial_{x}w+(\underline{\gamma}^w)^2w=\tilde{Y}\left(x,z;g,w,\underline{\alpha},\underline{\gamma}^w\right),\quad\text{$-b<z<0$}, \end{equation}
+where
+\begin{align*}\tilde{Y}\left(x,z;g,w,\underline{\alpha},\underline{\gamma}^w\right)&=-\text{div}[A_1\nabla w]-\text{div}[A_2\nabla w]-B_1\nabla w - B_2\nabla w\nonumber
+\\&~~-2i\underline{\alpha}\delta\partial_xw-\delta^2(\underline{\gamma}^w)^2w-2\delta(\underline{\gamma}^w)^2w\nonumber
+\\&~~-2S_1i\underline{\alpha}\partial_xw-2S_1i\underline{\alpha}\delta\partial_xw-S_1\delta^2(\underline{\gamma}^w)^2w-2S_1\delta(\underline{\gamma}^w)^2w-S_1(\underline{\gamma}^w)^2w\nonumber
+\\&~~-2S_2i\underline{\alpha}\partial_xw-2S_2i\underline{\alpha}\delta\partial_xw-S_2\delta^2(\underline{\gamma}^w)^2w-2S_2\delta(\underline{\gamma}^w)^2w-S_2(\underline{\gamma}^w)^2w.
+\end{align*}
+The boundary condition $(3.10\text{d})$ becomes
+$$\partial_z \left[w(x,-b)\right] - T_0^w[w(x,-b)]=\tilde{Q}(x;g,w),$$
+where $T_0^w = i \ugamma_D^w$
+corresponds to the case where $\delta=0$ and
+\bes
+\tilde{Q}(x;g,w) = \frac{1}{b} (\Eps f(x)) T^w \left[ w(x,-b) \right]
++ (T^w-T_0^w) \left[ w(x,-b) \right].
+\ees
+Proceeding in the same manner as in $\S2.5$, our governing equations without phase and two small perturbations become
+
+\begin{subequations}
+\begin{align}
+\Delta w +2i\underline{\alpha}\partial_{x}w+(\underline{\gamma}^w)^2w&=\tilde{Y}\left(x,z;g,w,\underline{\alpha},\underline{\gamma}^w\right),&& \text{$-b<z<0$}, \\
+w(x,0)&=\zeta^w(x),&&\text{at $z=0$},\\
+w(x+d,z)&=w(x,z), \\
+\partial_z \left[w(x,-b)\right] - T_0^w[w(x,-b)]&=\tilde{Q}(x;g,w),&&\text{at $z=-b$}. 
+\end{align}
+\end{subequations}

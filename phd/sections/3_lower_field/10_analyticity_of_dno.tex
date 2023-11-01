@@ -1,0 +1,89 @@
+\section{Analyticity of the Lower Layer DNO}
+\label{intro:analyticity of lower dno}
+
+Now that we have established the analyticity of the field, $w=w(x,z;\varepsilon,\delta)$, we move on to establishing the analyticity of the DNO, $J(g)=J(\varepsilon f)$. As in the upper field, we apply an unnormalized normal, $N=(-\partial_x g,1)^T$, to define the DNO
+\begin{equation} J(g):= \zeta^w \to \nu^w,\end{equation}
+which maps the Dirichlet data, $\zeta^w$, to the exterior Neumann trace, $\nu^w$,
+\begin{equation}J(g)[\zeta^w]:= [N\cdot \nabla w](x,g(x)) = [\partial_z w - (\partial_x g) \partial_x w](x,g(x)).\end{equation}
+To understand how the operator $J(g)$ behaves under the change of variables in Appendix $C$, we multiply $(3.36)$ by $C(x)$ to realize
+$$CJ = C\partial_z w - (\partial_x g) C\partial_x w.$$
+The differentiation rules for the change of variables, $(\text{C}.5),$ produces
+$$CJ = \partial_{z'}w'-(\partial_{x'} g)\{C\partial_{x'} w' - E\partial_{z'} w'\}.$$
+These are evaluated at the upper boundary, $z'=0$, where we observe that
+$$C(x')=1+\frac{g}{b},\quad E(x',0)=\partial_{x'}g,$$
+to find
+
+$$\left(1+\frac{g}{b}\right)J=\partial_{z'}w' -(\partial_{x'} g)\left\{\left(1+\frac{g}{b}\right)\partial_{x'} w' - (\partial_{x'}g)\partial_{z'} w' \right\}.$$
+We solve for $J$ and drop the primes to find
+\begin{equation}J(g)[\zeta^w] = \partial_z w(x,0) - L(x;g,w),\end{equation}
+with
+\begin{align}
+\begin{split}
+L(x;g,w):= &~(\partial_xg)\partial_x w(x,0)-\frac{1}{b}gJ(g)[\zeta^w]\\&  + \frac{1}{b}g(\partial_x g)\partial_x w(x,0)  -(\partial_x g)^2\partial_z w(x,0). 
+\end{split}
+\end{align}
+Upon setting $g(x)=\varepsilon f(x)$ and seeking an expansion of the form
+$$J=J(\varepsilon f,\delta)=\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}J_{n,m}(f)\varepsilon^n\delta^m,$$
+the equations $(3.37)$ and $(3.38)$ deliver
+\begin{equation}J_{n,m}(f)[\zeta^w]=\partial_z w_{n,m}(x,0)- L_{n,m}(x;f,w),\end{equation}
+where
+\begin{align}
+\begin{split}
+L_{n,m}(x;f,w):=&~ (\partial_xf)\partial_x w_{n-1,m}(x,0)-\frac{1}{b}fJ_{n-1,m}(f)[\zeta^w]\\&  + \frac{1}{b}f(\partial_x f)\partial_x w_{n-2,m}(x,0)  -(\partial_x f)^2\partial_z w_{n-2,m}(x,0). 
+\end{split}
+\end{align}
+To prove the analyticity of the DNO we will need the following recursive estimate for $L_{n,m}$.
+\vskip 0.1in
+
+\begin{lemma} Given an integer $s\ge 0$, if $f\in C^{s+2}([0,d])$ and
+\begin{equation}\|w_{n,m}\|_{H^{s+2}} \le KB^{n}D^{m}, \quad \|J_{n,m}\|_{H^{s+1/2}}\le \tilde{K}\tilde{B}^{n}\tilde{D}^{m},\quad \forall~ n < \overline{n},~m\geq 0,\end{equation}
+for constants $K,B,D,\tilde{K},\tilde{B},\tilde{D} > 0$ where $\tilde{K}\ge K,\tilde{B}\ge B, \tilde{D}\ge D$, then there exists a constant $\tilde{C} > 0$ such that
+\begin{equation}\|L_{\overline{n},m}\|_{H^{s+1/2}} \le \tilde{K}\tilde{C}\left\{|f|_{C^{s+2}}\tilde{B}^{n-1}\tilde{D}^{m}+ |f|_{C^{s+2}}^2\tilde{B}^{n-2}\tilde{D}^{m}\right\}.\end{equation}
+\end{lemma}
+\vskip 0.1in
+\begin{proof}{[Lemma 3.9.1]} From $(3.40)$ and Lemma $3.6.1$ we estimate
+\begin{align*}\|L_{\overline{n},m}\|_{H^{s+1/2}}&\le \mathcal{M}|\partial_x f|_{C^{s+1/2+\sigma}}\|\partial_x w_{\overline{n}-1,m}(x,0)\|_{H^{s+1/2}}\\&
++\frac{1}{b}\mathcal{M}|f|_{C^{s+1/2+\sigma}}\|G_{\overline{n}-1,m}(f)[\zeta^w]\|_{H^{s+1/2}}\\&
++\frac{1}{b}\mathcal{M}^2|f|_{C^{s+1/2+\sigma}}|\partial_x f|_{C^{s+1/2+\sigma}}\|\partial_x w_{\overline{n}-2,m}(x,0)\|_{H^{s+1/2}}\\&
++\mathcal{M}^2|\partial_x f|^2_{C^{s+1/2+\sigma}}\|\partial_z w_{\overline{n}-2,m}(x,0)\|_{H^{s+1/2}}.
+\end{align*}
+This gives
+\begin{align*}\|L_{\overline{n},m}\|_{H^{s+1/2}}&\le \tilde{K}\Big\{\mathcal{M}| f|_{C^{s+2}}\tilde{B}^{\overline{n}-1}\tilde{D}^{m} + \frac{1}{b}\mathcal{M}|f|_{C^{s+2}}\tilde{B}^{\overline{n}-1}\tilde{D}^{m} \\&~~~~~~~~+
+\frac{1}{b}\mathcal{M}^2|f|_{C^{s+2}}^2\tilde{B}^{\overline{n}-2}\tilde{D}^{m} + \mathcal{M}^2|f|_{C^{s+2}}^2\tilde{B}^{\overline{n}-2}\tilde{D}^{m}\Big\},
+\end{align*}
+and we are done provided
+$$\tilde{C} \ge \left(1+\frac{1}{b}\right)\max\{\mathcal{M},\mathcal{M}^2\}.$$
+\end{proof}
+\begin{flushleft}
+We now have everything we need to prove the analyticity of the lower layer DNO.
+\end{flushleft}
+\vskip 0.1in
+
+\begin{theorem} Given any integer $s\ge 0$, if $f\in C^{s+2}([0,d])$ and $\zeta^w_{n,m}\in H^{s+3/2}([0,d])$ such that
+$$\|\zeta^w_{n,m}\|_{H^{s+3/2}} \le K_{\zeta}B_{\zeta}^nD_{\zeta}^m, $$
+for constants $K_{\zeta},B_{\zeta},D_{\zeta} > 0$, then $J_{n,m}\in H^{s+1/2}([0,d])$ and
+\begin{equation} \|J_{n,m}\|_{H^{s+1/2}} \le \tilde{K}\tilde{B}^{n}\tilde{D}^{m},\end{equation}
+for constants $\tilde{K},\tilde{B},\tilde{D} > 0$.
+\end{theorem}
+\vskip 0.1in
+\begin{proof}{[Theorem 3.9.2]} We work by induction in $n$. At $n=0$ we have from $(3.39)$ that
+\bes
+J_{0,m}=\partial_z w_{0,m}(x,0),
+\ees
+and from Theorem $3.8.1$ we have
+\bes
+\|J_{0,m}\|_{H^{s+1/2}} = \|\partial_z w_{0,m}(x,0)\|_{H^{s+1/2}}\le  \|w_{0,m}\|_{H^{s+2}} \le KD^m.
+\ees
+So we choose $\tilde{K} \ge K$ and $\tilde{D} \ge D$. We now assume $\tilde{B} \ge B$ and the estimate $(3.43)$ for all $n < \overline{n}$ and estimate $(3.39)$
+\bes
+\|J_{\overline{n},m}(f)[\zeta^w]\|_{H^{s+1/2}}\le \|\partial_z w_{\overline{n},m}(x,0)\|_{H^{s+1/2}}+ \|L_{\overline{n},m}(x)\|_{H^{s+1/2}}.
+\ees
+Using the inductive hypothesis, Lemma $3.9.1$, and Theorem $3.8.1$ we have
+\bes
+\|J_{\overline{n},m}(f)[\zeta^w]\|_{H^{s+1/2}}\le KB^{\overline{n}}D^m + \tilde{K}\tilde{C}\left\{|f|_{C^{s+2}}\tilde{B}^{\overline{n}-1}\tilde{D}^{m}+ |f|_{C^{s+2}}^2\tilde{B}^{\overline{n}-2}\tilde{D}^{m}\right\}.
+\ees
+We are done provided $\tilde{K} \ge 2K$ and
+\bes
+\tilde{B} \ge \max\left\{B,4\tilde{C}|f|_{C^{s+2}},2\sqrt{\tilde{C}} |f|_{C^{s+2}}\right\}. 
+\ees
+\end{proof}

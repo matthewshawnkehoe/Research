@@ -1,0 +1,224 @@
+\section{Analyticity of the Boundary Perturbation}
+\label{intro:analyticity of the field}
+
+Before proceeding to the analyticity of the upper field, $u$, we present an analyticity estimate for the Dirichlet data
+$$\zeta^u(x;\varepsilon) =  \sum_{n=0}^{\infty} \zeta_{n,0}^u(x)\varepsilon^n.$$
+The following three lemmas will be invaluable in our subsequent analysis.
+\vskip 0.1in
+\begin{lemma} Given any integer $s\ge 0$, if $u\in H^s([0,d])$ then
+
+$$\|\partial_x u\|_{H^s} \le \|u\|_{H^{s+1}}.$$
+
+\end{lemma}
+\vskip 0.1in
+\begin{proof}{[Lemma 2.8.1]} By the definition of our Sobolev norms,
+\bes
+\|\partial_x u\|_{H^s}^2 = \sum_{p=-\infty}^{\infty}\langle \tilde{p} \rangle^{2s}|\widehat{\partial_x u}_p|^2=\sum_{p=-\infty}^{\infty}\langle \tilde{p} \rangle^{2s}|(i\tilde{p}) \hat{u}_p|^2\leq \sum_{p=-\infty}^{\infty}\langle \tilde{p} \rangle^{2s+2}| \hat{u}_p|^2= \|u\|_{H^{s+1}}^2.
+\ees
+\end{proof}
+
+\begin{lemma} Let $T_0^q$, $q\in\{u,w\},$ be the DNO defined by $(i\ugamma_D^q)$ and $s\geq 0$ a positive integer. Then for $\psi\in H^{s+1}([0,d])$, we have
+$$\|T_0^q\psi\|_{H^{s}} \le C_{([0,d])}\|\psi\|_{H^{s+1}},$$
+for some $C_{([0,d])}>0$.
+\end{lemma}
+\vskip 0.1in
+\begin{proof}{[Lemma 2.8.2]} Let $T_0^q=(i\ugamma_D^q)$ where $\psi\in H^{s+1}([0,d])$. By $(\text{B}.15),(2.9),$ and the definition of our Sobolev norms,
+\begin{align*}\|T_0^q\psi\|_{H^{s}}^2&=\sum_{p=-\infty}^{\infty}\left|(i\ugamma_p^q)\hat{\psi}_p\right|^2\langle \tilde{p} \rangle^{2s}\\&=\sum_{p\in \mathcal{\uU}^q}\left|\sqrt{(\uk^q)^2-\ualpha_p^2}\hat{\psi}_p\right|^2\langle \tilde{p} \rangle^{2s}+ \sum_{p\not\in \mathcal{\uU}^q}\left|\sqrt{\ualpha_p^2-(\uk^q)^2}\hat{\psi}_p\right|^2\langle \tilde{p} \rangle^{2s} \\&\le \sum_{p\in \mathcal{\uU}^q}C|\hat{\psi}_p|^2\langle \tilde{p} \rangle^{2s}+ \sum_{p\not\in \mathcal{\uU}^q}\left||\ualpha_p|\sqrt{1-{(\uk^q)^2}/{\ualpha_p^2}}\hat{\psi}_p\right|^2\langle \tilde{p} \rangle^{2s},~\text{C~=~$\max_{p\in\mathcal{\uU}^q}\Big[(\uk^q)^2-\ualpha_p^2\Big]$}\\&\le
+\sum_{p\in \mathcal{\uU}^q}C|\hat{\psi}_p|^2\langle \tilde{p} \rangle^{2s}+ \sum_{p\not\in \mathcal{\uU}^q}\tilde{C}|\ualpha_p|^2|\hat{\psi}_p|^2\langle \tilde{p} \rangle^{2s},~~\text{$\tilde{C}=\max_{p\not\in\mathcal{\uU}^q}\Big[1-{(\uk^q)^2}/{\ualpha_p^2}\Big]$}\\&\le
+\sum_{p=-\infty}^{\infty}\max\left\{C,2\alpha^2\tilde{C}\right\}|\hat{\psi}_p|^2\langle \tilde{p} \rangle^{2s} + \sum_{p\not\in \mathcal{\uU}^q}2\tilde{p}^2\tilde{C}|\hat{\psi}_p|^2\langle \tilde{p} \rangle^{2s}
+\\&\leq
+\sum_{p=-\infty}^{\infty}{\dbtilde{C}}\langle \tilde{p} \rangle^2|\hat{\psi}_p|^2\langle \tilde{p} \rangle^{2s},\quad \text{${\dbtilde{C}}=\max\left\{C,2\alpha^2\tilde{C},2\tilde{C}\right\}$}\\&=
+\sum_{p=-\infty}^{\infty}{\dbtilde{C}}|\hat{\psi}_p|^2\langle \tilde{p} \rangle^{2(s+1)}\\&=
+{\dbtilde{C}}\|\psi\|_{H^{s+1}}^2.
+%\qedhere
+\end{align*}
+\end{proof}
+
+\begin{lemma} Given any integer $s\ge 0$, if $f\in C^{s+2}([0,d])$ then
+\begin{equation}\|\zeta_{n,0}^u\|_{H^{s+3/2}}\le K_{\zeta}B_{\zeta}^n \end{equation}
+for constants $K_{\zeta},B_{\zeta} > 0$.
+\end{lemma}
+\vskip 0.1in
+\begin{proof}{[Lemma 2.8.3]} We work by induction and begin with $n=0$ where we choose
+$$K_{\zeta} := \|\zeta_{0,0}^u\|_{H^{s+3/2}}.$$
+We now assume the estimate $(2.34)$ for all $n <\overline{n} $ and note that
+$$\zeta_{\overline{n},0}^u=(-i\gamma^u)\left(\frac{f}{\overline{n}}\right)\zeta_{\overline{n}-1,0}^u.$$
+From this and $\overline{n} \ge 1$ we find the bound
+\begin{align*}
+\|\zeta_{\overline{n},0}^u\|_{H^{s+3/2}}&\le |\gamma^u|~\mathcal{M}~|f|_{C^{s+3/2+\sigma}}\|\zeta_{\overline{n}-1,0}^u\|_{H^{s+3/2}} \\ &\le
+|\gamma^u|~\mathcal{M}~|f|_{C^{s+2}}K_{\zeta}B_{\zeta}^{\overline{n}-1},
+\end{align*}
+and we are done provided 
+\bes
+B_{\zeta} > |\gamma^u|~\mathcal{M}~|f|_{C^{s+2}}. \qedhere
+\ees
+\end{proof}
+\begin{flushleft}
+We can now state our desired result for the analyticity of the transformed field $u=u(x,z;\varepsilon)$ with respect to the single perturbation parameter $\Eps$.
+\end{flushleft}
+\vskip 0.1in
+\begin{theorem}
+Given any integer $s\ge 0$, if $f\in C^{s+2}([0,d])$ and $\zeta_{n,0}^u\in H^{s+3/2}([0,d])$ such that
+\be
+\|\zeta_{n,0}^u\|_{H^{s+3/2}} \le K_{\zeta}B_{\zeta}^n,
+\ee
+for constants $K_{\zeta},B_{\zeta} > 0$, then $u_{n,0}\in H^{s+2}([0,d]\times[0,a])$ and
+\begin{equation}\|u_{n,0}\|_{H^{s+2}} \le KB^n,  \end{equation}
+for constants $K,B>0$.
+\end{theorem}
+To establish this result we work by induction. They key estimate is encapsulated in the following lemma.
+\vskip 0.1in
+\begin{lemma} Given an integer $s\ge 0$, if $f\in C^{s+2}([0,d])$ and
+
+\begin{equation}\|u_{n,0}\|_{H^{s+2}} \le KB^n, \quad \forall n < \overline{n},  \end{equation}
+for constants $K,B>0$, then there exists a constant $\overline{C}>0$ such that
+\begin{equation}\max\big\{\|\tilde{F}_{\overline{n},0}\|_{H^s}, \|\tilde{P}_{\overline{n},0}\|_{H^{s+1/2}}\big\}  \le K\overline{C}\Big\{ |f|_{C^{s+2}}B^{\overline{n}-1}+ |f|_{C^{s+2}}^2B^{\overline{n}-2}\Big\}.\end{equation}
+\end{lemma}
+\vskip 0.1in
+\begin{proof}{[Lemma 2.8.5]} We begin with $\tilde{F}_{\overline{n},0}$ and recall from $(2.28)$ that
+\begin{align}\tilde{F}_{\overline{n},0}\left(x,z;f,u,\underline{\alpha},\underline{\gamma}^u\right)&=-\text{div}[A_1\nabla u_{\overline{n}-1,0}]-\text{div}[A_2\nabla u_{\overline{n}-2,0}]-B_1\nabla u_{\overline{n}-1,0} \nonumber
+\\&~~- B_2\nabla u_{\overline{n}-2,0}-2S_1i\underline{\alpha}\partial_xu_{\overline{n}-1,0}-S_1(\underline{\gamma}^u)^2u_{\overline{n}-1,0}
+\\&~~-2S_2i\underline{\alpha}\partial_xu_{\overline{n}-2,0}-S_2(\underline{\gamma}^u)^2u_{\overline{n}-2,0}.\nonumber\end{align}
+Then from $(2.16)$ we have
+
+\begin{align*}
+\|\tilde{F}_{\overline{n},0}\|_{H^{s}}^2&\le \|A_1^{xx}\partial_x u_{\overline{n}-1,0}\|_{H^{s+1}}^2 + \|A_1^{xz}\partial_z u_{\overline{n}-1,0}\|_{H^{s+1}}^2 + \|A_1^{zx}\partial_x u_{\overline{n}-1,0}\|_{H^{s+1}}^2 \\&+
+\|A_1^{zz}\partial_z u_{\overline{n}-1,0}\|_{H^{s+1}}^2 + \|A_2^{xx}\partial_x u_{\overline{n}-2,0}\|_{H^{s+1}}^2 + \|A_2^{xz}\partial_z u_{\overline{n}-2,0}\|_{H^{s+1}}^2 \\&+
+\|A_2^{zx}\partial_x u_{\overline{n}-2,0}\|_{H^{s+1}}^2 + \|A_2^{zz}\partial_z u_{\overline{n}-2,0}\|_{H^{s+1}}^2 + \|B_1^{x}\partial_x u_{\overline{n}-1,0}\|_{H^{s}}^2 \\&+
+\|B_1^{z}\partial_z u_{\overline{n}-1,0}\|_{H^{s}}^2 +
+\|B_2^{x}\partial_x u_{\overline{n}-2,0}\|_{H^{s}}^2 +
+\|B_2^{z}\partial_z u_{\overline{n}-2,0}\|_{H^{s}}^2 \\&+
+\|2S_1i\underline{\alpha}\partial_xu_{\overline{n}-1,0}\|_{H^{s}}^2 + \|S_1(\underline{\gamma}^u)^2u_{\overline{n}-1,0}\|_{H^{s}}^2+\|2S_2i\underline{\alpha}\partial_xu_{\overline{n}-2,0}\|_{H^{s}}^2\\&+
+\|S_2(\underline{\gamma}^u)^2u_{\overline{n}-2,0}\|_{H^{s}}^2.
+\end{align*}
+We now estimate each of these and apply Lemmas $2.7.1, 2.7.3,$ and $2.8.1$. We begin with
+\begin{align*}
+\|A_1^{xx}\partial_x u_{\overline{n}-1,0}\|_{H^{s+1}} &= 
+\|-(2/a)f\partial_xu_{\overline{n}-1,0}\|_{H^{s+1}}\\&\le
+(2/a)\mathcal{M}|f|_{C^{s+1}}\|u_{\overline{n}-1,0}\|_{H^{s+2}}\\&\le
+(2/a)\mathcal{M}|f|_{C^{s+1}}KB^{\overline{n}-1},
+\end{align*}
+and in a similar fashion
+\begin{align*}
+\|A_1^{xz}\partial_z u_{\overline{n}-1,0}\|_{H^{s+1}} &= 
+\|-((a-z)/a)(\partial_x f)\partial_z u_{\overline{n}-1,0}\|_{H^{s+1}}\\&\le
+(Z_a/a)\mathcal{M}|\partial_x f|_{C^{s+1}}\|u_{\overline{n}-1, 0}\|_{H^{s+2}} \\&\le
+(Z_a/a)\mathcal{M}|f|_{C^{s+2}}KB^{\overline{n}-1}.
+\end{align*}
+Also,
+\begin{align*}
+\|A_1^{zx}\partial_x u_{\overline{n}-1,0}\|_{H^{s+1}} &= 
+\|-((a-z)/a)(\partial_x f)\partial_x u_{\overline{n}-1,0}\|_{H^{s+1}}\\&\le
+(Z_a/a)\mathcal{M}|\partial_x f|_{C^{s+1}}\|u_{\overline{n}-1, 0}\|_{H^{s+2}} \\&\le
+(Z_a/a)\mathcal{M}|f|_{C^{s+2}}KB^{\overline{n}-1},
+\end{align*}
+and we recall that $A_1^{zz}\equiv 0$. Moving to the second order
+\begin{align*}
+\|A_2^{xx}\partial_x u_{\overline{n}-2,0}\|_{H^{s+1}} &= 
+\|(1/a^2)f^2\partial_x u_{\overline{n}-2,0}\|_{H^{s+1}}\\&\le
+(1/a^2)\mathcal{M}^2|f|_{C^{s+1}}^2\|u_{\overline{n}-2, 0}\|_{H^{s+2}} \\&\le
+(1/a^2)\mathcal{M}^2|f|_{C^{s+1}}^2KB^{\overline{n}-2}.
+\end{align*}
+Also,
+\begin{align*}
+\|A_2^{xz}\partial_z u_{\overline{n}-2,0}\|_{H^{s+1}} &= 
+\|((a-z)/a^2)f(\partial_x f)\partial_x u_{\overline{n}-2,0}\|_{H^{s+1}}\\&\le
+(Z_a/a^2)\mathcal{M}^2|f|_{C^{s+1}}|\partial_x f|_{C^{s+1}}\|u_{\overline{n}-2, 0}\|_{H^{s+2}} \\&\le
+(Z_a/a^2)\mathcal{M}^2|f|_{C^{s+2}}^2KB^{\overline{n}-2},
+\end{align*}
+and
+\begin{align*}
+\|A_2^{zx}\partial_x u_{\overline{n}-2,0}\|_{H^{s+1}} &= 
+\|((a-z)/a^2)f(\partial_x f)\partial_z u_{\overline{n}-2,0}\|_{H^{s+1}}\\&\le
+(Z_a/a^2)\mathcal{M}^2|f|_{C^{s+1}}|\partial_x f|_{C^{s+1}}\|u_{\overline{n}-2, 0}\|_{H^{s+2}} \\&\le
+(Z_a/a^2)\mathcal{M}^2|f|_{C^{s+2}}^2KB^{\overline{n}-2},
+\end{align*}
+and
+\begin{align*}
+\|A_2^{zz}\partial_z u_{\overline{n}-2,0}\|_{H^{s+1}} &= 
+\|((a-z)^2/a^2)(\partial_x f)^2\partial_z u_{\overline{n}-2,0}\|_{H^{s+1}}\\&\le
+(Z_a^2/a^2)\mathcal{M}^2|\partial_x f|_{C^{s+1}}^2\|u_{\overline{n}-2, 0}\|_{H^{s+2}} \\&\le
+(Z_a^2/a^2)\mathcal{M}^2|f|_{C^{s+2}}^2KB^{\overline{n}-2}.
+\end{align*}
+Next for the $B_1$ terms
+\begin{align*}
+\|B_1^{x}\partial_x u_{\overline{n}-1,0}\|_{H^{s}} &= 
+\|(1/a)(\partial_x f)\partial_x u_{\overline{n}-1,0}\|_{H^{s}}\\&\le
+(1/a)\mathcal{M}|\partial_x f|_{C^{s}}\|u_{\overline{n}-1, 0}\|_{H^{s+1}} \\&\le
+(1/a)\mathcal{M}|f|_{C^{s+1}}KB^{\overline{n}-1},
+\end{align*}
+and $B_1^z\equiv 0$. Moving to the second order
+\begin{align*}
+\|B_2^{x}\partial_x u_{\overline{n}-2,0}\|_{H^{s}} &= 
+\|(-1/a^2)f(\partial_x f)\partial_x u_{\overline{n}-2,0}\|_{H^{s}}\\&\le
+(1/a^2)\mathcal{M}^2|f|_{C^{s}}|\partial_x f|_{C^{s}}\|u_{\overline{n}-2, 0}\|_{H^{s+1}} \\&\le
+(1/a^2)\mathcal{M}^2|f|_{C^{s+1}}^2KB^{\overline{n}-2},
+\end{align*}
+and
+\begin{align*}
+\|B_2^{z}\partial_z u_{\overline{n}-2,0}\|_{H^{s}} &= 
+\|(-1/a^2)(a-z)(\partial_x f)^2\partial_z u_{\overline{n}-2,0}\|_{H^{s}}\\&\le
+(Z_a/a^2)\mathcal{M}^2|\partial_x f|_{C^{s}}^2\|u_{\overline{n}-2, 0}\|_{H^{s+1}} \\&\le
+(Z_a/a^2)\mathcal{M}^2|f|_{C^{s+1}}^2KB^{\overline{n}-2}.
+\end{align*}
+To address the $S_0,S_1,S_2$ terms we have
+\begin{align*}
+\|2S_1i\underline{\alpha}\partial_xu_{\overline{n}-1,0}\|_{H^{s}}&=\|(-4/a)i\underline{\alpha}f\partial_xu_{\overline{n}-1,0}\|_{H^{s}}\\&\le
+(4/a)\underline{\alpha}\mathcal{M}|f|_{C^{s}}\|u_{\overline{n}-1, 0}\|_{H^{s+1}}\\&\le
+(4/a)\underline{\alpha}\mathcal{M}|f|_{C^{s}}KB^{\overline{n}-1},
+\end{align*}
+and
+\begin{align*}
+\|S_1(\underline{\gamma}^u)^2u_{\overline{n}-1,0}\|_{H^{s}}&=\|(-2/a)(\underline{\gamma}^u)^2fu_{\overline{n}-1,0}\|_{H^{s}}\\&\le
+(2/a)(\underline{\gamma}^u)^2\mathcal{M}|f|_{C^{s}}\|u_{\overline{n}-1, 0}\|_{H^{s}}\\&\le
+(2/a)(\underline{\gamma}^u)^2\mathcal{M}|f|_{C^{s}}KB^{\overline{n}-1},
+\end{align*}
+and
+\begin{align*}
+\|2S_2i\underline{\alpha}\partial_xu_{\overline{n}-2,0}\|_{H^{s}}&=\|(2/a^2)i\underline{\alpha}f^2\partial_xu_{\overline{n}-2,0}\|_{H^{s}}\\&\le
+(2/a^2)\underline{\alpha}\mathcal{M}^2|f|_{C^{s}}^2\|u_{\overline{n}-2, 0}\|_{H^{s+1}}\\&\le
+(2/a^2)\underline{\alpha}\mathcal{M}^2|f|_{C^{s}}^2KB^{\overline{n}-2},
+\end{align*}
+and
+\begin{align*}
+\|S_2(\underline{\gamma}^u)^2u_{\overline{n}-2,0}\|_{H^{s}}&=\|(1/a^2)(\underline{\gamma}^u)^2f^2u_{\overline{n}-2,0}\|_{H^{s}}\\&\le
+(1/a^2)(\underline{\gamma}^u)^2\mathcal{M}^2|f|_{C^{s}}^2\|u_{\overline{n}-2, 0}\|_{H^{s}}\\&\le
+(1/a^2)(\underline{\gamma}^u)^2\mathcal{M}^2|f|_{C^{s}}^2KB^{\overline{n}-2}.
+\end{align*}
+We satisfy the estimate for $\|\tilde{F}_{\overline{n},0}\|_{H^{s}}$ provided that we choose
+$$\overline{C} > \max\left\{\left(\frac{3+2Z_a+4\underline{\alpha}+2(\underline{\gamma}^u)^2}{a}\right)\mathcal{M},\left(\frac{2+3Z_a+{Z^2_a}+2\underline{\alpha}+(\underline{\gamma}^u)^2}{a^2} \right)\mathcal{M}^2    \right\}.$$
+The estimate for $\tilde{P}_{\overline{n},0}$ follows from Lemma $2.8.2$
+\begin{align*}
+\|\tilde{P}_{\overline{n},0}\|_{H^{s+1/2}}&=\|-(1/a)fT_0^u\left[u_{\overline{n}-1,0}\right]\|_{H^{s+1/2}}\\&\le
+(1/a)\mathcal{M}|f|_{C^{s+1/2+\sigma}}\|T_0^u\left[u_{\overline{n}-1,0}\right]\|_{H^{s+1/2}}\\&\le
+(1/a)\mathcal{M}|f|_{C^{s+1/2+\sigma}}C_{T_0^u}\|u_{\overline{n}-1,0}\|_{H^{s+3/2}}\\&\le
+(1/a)\mathcal{M}|f|_{C^{s+1/2+\sigma}}C_{T_0^u}KB^{\overline{n}-1},
+\end{align*}
+and provided that
+$$\overline{C} > (1/a)\mathcal{M}C_{T_0^u},$$
+we are done. 
+\end{proof}
+\begin{flushleft}
+With this information, we can now prove Theorem $2.8.4.$
+\end{flushleft}
+
+\begin{proof}{[Theorem 2.8.4]} We proceed by induction in $n$. At order $n=m=0$ $(2.27)$ becomes
+\begin{subequations}
+\begin{align}
+\Delta u_{0,0} +2i\underline{\alpha}\partial_{x}u_{0,0}+(\underline{\gamma}^u)^2u_{0,0}&=0,&& \text{$0<z<a$}, \\
+u_{0,0}(x,g)&=\zeta_{0,0}^u(x),&&\text{at $z=0$},\\
+u_{0,0}(x+d,z)&=u_{0,0}(x,z), \\
+\partial_z \left[u_{0,0}(x,a)\right] - T_0^u[u_{0,0}(x,a)]&=0,&& \text{at $z=a$}, 
+\end{align}
+\end{subequations}
+and Theorem $2.7.2$ guarantees a unique solution such that 
+$$\|u_{0,0}\|_{H^{s+2}}\le C_e\|\zeta_{0,0}^u\|_{H^{s+3/2}}.   $$
+So we choose $K \ge C_e\|\zeta_{0,0}^u\|_{H^{s+3/2}} $. We now assume the estimate $(2.36)$ for all $n < \overline{n}$ and study $u_{\overline{n},0}$. From Theorem $2.7.2$ we have a unique solution satisfying 
+$$\|u_{\overline{n},0}\|_{H^{s+2}}\le C_e\{\|\tilde{F}_{\overline{n},0}\|_{H^{s}}+\|\zeta_{\overline{n},0}^u\|_{H^{s+3/2}}+\|\tilde{P}_{\overline{n},0}\|_{H^{s+1/2}}  \}, $$
+and appealing to Lemmas $2.8.3$ (with the hypothesis $(2.35)$) and $2.8.5$ we find
+\bes
+\|u_{\overline{n},0}\|_{H^{s+2}}\le C_e\left\{K_{\zeta}B_{\zeta}^{\overline{n}} + 2K\overline{C}\Big[ |f|_{C^{s+2}}B^{\overline{n}-1}+ |f|_{C^{s+2}}^2B^{\overline{n}-2}\Big]  \right\}.
+\ees
+We are done provided we choose $K \ge 3C_eK_{\zeta}$ and
+$$ B > \max\Big\{B_{\zeta},6C_e\overline{C}|f|_{C^{s+2}},\sqrt{6C_e\overline{C}}|f|_{C^{s+2}} \Big\}.$$
+\end{proof}

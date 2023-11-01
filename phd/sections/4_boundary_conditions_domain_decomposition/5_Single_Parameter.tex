@@ -1,0 +1,83 @@
+\section{A Single Parameter}
+\label{Sec:Single Param}
+
+To begin, we consider $\Eps \in \mathbb R$ which is meant to model the situation where the geometry of the configuration is parameterized by one parameter (the height/slope). The second perturbation by $\delta\in\mathbb R$ (the frequency) will be discussed in Section $4.6$. We assume
+\bes
+\bA(\Eps)=\sumn \bA_n\Eps^n, 
+\quad 
+\bR(\Eps)=\sumn \bR_n\Eps^n,
+\ees
+in $(4.16)$ and seek a solution of the form
+\be
+\label{Eqn:Soln:One_Param}
+\bV(\Eps)=\sumn \bV_n\Eps^n.
+\ee
+From $(4.16)$ we find at order $\mathcal{O}(\Eps^n)$
+\bes
+\bA_0\bV_n = \bR_n - \sum_{\ell=0}^{n-1}\bA_{n-\ell}\bV_{\ell},
+\ees
+or
+\be
+\label{Eqn:Expansion:One_Param}
+\bV_n = \bA_0^{-1}\left( \bR_n - \sum_{\ell=0}^{n-1}\bA_{n-\ell}\bV_{\ell}\right).    
+\ee
+With these we can establish the following theorem.
+\vskip 0.1in
+\begin{theorem}
+\label{Theorem:One_Param}
+Given two Banach Spaces $X$ and $Y$, suppose that:
+\begin{enumerate}[label={\upshape[\arabic*]}]
+    \item $\bR_n\in Y$ for all $n\geq 0$, and there exists constants $B_R>0,C_R>0$ such that
+    \bes
+    \norm{\bR_n}_Y \leq C_RB_R^n,
+    \ees
+    \item $\bA_n: X \to Y$ for all $n\geq 0$, and there exists constants $B_A >0, C_A > 0$ such that
+    \bes
+    \norm{\bA_n}_{X\to Y}\leq C_AB_A^n,
+    \ees
+    \item $\bA_0^{-1}:Y\to X$, and there exists a constant $C_e>0$ such that
+    \bes
+    \norm{\bA_0^{-1}}_{Y \to X}\leq C_e.
+    \ees
+\end{enumerate}
+Then the equation $(4.16)$ has a unique solution, $(4.18)$, and there exists constants $B_V>0$ and $C_V>0$ such that
+\be
+\label{Eqn:Est:One_Param}
+\norm{\bV_n}_X \leq C_VB_V^n,
+\ee
+for all $n\geq 0$ and any
+\bes
+C_V \geq 2C_eC_R, \quad B_V \geq \operatorname{max}\{B_R,2B_A,4C_eC_AB_A\}.
+\ees
+This implies that, for any $0\leq \rho < 1$, $(4.18)$ converges for all $\Eps$ such that $B\Eps < \rho$, i.e., $\Eps < \rho / B.$
+\end{theorem}
+\vskip 0.1in
+\begin{proof}{[Theorem 4.5.1]}
+We work by induction, starting with $n=0$. At this order $(4.19)$ gives
+\bes
+\bV_0 = \bA_0^{-1}\bR_0,
+\ees
+and, from the properties of $\bA_0^{-1}$, we have
+\bes
+\norm{\bV_0}_X = \norm{\bA_0^{-1}\bR_0}_X\leq C_e\norm{\bR_0}_Y =:C_V.
+\ees
+Now, assuming estimate $(4.20)$ for all $n < \bar{n}$ we use $(4.19)$ and the mapping properties of $\bA_0^{-1}$ to find
+\bes
+\norm{\bV_{\bar{n}}}_X \leq C_e\left\{\norm{\bR_{\bar{n}}}_Y + \sum_{\ell=0}^{\bar{n}-1}
+\norm{\bA_{\bar{n}-\ell}\bV_{\ell}}_Y\right\}.
+\ees
+Now, using the estimates on $\bR_n$ and $\bA_n$ (for all $n$) and $\bV_n$ $(n < \bar{n})$ we have
+\begin{align*}
+    \norm{\bV_{\bar{n}}}_X &\leq C_e\left\{C_RB_R^{\bar{n}} + \sum_{\ell=0}^{\bar{n}-1}C_AB_A^{\bar{n}-\ell}C_VB_V^{\ell}\right\}\\&
+    = C_eC_RB_R^{\bar{n}}+C_eC_AC_V\left(\frac{B_A}{B_V}\right)B_V^{\bar{n}}\sum_{\ell=0}^{\bar{n}-1}\left(\frac{B_A}{B_V}\right)^{\bar{n}-\ell-1}\\& \leq 
+    C_eC_RB_R^{\bar{n}} + C_eC_AC_V\left(\frac{B_A}{B_V}\right)B_V^{\bar{n}}\left(\frac{1}{1-1/2}\right),
+\end{align*}
+if $B_A/B_V \leq 1/2$ (implying $B_V \geq 2B_A$). We are done if we demand that
+\bes
+B_V \geq B_R, \quad C_eC_R \leq C_V/2,\quad 2C_eC_AC_V(B_A/B_V)\leq C_V/2.
+\ees
+All of this can be achieved provided
+\begin{align*}
+C_V \geq 2C_eC_R, \quad B_V \geq \operatorname{max}\{B_R,2B_A,4C_eC_AB_A\}.    
+\end{align*}
+\end{proof}

@@ -1,0 +1,69 @@
+\section{Two--Layer Scattering}
+\label{intro:two_layer_scattering}
+Let $\tilde{u}$ be the scattered field in $S^{(u)}$ where $z>g(x)$. Then the total field is given as the sum of the scattered field and the incidence radiation
+\begin{equation}
+    \tilde{u}^t=\tilde{u}^i + \tilde{u}.
+\end{equation}
+Similarly, in $S^{(w)}$ where $z<g(x)$, there is no incidence radiation. So the total field is given by \begin{equation}
+    \tilde{w}^t=\tilde{w}.
+\end{equation}
+The boundary conditions at the interface $z=g(x)$ are
+\begin{equation}
+    \tilde{u}^t = \tilde{w}^t|_{z=g}, \quad \partial_N \tilde{u}^t = \tau^2 \partial_N \tilde{w}^t|_{z=g},
+\end{equation}
+Therefore $(1.52)-(1.54)$ becomes
+\begin{subequations}
+\begin{align}
+\tilde{u} + \tilde{u}^i &= \tilde{w}, &&\text{at $z=g(x)$,} \\
+\partial_N \tilde{u} + \partial_N \tilde{u}^i &= \tau^2 \partial_N \tilde{w}, &&\text{at $z=g(x)$.}
+\end{align}
+\end{subequations}
+As the incidence radiation ($\tilde{u}^i$) is an input in our system, we move it to the right--hand side. This forms the following Dirichlet and Neumann boundary conditions 
+\begin{subequations}
+\begin{align}
+\tilde{u}-\tilde{w}&=-\tilde{u}^{i},&&\text{at $z=g(x)$,}\\
+\partial_N \tilde{u}-\tau^2\partial_N \tilde{w}&=-\partial_N \tilde{u}^{i},&&\text{at $z=g(x)$,}
+\end{align}
+\end{subequations}
+where we let $\tilde{u}^{i}:=e^{i\alpha x-i\gamma^u z}$. At the surface $z=g(x)$, we need to find the unknowns
+\begin{align}
+U(x)=\tilde{u}(x,z)|_{z=g(x)},\quad W(x)=\tilde{w}(x,z)|_{z=g(x)}.    
+\end{align}
+Our strategy is to define $\tilde{U}$ and $\tilde{W}$ so that the normal derivative is exterior pointing in the upper and lower layers. We define
+\begin{align}
+\tilde{U}(x):=-\partial_N \tilde{u}(x,z)|_{z=g(x)},\quad \tilde{W}(x):=\partial_N \tilde{w}(x,z)|_{z=g(x)},
+\end{align}
+where the operators $G$ and $J$ are
+\begin{equation}G: U \to \tilde{U},\quad J: W \to \tilde{W}.\end{equation}
+These operators are Dirichlet--Neumann Operators (DNOs) which connect Dirichlect and Neumann data through the pairs $\{U,\tilde{U}\}$ and $\{W,\tilde{W}\}$. Letting 
+\begin{align}
+\tilde{\zeta}(x):&=-\tilde{u}^{i}(x,z)|_{z=g(x)}=-e^{i\alpha x-i\gamma^u g(x)}, \\
+\tilde{\psi}(x):&=-\partial_N \tilde{u}^{i}(x,z)|_{z=g(x)}=\left(i\gamma^u+i\alpha \partial_x g\right)e^{i\alpha x-i\gamma^u g(x)},
+\end{align}
+we see that the boundary conditions in $(1.56\text{a})-(1.56\text{b})$ may be rewritten as
+\begin{align*}
+U-W&=\tilde{\zeta}, &&\text{at $z=g(x)$,}\\
+-\tilde{U}-\tau^2\tilde{W}&=\tilde{\psi}, &&\text{at $z=g(x)$,}
+\end{align*}
+or
+\begin{subequations} 
+\begin{align}
+U-W&=\tilde{\zeta}, &&\text{at $z=g(x)$,}\\
+-G[U]-\tau^2J[W]&=\tilde{\psi}, &&\text{at $z=g(x)$.} 
+\end{align}
+\end{subequations}
+From $(1.62\text{a})$ we have $W=U-\tilde{\zeta}$. Therefore, we may write $(1.62\text{b})$ as
+$$-G[U]-\tau^2J\left[U-\tilde{\zeta}\right]=\tilde{\psi},$$
+which implies
+\begin{equation}(G+\tau^2J)[U]=-\tilde{\psi}+\tau^2J\left[\tilde{\zeta}\right].\end{equation}
+As the operators $G$ and $J$ are well--defined for sufficiently smooth $g$ (e.g., $g\in C^2$ \cite{NichollsReitich03b}) we may think of our boundary data in $(1.62\text{a})- (1.62\text{b})$ as a system of linear equations
+\begin{equation}
+    \bA\bV=\bR,
+\end{equation}
+where
+\begin{equation}
+ \bA=\begin{pmatrix}I & -I\\-G & -\tau^2J\end{pmatrix},\quad 
+ \bV=\begin{pmatrix}U \\ W\end{pmatrix},\quad
+ \bR=\begin{pmatrix}\tilde{\zeta} \\ \tilde{\psi}\end{pmatrix}.
+\end{equation}
+In Chapter $4$ we will show that our governing equations $(1.41)$ may be written as a linear system and discuss the motivation behind the definitions $(1.57)-(1.59)$ in terms of a Non--Overlapping \gls{ddm}. We will first remove the phase by defining $\tilde{u}(x,z):=e^{i\alpha x}u(x,z)$ and then apply two small perturbations relating to an interfacial deformation and a frequency deformation. The end result will be a linear system slightly more involved than $(1.65)$ by which interfacial data is recovered by the use of Dirichlet--Neumann Operators.

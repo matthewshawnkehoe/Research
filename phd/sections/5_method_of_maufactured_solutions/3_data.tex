@@ -1,0 +1,55 @@
+\section{Manufactured Solutions}
+\label{intro:data}
+
+We considered periodic, outgoing solutions of the Helmholtz equation $(4.8\text{a})$
+\begin{align}
+u_p(x,z):=A_pe^{i\tilde{p}x}e^{i\gamma_p^{u}z},\quad 
+p \in \mathbb{Z}, \quad A_p \in \mathbb{C},
+\end{align}
+and their counterparts for $(4.8\text{b})$
+\begin{align}
+w_p(x,z):=B_pe^{i\tilde{p}x}e^{-i\gamma_p^{w}z},\quad 
+p \in \mathbb{Z}, \quad B_p \in \mathbb{C}.
+\end{align}
+We then defined, for a particular choice of $p$,
+\begin{subequations}
+\begin{align}
+\xi^u &:= u_p(x,g(x)),\quad \nu^u := -\partial_N u_p(x,g(x)),\\
+\xi^w &:= w_p(x,g(x)),\quad \nu^w := \partial_N w_p(x,g(x)).
+\end{align}
+\end{subequations}
+To validate the two--layer solver we set
+\be
+\zeta = \xi^u - \xi^w, \quad \psi = -\nu^u - \tau^2 \nu^w.
+\ee
+In order to test our implementation of the recursions, $(5.4)$, we required the joint expansion of $\xi^u, \xi^w, \nu^u,$ and $\nu^w$ in $\Eps$ and $\delta$. In analogy to our developments in $\S 4.7$ we defined
+\bes
+\mathcal{E}^{q,p}(x;\varepsilon,\delta):=\operatorname{exp}\left\{\pm i\gamma_p^{q}(\delta)\varepsilon f(x)\right\},\quad  q\in\{u,w\}, 
+\ees
+and then derived the terms $\mathcal{E}_{n,m}^{q,p}$ in the expansion
+\bes
+\mathcal{E}^{q,p}(x;\varepsilon,\delta) = \sumn \summ \mathcal{E}_{n,m}^{q,p}(x)\varepsilon^n\delta^m.
+\ees
+From these it was clear that
+\begin{subequations}
+\begin{align}
+\xi_{n,m}^u(x) &= A_pe^{i\tilde{p}x}\mathcal{E}_{n,m}^{u,p}(x),\quad
+\xi_{n,m}^w(x) = B_pe^{i\tilde{p}x}\mathcal{E}_{n,m}^{w,p}(x),\quad\\
+\nu_{n,m}^u(x) &= \left(-i\gamma_p^{u} + i\tilde{p}\varepsilon f_x(x)\right)\xi_{n,m}^u(x), ~~
+\nu_{n,m}^w(x) = \left(i\gamma_p^{w} + i\tilde{p}\varepsilon f_x(x)\right)\xi_{n,m}^w(x).
+\end{align}
+\end{subequations}
+We then considered the surface data for our two--layer scattering problem (cf. $\S 4.2$)
+\be
+\zeta(x)  = -e^{-i \gamma^u g(x)}, 
+\quad
+\psi(x)  = (i \gamma^u + i \alpha (\partial_x g)) e^{-i \gamma^u g(x)},
+\ee
+and performed a joint expansion of $\zeta$ and $\psi$ in $\Eps$ and $\delta$
+\begin{subequations}
+\begin{align}
+\zeta_{n,m}(x) &= -\mathcal{E}_{n,m}^{u,p}(x),\\
+\psi_{n,m}(x) &= \left(i\gamma_p^{u} + i\alpha\varepsilon f_x(x)\right)\mathcal{E}_{n,m}^{u,p}(x),
+\end{align}
+\end{subequations}
+where we outline our procedure to find the $\mathcal{E}_{n,m}^{q,p}$ in $\S 5.5$.

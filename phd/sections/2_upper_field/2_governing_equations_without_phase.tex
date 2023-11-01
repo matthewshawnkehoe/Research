@@ -1,0 +1,43 @@
+\section{Governing Equations Without Phase}
+\label{intro:governing_equations_without_phase}
+In the upper field, we defined the geometry $S_{g,a}:=\{g(x)<z<a\}$ where $z$ is bounded between a constant imposed by the Artificial Boundary $\{z=a\}$ and the lower surface $g(x)$. The boundary value problem $(1.34)$ defined in $\S1.8$ gives an equivalent representation of the governing equations of linear wave propagation in a single homogeneous material layer 
+\begin{subequations}
+\begin{align}
+\Delta \tilde{u} + (k^u)^2 \tilde{u} &=0,&& \text{$g(x)<z<a$},\\
+\tilde{u}(x,g(x))&=\tilde{\zeta}^u(x),&& \text{at $z=g(x)$},\\
+\tilde{u}(x+d,z)&=e^{i\alpha d}\tilde{u}(x,z),\\
+\partial_z \tilde{u} - \tilde{T}^u[\tilde{u}]&=0,&&  \text{at $z=a$,}
+\end{align}
+\end{subequations}
+In our subsequent developments it will be convenient to consider periodic unknowns rather than quasiperiodic ones. This can be readily achieved by the simple phase extraction
+\begin{equation}u(x,z):= e^{-i\alpha x}\tilde{u}(x,z),\end{equation}
+where by $(2.1\text{c})$
+\begin{align*}u(x+d,z)=e^{-i\alpha(x+d)}\tilde{u}(x+d,z)&=
+e^{-i\alpha(x+d)}e^{i\alpha d}\tilde{u}(x,z)\\&=
+e^{-i\alpha x}\tilde{u}(x,z)\\&=
+u(x,z),
+\end{align*}
+so the $\alpha$-quasiperiodicity of $\tilde{u}(x,z)$ implies that ${u(x,z)}$ is $d$--periodic. We also compute
+\begin{equation*}\partial_x \tilde{u}(x,z) = (i\alpha)e^{i\alpha x}u(x,z)+e^{i\alpha x}\partial_x u(x,z),\end{equation*}
+\begin{equation*}\partial_x^2 \tilde{u}(x,z) = (i\alpha)^2e^{i\alpha x}u(x,z)+2(i\alpha)e^{i\alpha x}\partial_x u(x,z)+e^{i\alpha x}\partial_x^2 u(x,z),\end{equation*}
+\begin{equation*}\partial_z \tilde{u}(x,z) = e^{i\alpha x}\partial_z u(x,z),\end{equation*}
+\begin{equation*}\partial_z^2 \tilde{u}(x,z) = e^{i\alpha x}\partial_z^2 u(x,z).\end{equation*}
+These in turn imply
+\begin{align*}0=\Delta \tilde{u} + (k^u)^2\tilde{u} &= -\alpha^2e^{i\alpha x}u+2(i\alpha)e^{i\alpha x}\partial_xu+e^{i\alpha x}\partial_x^2u+e^{i\alpha x}\partial_z^2u+(k^u)^2e^{i\alpha x}u\\&=
+e^{i\alpha x}\big(\Delta u +2i\alpha\partial_xu+\left((k^u)^2-\alpha^2\right)u\big),
+\end{align*}
+and, setting $(\gamma^u)^2 = (k^u)^2-\alpha^2$, $(2.1\text{a})$ becomes
+\begin{equation}\Delta u +2i\alpha\partial_xu+\gamma^2u=0,\quad \text{$g(x)<z<a$}. \end{equation}
+Similarly, the boundary condition $(2.1\text{b})$ becomes
+$$u(x,g(x))=e^{-i\alpha x}\tilde{u}(x,g(x))=e^{-i\alpha x}\tilde{\zeta}^u(x)=:\zeta^u(x),\quad \text{at $z=g(x)$}.$$
+As we will show in $\S 2.3$, the Transparent Boundary Condition for $(2.1\text{d})$ becomes
+\begin{equation}\partial_z \left[u(x,a)\right] - T^u[u(x,a)]=0,\quad \text{at $z=a$}. \end{equation}
+Our governing equations are now
+\begin{subequations}
+\begin{align}
+\Delta u +2i\alpha\partial_xu+(\gamma^u)^2u&=0,&& \text{$g(x)<z<a$},\\
+u(x,g(x))&={\zeta}^u(x),&& \text{at $z=g(x)$},\\
+u(x+d,z)&=u(x,z),\\
+\partial_z \left[u(x,a)\right] - T^u[u(x,a)]&=0,&& \text{at $z=a$}. 
+\end{align}
+\end{subequations}

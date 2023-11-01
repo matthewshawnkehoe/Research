@@ -1,0 +1,61 @@
+\section{Tranverse Magnetic (TM) Polarization}
+\label{intro:tm_polarization}
+If we instead assume that the magnetic field is transverse to the direction of propagation while the electric field is parallel to the direction of propagation, then the magnetic field is composed entirely of a transverse component and we seek solutions satisfying
+
+\begin{equation}
+\textbf{H}=\textbf{H}(x,z)=\begin{pmatrix}
+0\\ \tilde{v}(x,z) \\ 0
+\end{pmatrix},\quad 
+\textbf{E}=\textbf{E}(x,z)=\begin{pmatrix}
+E^x(x,z)\\ 0 \\ E^z(x,z)
+\end{pmatrix}.
+\end{equation}
+We may once again satisfy the time--harmonic Maxwell equations by calculating
+$$\nabla \times \textbf{H}= \begin{pmatrix}
+-\partial_z \tilde{v}\\ 0 \\ \partial_x \tilde{v}
+\end{pmatrix},$$
+which implies
+$$\textbf{E} = \frac{-1}{i\omega\epsilon_0\epsilon}\nabla \times \textbf{H} =\frac{1}{\epsilon}\begin{pmatrix}
+\partial_z \tilde{v}/(i\omega\epsilon_0)\\ 0 \\ -\partial_x \tilde{v}/(i\omega\epsilon_0)
+\end{pmatrix}.$$
+Similarly to TE polarization, we find
+$$\nabla \times \textbf{E}=\begin{pmatrix}
+0\\ \partial_z E^x - \partial_x E^z \\ 0
+\end{pmatrix},$$
+and we can reduce $(1.9\text{a})$ and $(1.9\text{c})$
+$$i\omega\mu_0 \textbf{H} = \nabla \times \textbf{E},$$
+to one equation in the $y$--component
+$$\text{div}\left[\frac{1}{i\omega \epsilon_0\epsilon}\nabla \tilde{v}\right]=  i\omega \mu_0 \tilde{v}.$$
+As $\epsilon$ changes value between layers, we find
+\begin{equation}
+ 0=\text{div}\left[\frac{1}{\epsilon}\nabla \tilde{v}\right] + \omega^2\mu_0\epsilon_0\tilde{v} = \text{div}\left[\frac{1}{\epsilon}\nabla \tilde{v}\right]+\frac{\omega^2}{c^2}\tilde{v}=\text{div}\left[\frac{1}{\epsilon}\nabla \tilde{v}\right]+k_0^2\tilde{v}. 
+\end{equation}
+If the layers are homogeneous then we may reduce $(1.19)$ in each layer to 
+\begin{equation}
+0=\Delta \tilde{v} + k^2\tilde{v}.
+\end{equation}
+The boundary conditions become
+\begin{equation}
+0=\textbf{N} \times \textbf{H} = \begin{pmatrix}
+-\tilde{v} \\ 0 \\ -(\partial_x g)\tilde{v}
+\end{pmatrix},
+\end{equation}
+and
+\begin{equation}
+0=\textbf{N} \times \textbf{E} = \begin{pmatrix}
+0 \\ (\partial_x g)E^z + E^x \\ 0 
+\end{pmatrix}=\frac{-1}{i\omega\epsilon_0}\begin{pmatrix}
+0 \\ \big[(\partial_x g)\partial_x \tilde{v} - \partial_z \tilde{v}\big]/\epsilon \\ 0
+\end{pmatrix}.
+\end{equation}
+Similarly to TE polarization, the first boundary condition $(1.21)$ shows that $\tilde{v}$ is continuous across interfaces. However, the second boundary condition $(1.22)$ mandates that $(1/\epsilon)\partial_N \tilde{v}$ is continuous across interfaces. This follows from the fact that $\epsilon_0$ is constant everywhere and $\epsilon$ is allowed to jump across layer interfaces. Therefore in a doubly layered medium the TM governing equations are
+\begin{subequations}
+\begin{align}
+\Delta \tilde{u} + (k^u)^2 \tilde{u} &=0,&& z > g(x),\\
+\Delta \tilde{w} + (k^w)^2 \tilde{w} &=0,&& z < g(x),\\
+\tilde{u}-\tilde{w} &= -\tilde{u}^{inc},&& z=g(x),\\
+\partial_N \tilde{u}-\tau^2\partial_N \tilde{w} &= -\partial_N \tilde{u}^{inc},&& z=g(x),
+\end{align}
+\end{subequations}
+where, as in TE polarization, $\tilde{u}$ and $\tilde{w}$ are defined as outgoing, quasiperiodic solutions (in the $y$--component) of the magnetic field in the upper and lower layers. 
+

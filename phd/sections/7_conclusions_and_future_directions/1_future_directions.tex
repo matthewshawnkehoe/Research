@@ -1,0 +1,11 @@
+\section{Future Directions}
+\label{Sec: Future Directions}
+There are a wide range of improvements to both the HOPS/AWE algorithm and the proof of analyticity for linear waves in periodic layered media. Our main goals for future research are to expand the TFE method through a new proof of convergence, investigate expanding around singularities, evaluate analyticity theorems in multilayered configurations, add new parallel programming functionality, explore alternative methods to recover surface data without Dirichlet--Neumann Operators, and to reduce the execution time of the HOPS algorithm. We now summarize these six research goals and suggest predictions for future research.
+\begin{enumerate}[labelsep=0ex,align=left,start=1]
+    \item[\textbf{Goal 1-}] ~\textbf{Choice of Parameters: Does the geometry of the perturbation impact how large the size of the perturbation can be? }
+    \item[\textbf{Goal 2-}] ~\textbf{Rayleigh Singularities: Can we build a full HOPS algorithm based on points where the Taylor expansion is invalid? }
+    \item[\textbf{Goal 3-}] ~\textbf{Multiple Layers: Can we prove analyticity results when the number of layers is greater than three? Do the same theorems hold for ten or one hundred layers?} 
+    \item[\textbf{Goal 4-}] ~\textbf{{Parallel Programming}: Can we implement parallel programming techniques so that our HOPS code runs on $N$ processors? }
+    \item[\textbf{Goal 5-}] ~\textbf{{Alternatives to DNOs}: Do we need to use DNOs to recover surface data from information stored in the transformed field? Is there an alternative method which preserves the inversion of a single, sparse operator at the interface?   }
+    \item[\textbf{Goal 6-}] ~\textbf{Computational Costs: Can we reduce the execution time per time step in our HOPS algorithm?} 
+\end{enumerate}

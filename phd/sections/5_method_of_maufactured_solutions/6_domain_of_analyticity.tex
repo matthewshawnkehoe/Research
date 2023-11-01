@@ -1,0 +1,48 @@
+\section{The Domain of Analyticity}
+\label{Sec:Anal}
+
+While the precise domain of analyticity of our solutions in $(\Eps,\delta)$ cannot be specified, it is clear that the expansion of $\gamma_p^q(\delta)$ only converges for $\delta$ away from the Rayleigh singularities. Therefore, our expansions are only valid on subsets of the $(\Eps,\delta)$--plane away from Rayleigh singularities. For instance, in the upper layer, Rayleigh singularities
+occur when $\ualpha_p^2 = (\uk^u)^2$ which implies
+\be
+\label{Eqn:Rayleigh:Sing}
+\uomega = \pm \frac{c_0}{n^u} \left\{ \ualpha + \frac{2 \pi p}{d}
+  \right\},
+\quad
+  \text{for any $p \in \mathbb{Z}$}.
+\ee
+In the interest of maximizing our choice of $\delta$ we selected
+a ``mid--point'' value of $\uomega$ which is as far away as possible
+from consecutive Rayleigh singularities
+\be
+\label{Eqn:uomegaq}
+\uomega_q := \frac{c_0}{n^u} \left\{ \ualpha 
+  + \frac{2 \pi (q+1/2)}{d} \right\}.
+\ee
+About this value the nearest singularities are
+\begin{align*}
+\uomega_q^- & := \frac{c_0}{n^u} \left\{ \ualpha 
+  + \frac{2 \pi q}{d} \right\}
+  = \uomega_q - \frac{\pi c_0}{n^u d},
+\\
+\uomega_q^+ & := \frac{c_0}{n^u} \left\{ \ualpha 
+  + \frac{2 \pi (q+1)}{d} \right\}
+  = \uomega_q + \frac{\pi c_0}{n^u d},
+\end{align*}
+so to maximize our range of $\omega$ we choose, for some
+filling fraction $0 < \sigma < 1$,
+\bes
+\uomega_q - \sigma \left( \frac{\pi c_0}{n^u d} \right)
+  < \omega < \uomega_q + \sigma \left( \frac{\pi c_0}{n^u d} \right).
+\ees
+To express this in terms of $\delta$ we recall that
+$\omega = (1+\delta) \uomega_q$ which gives
+\bes
+- \sigma \left( \frac{\pi c_0}{ \uomega_q n^u d} \right)
+  < \delta < \sigma \left( \frac{\pi c_0}{ \uomega_q n^u d} \right).
+\ees
+Simplifying gives
+\be
+\label{Eqn:uomega:Range}
+-\left( \frac{\sigma}{(\ualpha d/\pi) + 2 q + 1} \right)
+  < \delta < \left( \frac{\sigma}{(\ualpha d/\pi) + 2 q + 1} \right).
+\ee

@@ -1,0 +1,106 @@
+\section{Expansion of Surface Data}
+\label{Sec: Expansion of Helmholtz}
+In $\S 4.2$ we saw that the surface data for our two--layer scattering problem is given by
+\begin{subequations}
+\begin{align}
+\zeta(x) & = -e^{-i \gamma^u g(x)}, 
+  \label{Eqn:Govern:e} \\
+\psi(x) & = (i \gamma^u + i \alpha (\partial_x g)) e^{-i \gamma^u g(x)}.
+  \label{Eqn:Govern:f}
+\end{align}
+\end{subequations}
+Following the strategy discussed in Chapter 5, we selected a wavenumber $p$ and defined
+\bes
+\mathcal{E}^{u,p}(x;\varepsilon,\delta):=\operatorname{exp}\left\{-i\gamma_p^{u}(\delta)\varepsilon f(x)\right\},
+\ees
+and then derived the terms $\mathcal{E}_{n,m}^{u,p}$ in the expansion
+\bes
+\mathcal{E}^{u,p}(x;\varepsilon,\delta) = \sumn \sumn \mathcal{E}_{n,m}^{u,p}(x)\varepsilon^n\delta^m.
+\ees
+From this, it is clear that
+\begin{subequations}
+\begin{align}
+\zeta_{n,m}(x) &= -\mathcal{E}_{n,m}^{u,p}(x),\\
+\psi_{n,m}(x) &= \left(i\gamma_p^{u} + i\alpha\varepsilon f_x(x)\right)\mathcal{E}_{n,m}^{u,p}(x).
+\end{align}
+\end{subequations}
+We first calculated the Dirichlet data, $(6.2\text{a})$, when $n=0$. We have
+$$\mathcal{E}^{u,p}(x;0,\delta)=\operatorname{exp}\{-0\}=1,$$
+therefore 
+$$\mathcal{E}^{u,p}_{0,m}(x)= 
+\begin{cases} 
+1, & m=0, \\
+0, & m>0,
+\end{cases} $$
+and 
+$$\zeta_{0,m}= 
+\begin{cases} 
+-1, & m=0, \\
+0, & m>0.
+\end{cases}
+$$
+We then evaluated $(6.2\text{a})$ when $n>0$. 
+Inserting the Taylor series expansions for $\mathcal{E}^{u,p}$ and $\gamma_p^{u}$ and applying $(5.11)$ gives
+$$\sum_{n=1}^{\infty}\sum_{m=0}^{\infty}\mathcal{E}^{u,p}_{n,m}n\varepsilon^{n-1}\delta^m =
+(-if)\left(\sum_{r=0}^{\infty}\gamma^{u}_{p,r}\delta^r\right)\left(\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}\mathcal{E}^{u,p}_{n,m}\varepsilon^n\delta^m\right).$$
+Re--indexing the left--hand side and rearranging the order of terms on the right--hand side forms
+$$ \sum_{n=0}^{\infty}\sum_{m=0}^{\infty}\mathcal{E}^{u,p}_{n+1,m}(n+1)\varepsilon^{n}\delta^m =
+ \sum_{n=0}^{\infty}\sum_{m=0}^{\infty}\left((-if)\sum_{r=0}^m \gamma^{u}_{p,m-r}\mathcal{E}^{u,p}_{n,r}\right)\varepsilon^n\delta^m.$$
+Upon equating like orders we found
+$$\mathcal{E}^{u,p}_{n+1,m} = -\frac{if}{n+1}\sum_{r=0}^m \gamma^{u}_{p,m-r}\mathcal{E}^{u,p}_{n,r}.$$
+Therefore we have
+\be
+\zeta_{n+1,m} = \frac{if}{n+1}\sum_{r=0}^m \gamma^{u}_{p,m-r}\mathcal{E}^{u,p}_{n,r}, 
+\ee
+where the initial data is
+\be
+\zeta_{0,m}= 
+\begin{cases} 
+-1, & m=0, \\
+0, & m>0.
+\end{cases}
+\ee
+As $(6.3)$ and $(6.4)$ are valid for all values of $m$, we see that to find the coefficient at order $(n+1,m),$ one only needs the values of $(n,0),\ldots ,(n,m)$.
+\\
+\newline
+We then calculated $(6.2\text{b})$ when $n=0$. We have
+$$\psi_{0,m}= 
+\begin{cases} 
+i\gamma^{u}_{p,0}\mathcal{E}^{u,p}_{0,m}, & m=0, \\
+i\gamma^{u}_{p,m}\mathcal{E}^{u,p}_{0,m}, & m>0,
+\end{cases}$$
+therefore
+$$\psi_{0,m}= 
+\begin{cases} 
+i\gamma^{u}_{p,0}, & m=0, \\
+0, & m>0.
+\end{cases}  $$
+For $(6.2\text{b})$ and $n>0$ we expanded
+\bes
+\alpha = \alpha(\delta)=\sum_{k=0}^{\infty}\alpha_k \delta^k,
+\ees
+and inserted the Taylor series expansions for $\alpha, \xi^q$, and $\gamma_p^{q}$ and used $(5.11)$ to deduce
+
+\begin{align*}\sum_{n=1}^{\infty}\sum_{m=0}^{\infty}\psi_{n,m}n\varepsilon^{n-1}\delta^m &= 
+f\left(\sum_{r=0}^{\infty}\gamma^u_{p,r}\delta^r\right)\left(\sum_{k=0}^{\infty}\gamma^u_{p,k}\delta^k\right)\left(\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}\mathcal{E}^u_{n,m}\varepsilon^n\delta^m\right)\\&+
+ff_x\left(\sum_{r=0}^{\infty}\gamma^u_{p,r}\delta^r\right)\left(\sum_{k=0}^{\infty}\alpha_k \delta^k\right)\left(\sum_{n=1}^{\infty}\sum_{m=0}^{\infty}\mathcal{E}^u_{n-1,m}\varepsilon^n\delta^m\right).\end{align*}
+Re--indexing the left--hand side and rearranging the order of terms on the right--hand side forms
+
+\begin{align*}\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}\psi_{n+1,m}(n+1)\varepsilon^n\delta^m&=
+\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}\left((f)\sum_{r=0}^m \sum_{k=0}^r \gamma^u_{p,m-r}\gamma^u_{p,r-k}\mathcal{E}^u_{n,k}\right)\varepsilon^n\delta^m\\&+
+\sum_{n=1}^{\infty}\sum_{m=0}^{\infty}\left(( ff_x)\sum_{r=0}^m \sum_{k=0}^r \gamma^u_{p,m-r}\alpha_{r-k}\mathcal{E}^u_{n-1,k}\right)\varepsilon^n\delta^m
+.\end{align*}
+Upon equating like orders we found
+\begin{align}
+\begin{split}
+\psi_{n+1,m} &= \frac{f}{n+1}\sum_{r=0}^m \sum_{k=0}^r \gamma^u_{p,m-r}\gamma^u_{p,r-k}\mathcal{E}^u_{n,k} \\&+
+\frac{ff_x}{n+1}\sum_{r=0}^m \sum_{k=0}^r \gamma^u_{p,m-r}\alpha_{r-k}\mathcal{E}^u_{n-1,k},
+\end{split}
+\end{align}
+where the initial data is
+\begin{equation}\mathcal{\psi}_{0,m}= 
+\begin{cases} 
+i\gamma^u_{p,0}, & m=0, \\
+0, & m>0.
+\end{cases}  \end{equation}
+Analogously to the Dirichlet data, we see that $(6.5)$ and $(6.6)$ are valid for all values of $m$. Therefore we can find the coefficient at order $(n+1,m)$ by the values of the coefficients at $(n,0),\ldots ,(n,m)$.

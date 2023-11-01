@@ -1,0 +1,320 @@
+\chapter{Proof of Algebra Property, Elliptic Estimate, and Translation Property}
+\label{Appendix B: Alebra and Elliptic Property}
+\thispagestyle{pageonbottom}
+
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% The paper headers
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\text{Appendix B} \quad   {Algebra Property and Elliptic Estimate}}
+\fancyhead[RE]{\text{Appendix B} \quad   {Algebra Property and Elliptic Estimate}} %Even page header and number at left top
+\fancyfoot[L,R,C]{}
+\renewcommand{\headrulewidth}{1pt}% disable the underline of the header part
+
+As discussed in $\S 2.7$, we present the proof of the three major tools used to show joint analyticity of the upper field in the appropriate Sobolev space. Our first property is the ``Algebra Property" for estimating products of functions, the second property is a rigorous statement of the ``Elliptic Estimate," and our final property shows how to bound translated elements in our function spaces. The same techniques will work for the lower field in $\S3.6$ where the interval $[0,a]$ is translated to $[-b,0]$.
+\begin{lemma}[{Algebra Property}] Given an integer $s \ge 0$ and any $\sigma > 0$, there exists a constant $\mathcal{M}=\mathcal{M}(s)$ such that if $f\in C^s([0,d]),u\in H^s([0,d]\times [0,a])$ then
+\begin{equation}
+\|fu\|_{H^s} \le \mathcal{M}|f|_{C^s}\|u\|_{H^s},
+\end{equation}
+and if $\tilde{f}\in C^{s+1/2+\sigma}([0,d]),\tilde{u}\in H^{s+1/2}([0,d])$ then there exists a constant $\tilde{\mathcal{M}}=\tilde{\mathcal{M}}(s)$ such that
+\begin{equation}
+ \|\tilde{f}\tilde{u}\|_{H^{s+1/2}} \le \tilde{\mathcal{M}}|\tilde{f}|_{C^{s+1/2+\sigma}}\|\tilde{u}\|_{H^{s+1/2}}.   
+\end{equation}
+\end{lemma}
+\vspace{1 mm}
+\begin{proof}{[Lemma B.0.1]} Let $s\in \mathbb N_0:=\mathbb N\cup\{0\}, f\in C^s([0,d])$, and $u\in H^s([0,d]\times [0,a])$. We will first verify $(\text{B}.1)$. For this, the definition of our Sobolev norms and Leibniz's formula delivers
+\begin{align*}
+\|fu\|_{H^s}^2 &= \sum_{\ell=0}^s \sum_{m=0}^{\ell} \norm{\partial_z^{s-\ell}\partial_x^{\ell - m}(fu)}_{L^2}^2 \\&=
+\sum_{\ell=0}^s \sum_{m=0}^{\ell}\norm{ \sum_{p=0}^{s-\ell}\sum_{q=0}^{\ell-m}\binom{s - \ell}{p}\binom{\ell - m}{q}\left[\partial_z^{s-\ell-p}\partial_x^{\ell-m-q}f\right]\Big[\partial_z^p\partial_x^{q}u\Big]}_{L^2}^2
+\end{align*}
+As $f\in C^s([0,d])$ only depends on the $x$--component, the expression inside the norm is zero unless $s-\ell= p$ and we deduce
+\bes
+\sum_{p=0}^{s-\ell}\sum_{q=0}^{\ell-m}\binom{s - \ell}{p}\binom{\ell - m}{q}\left[\partial_z^{s-\ell-p}\partial_x^{\ell-m-q}f\right]\Big[\partial_z^p\partial_x^{q}u\Big]=\sum_{q=0}^{\ell-m}\binom{\ell - m}{q}\left[\partial_x^{\ell-m-q}f\right]\left[\partial_z^{s-\ell}\partial_x^{q}u\right].
+\ees
+Therefore
+\begin{align}
+\|fu\|_{H^s}^2 &= \sum_{\ell=0}^s \sum_{m=0}^{\ell}\norm{\sum_{q=0}^{\ell-m}\binom{\ell - m}{q}\left[\partial_x^{\ell-m-q}f\right]\left[\partial_z^{s-\ell}\partial_x^{q}u\right]}_{L^2}^2 \nonumber\\&\leq 
+\sum_{\ell=0}^s \sum_{m=0}^{\ell}\sum_{q=0}^{\ell-m}\binom{\ell - m}{q}\left|\partial_x^{\ell-m-q}f\right|_{L^{\infty}}^2 \norm{\partial_z^{s-\ell}\partial_x^{q}u}_{L^2}^2 \nonumber\\& \leq
+\sum_{\ell=0}^s \sum_{m=0}^{\ell}\sum_{q=0}^{\ell-m}\binom{\ell - m}{q} \left|f\right|_{C^s}^2 \norm{u}_{H^s}^2.
+\end{align}
+By the binomial theorem we may observe
+\bes
+\sum_{q=0}^{\ell-m}\binom{\ell - m}{q}= 2^{\ell-m}.
+\ees
+Inserting the above expression into $(\text{B}.3)$ and repeatedly applying the definition of the geometric series gives
+\begin{align*}
+\|fu\|_{H^s}^2 & \leq 
+\sum_{\ell=0}^s \sum_{m=0}^{\ell} 2^{\ell-m}\left|f\right|_{C^s}^2 \norm{u}_{H^s}^2 \\&=
+\sum_{\ell=0}^s 2^{\ell} \sum_{m=0}^{\ell} 2^{-m}\left|f\right|_{C^s}^2 \norm{u}_{H^s}^2 \\& =
+\sum_{\ell=0}^s 2^{\ell}\left(2-2^{-m}\right)\left|f\right|_{C^s}^2 \norm{u}_{H^s}^2\\&\leq
+\sum_{\ell=0}^s 2^{\ell+1}\left|f\right|_{C^s}^2 \norm{u}_{H^s}^2 \\&=
+\left(2^{s+2}-2\right)\left|f\right|_{C^s}^2 \norm{u}_{H^s}^2,
+\end{align*}
+and the inequality $(\text{B}.1)$ follows by taking the square root.
+
+Next, we follow \cite{NichollsReitich99} to verify $(\text{B}.2)$. Suppose $s=\rho$ for $0<\rho < 1$ and $\Omega\subseteq \mathbb R^n$. Then a norm in $H^{\rho}(\Omega)$ that is equivalent to the usual Sobolev space norm is defined as
+\begin{equation}
+\|\tilde{u}\|_{H^{\rho}}^2 := \|\tilde{u}\|_{L^2}^2 +
+\int_{\Omega} \int_{\Omega}\frac{|\tilde{u}(x)-\tilde{u}(z)|^2}{|e^{ix}-e^{iz}|^{2\rho + n}}\diff x \diff z.
+\end{equation}
+The above definition is a fractional order Sobolev space known as the Sobolev--Slobodeckij space. To establish $(\text{B}.2)$ we start with the case $s=0$ and evaluate $(\text{B}.4)$ with $\rho = 1/2$ 
+\vspace{-3mm}
+\begin{align}
+\begin{split}
+ \|\tilde{f}\tilde{u}\|_{H^{1/2}}^2 &= \|\tilde{f}\tilde{u}\|_{L^2}^2 + \int_{\Omega} \int_{\Omega}\frac{|\tilde{f}(x)\tilde{u}(x)-\tilde{f}(z)\tilde{u}(z)|^2}{|e^{ix}-e^{iz}|^{n+1}}\diff x \diff z\\& \le
+|\tilde{f}|_{L^{\infty}}^2\|\tilde{u}\|_{L^2}^2 +
+2\int_{\Omega} \int_{\Omega} \frac{|\tilde{f}(x)-\tilde{f}(z)|^2}{|e^{ix}-e^{iz}|^{n+1}}|\tilde{u}(x)|^2\diff x \diff z \\&\qquad+
+2\int_{\Omega} \int_{\Omega}|\tilde{f}(z)|^2 \frac{|\tilde{u}(x)-\tilde{u}(z)|^2}{|e^{ix}-e^{iz}|^{n+1}}\diff x \diff z,
+\end{split}
+\end{align}
+where it is clear that the first and third terms in $(\text{B}.5)$ can be grouped together and bounded 
+\bes
+|\tilde{f}|_{L^{\infty}}^2\|\tilde{u}\|_{L^2}^2 + 2\int_{\Omega} \int_{\Omega}|\tilde{f}(z)|^2 \frac{|\tilde{u}(x)-\tilde{u}(z)|^2}{|e^{ix}-e^{iz}|^{n+1}}\diff x \diff z \leq C|\tilde{f}|_{L^{\infty}}^2\|\tilde{u}\|_{H^{1/2}}^2.
+\ees
+To bound the second term in $(\text{B}.5)$ we observe
+\begin{align}
+\begin{split}
+2\int_{\Omega} \int_{\Omega} &\frac{|\tilde{f}(x)-\tilde{f}(z)|^2}{|e^{ix}-e^{iz}|^{n+1}}|\tilde{u}(x)|^2\diff x \diff z \\&\le 2
+|\tilde{f}|_{C^{1/2+\sigma}}^2 \int_{\Omega} \int_{\Omega}
+\frac{|x-z|^{1+2\sigma}}{|e^{ix}-e^{iz}|^{n+1}}|\tilde{u}(x)|^2\diff x \diff z \\&\le
+C|\tilde{f}|_{C^{1/2+\sigma}}^2 \|\tilde{u}\|_{L^2}^2,
+\end{split}
+\end{align}
+so that $(\text{B}.5)$ and $(\text{B}.6)$ establish the inequality $(\text{B}.2)$ in the case $s=0$
+$$ \|\tilde{f}\tilde{u}\|_{H^{1/2}} \leq  \tilde{\mathcal{M}}(s)|\tilde{f}|_{C^{1/2+\sigma}}\|\tilde{u}\|_{H^{1/2}}.$$
+In general, for $s>0$ we have
+\begin{equation}
+\|\tilde{u}\|_{H^{s+1/2}}^2 = \|\tilde{u}\|_{H^s}^2 + \|\partial_x^s \tilde{u}\|_{H^{1/2}}^2,
+\end{equation}
+and from $(\text{B}.1)$
+\begin{equation}
+\|\tilde{f}\tilde{u}\|_{H^s} \le \tilde{\mathcal{M}}(s)|\tilde{f}|_{C^s}\|\tilde{u}\|_{H^s}.
+\end{equation}
+For $s>0$, the regularity of $\tilde{f}\in C^{s+1/2+\sigma}(\Omega)$ and the estimates $(\text{B}.5)$ and $(\text{B}.6)$ imply
+\begin{equation}
+\|\partial_x^s (\tilde{f}\tilde{u})\|_{H^{1/2}} \le 
+\tilde{\mathcal{M}}(s)|\tilde{f}|_{C^{s+1/2+\sigma}}\|\tilde{u}\|_{H^{s+1/2}}.
+\end{equation}
+Finally, the equation $(\text{B}.7)$ and estimates $(\text{B}.8)$ and $(\text{B}.9)$ deliver 
+$$
+\|\tilde{f}\tilde{u}\|_{H^{s+1/2}}^2 = \|\tilde{f}\tilde{u}\|_{H^s}^2 + \|\partial_x^s (\tilde{f}\tilde{u})\|_{H^{1/2}}^2\leq \tilde{\mathcal{M}}(s)|\tilde{f}|_{C^{s+1/2+\sigma}}^2\|\tilde{u}\|_{H^{s+1/2}}^2,$$
+which is the required estimate for $s>0$. 
+\end{proof}
+
+
+\vskip 0.1in
+\begin{theorem}[{Elliptic Estimate}] Given an integer $s\ge 0$, if $F\in H^s([0,d])\times [0,a]),$ $\zeta^u \in H^{s+3/2}([0,d]),$ $P\in H^{s+1/2}([0,d])$, then there exists a unique solution $u\in H^{s+2}([0,d])\times [0,a])$ of
+\begin{subequations}
+\begin{align}
+\Delta u(x,z) +2i\underline{\alpha}\partial_{x}u(x,z)+(\underline{\gamma}^u)^2u(x,z)&=F(x,z), && \text{$0<z<a$},\\
+u(x,0)&=\zeta^u(x,0), && \text{at $z=0$},\\
+u(x+d,z)&=u(x,z),\\
+\partial_z u(x,a)-T_0^u[u(x,a)] &= P(x), && \text{at $z=a$},
+\end{align}
+\end{subequations}
+satisfying 
+\begin{equation}\|u\|_{H^{s+2}}\le C_e\{\|F\|_{H^{s}}+\|\zeta^u\|_{H^{s+3/2}}+\|P\|_{H^{s+1/2}}  \}, \end{equation}
+for some constant $C_e = C_e(s) > 0$.
+\end{theorem}
+\vspace{1 mm}
+\begin{proof}{[Lemma B.0.2]} Following \cite{HongNicholls20}, we let $\tilde{\zeta}^u=[-\partial_zu]_{z=0}$ where we define the DNO
+\bes
+G:(\zeta^u,P,F)\to \tilde{\zeta}^u, \quad G[\zeta^u,P,F]=G^{(0)}[\zeta^u] + G^{(a)}[P] + G^{([0,a])}[F].
+\ees
+With these, we will obtain the estimates
+\begin{subequations}
+\begin{align}
+\norm{G^{(0)}[\zeta^u]}_{H^{s+1/2}}&\leq C_{G^{(0)}}\norm{\zeta^u}_{H^{s+3/2}},\\
+\norm{G^{(a)}[P]}_{H^{s+1/2}}&\leq C_{G^{(a)}}\norm{P}_{H^{s+1/2}},\\
+\norm{G^{([0,a])}[F]}_{H^{s+1/2}}&\leq C_{G^{([0,a])}}\norm{F}_{H^{s}}.
+\end{align}
+\end{subequations}
+As in $\S 2.11$, we posit the expansions
+\bes
+\{u,F\}(x,z)=\sum_{p=-\infty}^{\infty}\{\hat{u}_{p},\hat{F}_p\}(z)e^{i\tilde{p} x},\quad \{\zeta^u,P\}(x)=\sum_{p=-\infty}^{\infty}\{\hat{\zeta}_p^u,\hat{P}_{p}\}e^{i\tilde{p} x},
+\ees
+into $(\text{B}.10)$ which delivers the two--point boundary value problem
+\begin{align*}
+\partial_z^2\hat{u}_{p}(z)+\left((\underline{\gamma}_p^u)^2-\tilde{p}^2-2\underline{\alpha}\tilde{p}\right)\hat{u}_{p}(z)&=\hat{F}_{p}(z),&&\text{$0<z<a$},\\
+\hat{u}_{p}(0)&=\hat{\zeta}_{p}^u,&& \text{at $z=0$},\\
+\partial_z \left[\hat{u}_{p}(a)\right] - (i\ugamma_p^u)[\hat{u}_{p}(a)]&=\hat{P}_{p},&& \text{at $z=a$},
+\end{align*}
+where
+\bes
+\ugamma_p^u = \begin{cases} 
+      (\ugamma_p^u)':=\sqrt{(\uk^u)^2-\ualpha_p^2},  & \ualpha_p^2 < (\uk^u)^2, \\
+      0, & \ualpha_p^2 = (\uk^u)^2, \\
+      i(\ugamma_p^u)'':=i\sqrt{\ualpha_p^2-(\uk^u)^2}, & \ualpha_p^2 > (\uk^u)^2,
+   \end{cases} \quad (\ugamma_p^u)',(\ugamma_p^u)''\in\mathbb R,\quad (\ugamma_p^u)',(\ugamma_p^u)''>0.
+\ees
+The primed notation denotes $'$ as the real part and $''$ as the imaginary part. 
+Observing
+\begin{align*}
+(\ugamma_p^u)^2-\tilde{p}^2-2\ualpha\tilde{p}&=
+\ualpha^2 + (\ugamma_p^u)^2 - (\ualpha+\tilde{p})^2 := 
+(\uk^u)^2 - \ualpha_p^2 = (\ugamma_p^u)^2,
+\end{align*}
+delivers
+
+\begin{align*}
+\partial_z^2\hat{u}_{p}(z)+(\underline{\gamma}_p^u)^2\hat{u}_{p}(z)&=\hat{F}_{p}(z),&&\text{$0<z<a$},\\
+\hat{u}_{p}(0)&=\hat{\zeta}_{p}^u,&& \text{at $z=0$},\\
+\partial_z \left[\hat{u}_{p}(a)\right] - (i\ugamma_p^u)[\hat{u}_{p}(a)]&=\hat{P}_{p},&& \text{at $z=a$}.
+\end{align*}
+We now consider a function $\Phi_0(z;p)$ satisfying
+\begin{align*}
+\partial_z^2\Phi_0(z;p)+(\underline{\gamma}_p^u)^2\Phi_0(z;p)&=0,&&\text{$0<z<a$},\\
+\Phi_0(0;p)&=1,&& \text{at $z=0$},\\
+\partial_z \Phi_0(a;p) - (i\ugamma_p^u)\Phi_0(a;p)&=0,&& \text{at $z=a$},
+\end{align*}
+so that the solution of
+\begin{align*}
+\partial_z^2\hat{u}_{p}(z)+(\underline{\gamma}_p^u)^2\hat{u}_{p}(z)&=0,&&\text{$0<z<a$},\\
+\hat{u}_{p}(0)&=\hat{\zeta}_{p}^u,&& \text{at $z=0$},\\
+\partial_z \left[\hat{u}_{p}(a)\right] - (i\ugamma_p^u)[\hat{u}_{p}(a)]&=0,&& \text{at $z=a$},
+\end{align*}
+is 
+\bes
+\hat{u}_p(z) = \hat{\zeta}_{p}^u\Phi_0(z;p).
+\ees
+Similarly, we consider a function $\Phi_a(z;p)$ satisfying
+\begin{align*}
+\partial_z^2\Phi_a(z;p)+(\underline{\gamma}_p^u)^2\Phi_a(z;p)&=0,&&\text{$0<z<a$},\\
+\Phi_a(0;p)&=0,&& \text{at $z=0$},\\
+\partial_z \Phi_a(a;p) - (i\ugamma_p^u)\Phi_a(a;p)&=1,&& \text{at $z=a$},
+\end{align*}
+so that the solution of
+\begin{align*}
+\partial_z^2\hat{u}_{p}(z)+(\underline{\gamma}_p^u)^2\hat{u}_{p}(z)&=0,&&\text{$0<z<a$},\\
+\hat{u}_{p}(0)&=0,&& \text{at $z=0$},\\
+\partial_z \left[\hat{u}_{p}(a)\right] - (i\ugamma_p^u)[\hat{u}_{p}(a)]&=\hat{P}_{p},&& \text{at $z=a$},
+\end{align*}
+is 
+\bes
+\hat{u}_p(z) = \hat{P}_{p}\Phi_a(z;p).
+\ees
+With these, the unique solution of the two--point boundary value problem is given by
+\be
+\hat{u}_p(z)=\hat{\zeta}_p^u\Phi_0(z;p)+\hat{P}_pe^{i\ugamma_p^ua}\Phi_a(z;p) - I_0[\hat{F}_p](z) - I_a[\hat{F}_p](z),
+\ee
+where one can readily verify that
+\bes
+\Phi_0(z;p)=e^{i\ugamma_p^uz}:= \begin{cases} 
+      e^{i(\ugamma_p^u)'z}, & \ualpha_p^2 < (\uk^u)^2, \\
+      1, & \ualpha_p^2 = (\uk^u)^2, \\
+      e^{-(\ugamma_p^u)''z}, & \ualpha_p^2 > (\uk^u)^2,
+   \end{cases}
+\ees
+and
+\bes
+\Phi_a(z;p)=\frac{\sinh(\ugamma_p^uz)}{\ugamma_p^u}:= \begin{cases} 
+      \frac{\sin\left((\ugamma_p^u)'z\right)}{(\ugamma_p^u)'}, & \ualpha_p^2 < (\uk^u)^2, \\
+      z, & \ualpha_p^2 = (\uk^u)^2, \\
+      \frac{\sinh\left((\ugamma_p^u)''z\right)}{(\ugamma_p^u)''}, & \ualpha_p^2 > (\uk^u)^2,
+   \end{cases}
+\ees
+and
+\begin{align*}
+I_0[\hat{F}_p](z)&:=\int_0^z \Phi_0(z;p) \Phi_a(s;p) \hat{F}_p(s)\diff s,\\
+I_a[\hat{F}_p](z)&:=\int_z^a \Phi_0(s;p) \Phi_a(z;p) \hat{F}_p(s)\diff s.
+\end{align*}
+By the Leibniz integral rule
+\begin{align*}
+\partial_zI_0[\hat{F}_p](z)&=\Phi_0(z;p) \Phi_a(z;p) \hat{F}_p(z) + \int_0^z \left(\partial_z\Phi_0(z;p)\right) \Phi_a(s;p) \hat{F}_p(s)\diff s,\\
+\partial_zI_a[\hat{F}_p](z)&=-\Phi_0(z;p) \Phi_a(z;p) \hat{F}_p(z) + \int_z^a \Phi_0(s;p) \left(\partial_z\Phi_a(z;p)\right) \hat{F}_p(s)\diff s.
+\end{align*}
+Adding the two expressions above and substituting the result into $(\text{B}.13)$ gives
+\be
+\partial_z\hat{u}_p(z)=\hat{\zeta}_p^u\partial_z\Phi_0(z;p)+\hat{P}_pe^{i\ugamma_p^ua}\partial_z\Phi_a(z;p) - \tilde{I}_0[\hat{F}_p](z) - \tilde{I}_a[\hat{F}_p](z),
+\ee
+where
+\begin{align*}
+\tilde{I}_0[\hat{F}_p](z)&:=\int_0^z \left(\partial_z\Phi_0(z;p)\right) \Phi_a(s;p) \hat{F}_p(s)\diff s,\\
+\tilde{I}_a[\hat{F}_p](z)&:=\int_z^a \Phi_0(s;p) \left(\partial_z\Phi_a(z;p)\right) \hat{F}_p(s)\diff s.
+\end{align*}
+Evaluating $(\text{B.14})$ at $z=0$ and multiplying by negative one yields
+\begin{align*}
+-\partial_z\hat{u}_p(0)&=-\hat{\zeta}_p^u\partial_z\Phi_0(0;p)-\hat{P}_pe^{i\ugamma_p^ua}\partial_z\Phi_a(0;p) + \tilde{I}_0[\hat{F}_p](0) + \tilde{I}_a[\hat{F}_p](0)\\&=
+-\hat{\zeta}_p^u(i\ugamma_p^u) - \hat{P}_pe^{i\ugamma_p^ua} + \int_0^a e^{i\ugamma_p^us} \hat{F}_p(s)\diff s.
+\end{align*}
+From this, we deduce
+\bes
+G^{(0)}[\zeta^u] = - \sump \big[\partial_z\Phi_0(0;p)\big] \hat{\zeta}_p^ue^{i\tilde{p}x} = \sump (-i\ugamma_p^u)\hat{\zeta}_p^ue^{i\tilde{p}x},
+\ees
+and
+\bes
+G^{(a)}[P] = - \sump \big[e^{i\ugamma_p^u a}\partial_z\Phi_a(0;p)\big] \hat{P}_pe^{i\tilde{p}x} = \sump (-e^{i\ugamma_p^u a})\hat{P}_pe^{i\tilde{p}x},
+\ees
+and
+\bes
+G^{([0,a])}[F] = \sump \int_0^a \left(e^{i\ugamma_p^u s}\hat{F}_p(s)\diff s\right)e^{i\tilde{p}x}.
+\ees
+With these, we use our Sobolev norms in $\S 2.7$ and follow the proof of Lemma $2.8.2$ to estimate
+\begin{align*}
+\norm{G^{(0)}[\zeta^u]}_{H^{s+1/2}}^2&=\sum_{p=-\infty}^{\infty}\left|(i\ugamma_p^u)\hat{\zeta}_p^u\right|^2\langle \tilde{p} \rangle^{2(s+1/2)} \\& \leq
+C_{G^{(0)}}\sum_{p=-\infty}^{\infty}\left|\hat{\zeta}_p^u\right|^2\langle \tilde{p} \rangle^{2(s+3/2)} \\&=
+C_{G^{(0)}}\norm{\zeta^u}_{H^{s+3/2}}^2.
+\end{align*}
+and
+\begin{align*}
+\norm{G^{(a)}[P]}_{H^{s+1/2}}^2&= \sum_{p=-\infty}^{\infty}\left|\left(e^{i\ugamma_p^u a}\right)\hat{P}_p\right|^2\langle \tilde{p} \rangle^{2(s+1/2)} \\&\leq
+C_{G^{(a)}}\sum_{p=-\infty}^{\infty}\left|\hat{P}_p\right|^2\langle \tilde{p} \rangle^{2(s+1/2)} \\&=
+C_{G^{(a)}}\norm{P}_{H^{s+1/2}}^2.
+\end{align*}
+We then apply the Cauchy--Schwarz inequality to estimate
+\begin{align*}
+\norm{G^{([0,a])}[F]}_{H^{s+1/2}}^2&= \sum_{p=-\infty}^{\infty}\left|\int_0^a e^{i\ugamma_p^u s}\hat{F}_p(s)\diff s\right|^2\langle \tilde{p} \rangle^{2(s+1/2)}  \\&\leq
+\sum_{p=-\infty}^{\infty}\int_0^a \left|e^{i\ugamma_p^u s}\right|^2\diff s \int_0^a \left| \hat{F}_p(s)\right|^2\diff s~\langle \tilde{p} \rangle^{2(s+1/2)}.
+\end{align*}
+By the definition of $\Phi_0(s;p)$ the middle term becomes
+\bes
+\int_0^a \left|e^{i\ugamma_p^u s}\right|^2\diff s =\begin{cases} 
+      a, & \ualpha_p^2 < (\uk^u)^2, \\
+      a, & \ualpha_p^2 = (\uk^u)^2, \\
+     \int_0^a e^{-2(\ugamma_p^u)''s}\diff s , & \ualpha_p^2 > (\uk^u)^2,
+   \end{cases}
+\ees
+where
+
+\bes
+\int_0^a e^{-2(\ugamma_p^u)''s} \diff s =\frac{1}{2(\ugamma_p^u)''}\left(1-e^{-2(\ugamma_p^u)''a}\right)\leq \frac{1}{2(\ugamma_p^u)''}.
+\ees
+By defining for $q\in\{u,w\}$
+\be
+\mathcal{\uU}^q:=\{p\in\mathbb Z ~|~ \ualpha_p^2 \leq (\uk^q)^2\},\quad
+\ugamma_p^q:= \begin{cases} 
+      \sqrt{(\uk^q)^2-\ualpha_p^2}, & p\in\mathcal{\uU}^q, \\
+      i\sqrt{\ualpha_p^2-(\uk^q)^2}, & p\not\in\mathcal{\uU}^q,
+   \end{cases}
+\ee
+the third estimate follows from the bounds
+\begin{align*}
+\norm{G^{([0,a])}[F]}_{H^{s+1/2}}^2 &\leq \sum_{p=-\infty}^{\infty}\int_0^a \left|e^{i\ugamma_p^u s}\right|^2\diff s \int_0^a \left| \hat{F}_p(s)\right|^2\diff s~\langle \tilde{p} \rangle^{2(s+1/2)} \\& \leq
+\sum_{p\in \mathcal{\uU}^u} a\langle \tilde{p} \rangle^{2(s+1/2)} \Norm{\hat{F}_p}{L^2([0,a])}^2 + \sum_{p\not\in \mathcal{\uU}^u}\frac{\langle \tilde{p} \rangle^{2(s+1/2)}}{2(\ugamma_p^u)''}\Norm{\hat{F}_p}{L^2([0,a])}^2
+\\& \leq
+C\sum_{p\in \mathcal{\uU}^u}\langle \tilde{p} \rangle^{2s}\Norm{\hat{F}_p}{L^2([0,a])}^2 + \tilde{C}\sum_{p\not\in \mathcal{\uU}^u}\langle \tilde{p} \rangle^{2s}\Norm{\hat{F}_p}{L^2([0,a])}^2 \\&\leq
+C_{G^{([0,a])}}\sum_{p=-\infty}^{\infty}\langle\tilde{p} \rangle^{2s}\Norm{\hat{F}_p}{L^2([0,a])}^2, \quad C_{G^{([0,a])}}=\max\left\{a\langle\tilde{p} \rangle,1/2\right\}
+\\&= C_{G^{([0,a])}}\norm{F}_{H^{s}}^2,
+\end{align*}
+which validates $(\text{B}.12)$. These imply
+\bes
+\|u\|_{H^{s+2}}\le C_e\{\|F\|_{H^{s}}+\|\zeta^u\|_{H^{s+3/2}}+\|P\|_{H^{s+1/2}}  \},
+\ees
+where
+\bes
+C_e := \max\big\{C_{G^{(0)}},C_{G^{(a)}}, C_{G^{([0,a])}}\big\}.
+\ees
+\end{proof}
+
+
+\vskip 0.1in
+\begin{lemma}[{Translation Property}]
+Given an integer $s\ge 0$, if $F\in H^s([0,d])\times [0,a])$, then $(a-z)F \in$ $H^s([0,d])\times [0,a])$ and there exists a positive constant $Z_a = Z_a(s)$ such that
+$$\|(a-z)F\|_{H^s} \le Z_a \|F\|_{H^s}.$$
+\end{lemma}
+\vskip 0.1in
+\begin{proof}{[Lemma B.0.3]}
+As $(a-z)$ is a constant, it is clear that $(a-z)F \in$ $H^s([0,d])\times [0,a])$. The required estimate then follows from applying Lemma $\text{B}.0.1$.
+
+\end{proof}

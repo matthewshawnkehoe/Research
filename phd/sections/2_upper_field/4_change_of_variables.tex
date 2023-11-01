@@ -1,0 +1,53 @@
+% MSK 04/26/22 - NOT IN USE!
+
+\section{Change of Variables}
+\label{intro:change_of_variables}
+We now present a fundamental step in our Boundary Perturbation algorithm. One of the primary objectives of this chapter is to show that both the upper field and the upper layer DNO are analytic with respect to two small parameters introduced in $\S 2.5$ and $\S 2.6$. In order to do this, we first perform a domain-flattening change of variables (known as $\sigma$--coordinates in oceanography \cite{Phillips57} and the C--method in the dynamical theory of gratings \cite{CDCM82,CMR80}). We will present the theory in Cartesian coordinates and will later state the effects on the Helmholtz equation and the overall impact on our governing equations $(2.18)$.
+\newline
+\\
+We begin by considering the doubly--perturbed domain
+\begin{equation}
+S_{L,U}:=\{L(x)<z<U(x)\}=\{\overline{\ell}+\ell(x)<z<\overline{u}+u(x)\},    
+\end{equation}
+where the change of variables 
+\begin{equation}
+    x'=x,\quad z'=\overline{\ell}\left(\frac{U-z}{U-L}\right)+\overline{u}\left(\frac{z-L}{U-L}\right),
+\end{equation}
+maps $S_{L,U}$ to $S_{\overline{\ell},\overline{u}}$. As discussed in Chapter $1$, the variables $u$ and $U$ both refer to the upper boundary while $\ell$ and $L$ reference the lower boundary. In the upper layer, the upper boundary is the artificial boundary at $\{z=a\}$ while the lower boundary is the surface $z=g(x)$. Defining the height of the layer to be
+$$\overline{h}:=\overline{u}-\overline{\ell},$$
+and using the formulas for $L$ and $U$, we find
+
+$$\left(1+\frac{u(x)-\ell(x)}{\overline{h}}\right)z'= z-\left(\frac{\overline{u}\ell(x)-\overline{\ell}u(x)}{\overline{h}}\right), $$
+or
+$$C(x)z'=z-D(x),$$
+where
+$$C(x):=1+\frac{u(x)-\ell(x)}{\overline{h}},\quad D(x):=\frac{\overline{u}\ell(x)-\overline{\ell} u(x)}{\overline{h}}.$$
+Recalling our artificial boundary conditions, we know that the constants in the upper field are
+$$\ell=g, \quad u = 0,\quad \overline{u}=a,\quad\overline{h}=\overline{u}-\overline{\ell}=a-0=a.$$
+Similarly, we will later see that the constants in the lower field are
+$$\ell=0, \quad w = g,\quad \overline{w}=0,\quad\overline{\ell}=-b.$$
+For a function $v=v(x,z)$ which is transformed to
+$$u=u(x',z')=v(x(x',z'),z(x',z')), \quad v=v(x,z)=u(x'(x,z),z'(x,z)),$$
+we apply the chain rule
+$$\frac{\partial v}{\partial x}=\frac{\partial u}{\partial x'}\frac{\partial x'}{\partial x}+\frac{\partial u}{\partial z'}\frac{\partial z'}{\partial x},\quad  \frac{\partial v}{\partial z}=\frac{\partial u}{\partial x'}\frac{\partial x'}{\partial z}+\frac{\partial u}{\partial z'}\frac{\partial z'}{\partial z}.$$
+Then
+$$\frac{\partial x'}{\partial x}=1,\quad \frac{\partial x'}{\partial z}=0,\quad \frac{\partial z'}{\partial z}=\frac 1C,$$
+where differentiating $Cz'=z-D$ with respect to $x$ yields
+$$\left(\partial_x C\right)z'+C\left(\frac{\partial z'}{\partial x}\right)=-\left(\partial_x D\right),$$
+and
+$$\frac{\partial z'}{\partial x}=-\left(\frac{\left(\partial_x C\right)z'+\left(\partial_x D\right)}{C}\right)=-\frac EC,$$
+We define
+$$E(x,z'):=\left(\partial_x C\right)z'+\left(\partial_x D\right),$$
+and observe that
+$$\partial_x C=\frac{\partial_x u - \partial_x \ell}{\overline{h}},\quad \partial_x D=\frac{\overline{u}\partial_x \ell - \overline{\ell}\partial_x u}{\overline{h}}.   $$
+This implies
+$$E=\frac{(\partial_x u - \partial_x \ell)z'+\overline{u}\partial_x \ell - \overline{\ell}\partial_x u}{\overline{h}}=(\partial_x u)Z_L + (\partial_x\ell)Z_U,$$
+for the definitions
+$$Z_L:=\frac{z'-\overline{\ell}}{\overline{h}},\quad Z_U:=\frac{\overline{u}-z'}{\overline{h}}.$$
+We will later realize that it is more convenient to express our differentiation rules when premultiplied by $C$ (either $C(x)$ or $C(x')$ as appropriate) by which we settle upon the following differentiation rules under the change of variables in $(2.21)$
+\begin{equation}C\partial_x = C\partial_{x'} - E\partial_{z'},\quad C\partial_z = \partial_{z'}.\end{equation}
+To distinguish between changes in the upper and lower fields, we denote two different variables in the change of variables. The lower field transforms
+$v=v(x,z)$ to
+$$w=w(x'',z'')=v(x(x'',z''),z(x'',z'')), \quad v=v(x,z)=w(x''(x,z),z''(x,z)),$$
+while the upper field transforms $v=v(x,z)$ to
+$$u=u(x',z')=v(x(x',z'),z(x',z')),\quad v=v(x,z)=u(x'(x,z),z'(x,z)).$$

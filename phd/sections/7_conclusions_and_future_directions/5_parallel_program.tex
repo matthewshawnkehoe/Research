@@ -1,0 +1,8 @@
+\section{Parallel Programming}
+\setcounter{section}{5}
+\label{Sec: Parallel Programming}
+
+In the case of multiple layered interfaces, we need to compute intermediate DNOs for up to $M$ layers. This will greatly increase the computational cost and execution time of our HOPS/AWE algorithm and we suspect that it will be necessary to introduce parallel programming techniques to offset the computational expense. In the context of the \gls{oe} method, preliminary work \cite{fang2015operator} has been completed in C\texttt{++} to parallelize the computation of Navier's equations \cite{BillinghamKing00,achenbach2012wave}. These techniques can be adapted to the TFE method through the choice of OpenMP \cite{chandra2001parallel}, MPI \cite{snir1998mpi}, or CUDA \cite{sanders2010cuda}.
+\newline
+\\
+\textbf{Predictions:} In two or three dimensions, our HOPS code is robust, efficient and has a runtime less than an hour. A local machine with an Intel Core i$5$ CPU, $8$GB of RAM, and Windows $10$ OS completed almost every simulation in this thesis in less than thirty minutes. However, with ten to one hundred layer configurations, we suspect that many simulations will take on the order of weeks or even months. As a result, it will be necessary to parallelize our Matlab code in a compiled programming language such as C or  C\texttt{++}.

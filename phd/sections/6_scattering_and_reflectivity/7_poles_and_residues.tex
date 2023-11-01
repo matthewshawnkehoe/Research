@@ -1,0 +1,74 @@
+\vspace{-18mm}
+\section{Poles and Residues}
+\label{Sec: Poles and Residues}
+
+We conclude our discussion of numerics by considering how the Taylor series in 
+$(\Eps,\delta)$ are summed and how they can be used to find poles and residues. As an example, we saw in $\S 2.12$ that the DNO,
+$G$, can be approximated through the Fourier--Chebyshev approach by
+\bes
+G(x;\Eps,\delta) \approx G^{N,M}(x;\Eps,\delta) 
+  := \sum_{n=0}^{N} \sum_{m=0}^{M} G_{n,m}(x) \Eps^n \delta^m,
+\ees
+where
+\bes
+\label{Eqn:G:NMNx}
+G_{n,m}(x) \approx G_{n,m}^{N_x}(x) 
+  := \sum_{p=-N_x/2}^{N_x/2-1} \hat{G}_{n,m,p} e^{i \tilde{p} x},
+\ees
+which, in turn, we can approximate the $\hat{G}_p(\Eps,\delta)$ by
+\bes
+\hat{G}_p^{N,M}(\Eps,\delta) 
+  := \sum_{n=0}^{N} \sum_{m=0}^{M} \hat{G}_{n,m,p} \Eps^n \delta^m.
+\ees
+The technique of Pad\'e approximation 
+\cite{BakerGravesMorris96} has been used with HOPS methods
+to great advantage in the past \cite{BrunoReitich93b,NichollsReitich00b}
+and we advocate its use here. Classically, this approach seeks to estimate
+the truncated Taylor series of a single variable
+\bes
+Q^N(\rho) := \sum_{n=0}^{N} Q_n \rho^n \approx Q(\rho),
+\ees
+by the rational function
+\bes
+[L/M](\rho) := \frac{a^L(\rho)}{b^M(\rho)}
+  = \frac{\sum_{\ell=0}^{L} a_{\ell} \rho^{\ell}}
+  {1 + \sum_{m=1}^{M} b_m \rho^m},
+\quad
+L+M=N,
+\ees
+and
+\bes
+[L/M](\rho) = Q^N(\rho) + \BigOh{\rho^{L+M+1}},
+\ees
+where well--known formulas for the coefficients $\{a_{\ell},b_m\}$
+can be found in \cite{BakerGravesMorris96}.
+Pad\'e approximation enjoys greatly enhanced convergence properties
+and we refer the interested reader to $\S2.2$ of Baker \& Graves--Morris
+\cite{BakerGravesMorris96} and the insightful calculations
+of $\S8.3$ of Bender \& Orszag \cite{BenderOrszag78} for a
+thorough discussion of the capabilities and limitations of
+Pad\'e approximants.
+
+In the current context of functions analytic with respect to two
+perturbation variables we utilize the polar coordinates
+\bes
+\Eps = \rho \cos(\theta),
+\quad
+\delta = \rho \sin(\theta),
+\ees
+and write the function
+\begin{align*}
+\hat{G}_p(\Eps,\delta) 
+  & = \sumn \summ \hat{G}_{n,m,p} \Eps^n \delta^m \\
+  & = \sumn \summ \left( \hat{G}_{n,m,p} \cos^n(\theta) \sin^m(\theta) \right) \rho^{n+m}.
+\end{align*}
+Letting $\ell = n + m$ and $s = m$ we can write this as
+\bes
+\hat{G}_p(\Eps,\delta) = \sum_{\ell=0}^{\infty} \left\{ \sum_{s=0}^{\ell} 
+    \hat{G}_{\ell-s,s,p} \cos^{\ell-s}(\theta) \sin^s(\theta) \right\}
+    \rho^{\ell}
+  =: \sum_{\ell=0}^{\infty} \tilde{G}_{\ell,p}(\theta) \rho^{\ell}.
+\ees
+We then select particular values of $\theta = \theta_j$ between $0$ and $2 \pi$
+and apply classical Pad\'e approximation on the resulting
+$\{ \tilde{G}_{\ell,p}(\theta_j) \}$ as a function of $\rho$ alone.

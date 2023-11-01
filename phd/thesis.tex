@@ -1,0 +1,241 @@
+% No need to change the first 4 lines of this file
+% Make 12 point font?
+%\documentclass[12pt]{uicthesi}
+\documentclass[twoside]{uicthesi}
+\input{sections/other/__preamble}
+\input{sections/other/__commands}
+
+% Used for norm
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+% Use for proofs
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+% Double tilde
+\usepackage{accents}
+\newcommand{\dbtilde}[1]{\accentset{\approx}{#1}}
+\newcommand{\vardbtilde}[1]{\tilde{\raisebox{0pt}[0.85\height]{$\tilde{#1}$}}}
+
+% Use Subfig package
+\usepackage{subfig}
+
+% Use Fancy Headers!
+\usepackage{fancyhdr}
+
+% Adjust later if you want to include more text 
+% per page
+\usepackage[a4paper,
+%            bindingoffset=0.25in,
+            left=1.25in,
+            right=1.25in,
+            top=1.25in,
+            bottom=1in,
+            footskip=.25in]{geometry}
+% Looks best with 1.3 spacing
+\setstretch{1.3}
+
+% Upward Greek letters
+\usepackage{upgreek}
+
+
+% Make clickable links
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage[dvipsnames]{xcolor}
+\usepackage[bookmarks]{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+    citecolor = Green
+}
+
+% Needed to make a definition
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+% Needed to make a remark
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+
+% Space Before/After Sections
+\usepackage{titlesec}
+\titlespacing*{\section}
+{0pt}{1.0ex plus .2ex}{1.0ex plus .2ex}
+% And make Section title larger
+\titleformat*{\section}{\large\bfseries}
+% TODO - Add back section underlining?
+
+% For Longtable across multiple pages
+\usepackage{longtable}
+
+% Single spacing inside table data
+\AtBeginEnvironment{tabular}{\singlespacing}% Single spacing in tabular environment
+
+% Code for upper field
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+% Add an appendix
+%\usepackage[toc,page]{appendix}
+\usepackage[titletoc]{appendix}
+
+% Make a fake section for the summary in the TOC
+\newcommand{\fakesection}[1]{%
+  \par\refstepcounter{section}% Increase section counter
+  \sectionmark{#1}% Add section mark (header)
+  \addcontentsline{toc}{section}{Summary}% Add section to ToC
+  % Add more content here, if needed.
+}
+
+% Make a fake section for the notations page
+\newcommand{\fakesectionfornotations}[1]{%
+  \par\refstepcounter{section}% Increase section counter
+  \sectionmark{#1}% Add section mark (header)
+  \addcontentsline{toc}{section}{Notations}% Add section to ToC
+  % Add more content here, if needed.
+}
+
+
+% Make a fake chapter for the Vita in the TOC
+\newcommand{\fakechapter}[1]{%
+  \par\refstepcounter{chapter}% Increase chapter counter
+  \chaptermark{#1}% Add section mark (header)
+  \addcontentsline{toc}{chapter}{~~Vita}% Add section to ToC
+  % Add more content here, if needed.
+  \thispagestyle{pageonbottom}
+}
+
+
+% Use algorithm packages
+\usepackage[section]{algorithm}
+\usepackage{algcompatible}
+\usepackage{algpseudocode}
+
+% Format "d" in integration
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\begin{document}
+
+% Default for Matlab code
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    % Make text smaller in scripts
+    basicstyle=\scriptsize,
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},
+    % Don't emphasize gamma!
+    emph=[1]{gamma,beta}, emphstyle=[1]\color{none},
+    % Emphasize parfor
+    emph=[3]{parfor}, emphstyle=[3]\color{blue},
+}
+
+% The title of the thesis
+\title{Joint Analyticity of the Transformed Field  and Dirichlet--Neumann Operator in Periodic Media}
+
+% Your full name
+\author{Matthew Kehoe}
+
+% Mention all degrees you hold currently
+\pdegrees{B.A. (Oakland University) 2010 \\
+M.S. (University of Michigan at Dearborn) 2015}
+
+% Probably no need to edit this
+\degree{Doctor of Philosophy in Mathematics (Applied Mathematics)}
+
+% Add your committee members, one per line, mentioning external universities
+% where relevant
+\committee{David Nicholls, Chair and Advisor \\
+Gerard Awanou\\
+Mimi Dai \\
+Jan Verschelde \\
+Thomas Royston, Bioengineering
+}
+% No need to make any changes to the next 10 lines
+\maketitle
+\copyrightpage
+% Do you really need the dedication page?
+%\input{sections/other/_1_dedication}
+\input{sections/other/_2_acknowledgement}
+\input{sections/other/_3_contribution_of_authors}
+\tableofcontents
+\phantomsection
+\let\cleardoublepage\clearpage
+%\listoftables
+%\listoffigures
+%\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\phantomsection
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\phantomsection
+\cleardoublepage
+\printglossary[type=\acronymtype,title=LIST OF ABBREVIATIONS,style=clong]
+% Include a notations section? Decided not to due to 2.7
+%\newpage
+%\phantomsection
+%\input{sections/other/_10_notations}
+\input{sections/other/_4_summary}
+
+% Show all acronyms
+\glsaddall
+
+% 01/08/2022: How can I fix this? Delete?
+%\addcontentsline{toc}{subsection}{List of Abbreviations}
+%\addcontentsline{toc}{subsection}{List of Figures}
+%s\addcontentsline{toc}{subsection}{List of Tables}
+%\addcontentsline{toc}{section}{Summary}
+% Add additional information to TOC
+%\addcontentsline{toc}{section}{List of Abbreviations}
+%\addcontentsline{toc}{section}{Summary}
+% This is where you write the paper.  I've included a sample chapter
+% below, to suggest a possible organization.  Just add references to the
+% rest of your paper here.\
+
+% I prefer onehalfspacing, make the decision later 
+%\begin{singlespacing}
+%\begin{flushleft}
+\input{sections/1_sample_chapter/0_index}
+\input{sections/2_upper_field/0_index}
+\input{sections/3_lower_field/0_index}
+\input{sections/4_boundary_conditions_domain_decomposition/0_index}
+\input{sections/5_method_of_maufactured_solutions/0_index}
+\input{sections/6_scattering_and_reflectivity/0_index}
+\input{sections/7_conclusions_and_future_directions/0_index}
+\input{sections/other/_6_appendix_a}
+\input{sections/other/_7_appendix_b}
+\input{sections/other/_8_appendix_c}
+\input{sections/other/_9_appendix_d}
+%\end{flushleft}
+%\end{singlespacing}
+
+% No need to make any changes to this file below this line.
+\newpage
+\phantomsection
+\bibformb
+%\bibliography{thesis}
+%\bibliography{nicholls}
+% MSK 2/22/2022 - Is the default spacing 1?
+\setstretch{1}
+\bibliography{nicholls}
+\newpage
+\input{sections/other/_5_vita}
+\end{document}

@@ -1,0 +1,38 @@
+\section{Transformed Field Expansions}
+\label{intro:transformed_field_expansions in lower field}
+
+As in the upper field, we have made two smallness assumptions:
+\begin{enumerate}
+\item Boundary Perturbation: $g(x) = \varepsilon f(x)$,
+  $\varepsilon \in \mathbb R,$ $\varepsilon \ll 1$,
+\item Frequency Perturbation: 
+  $\omega = (1 + \delta) \underline{\omega} 
+  = \underline{\omega} + \delta \underline{\omega}$,
+  $\delta \in \mathbb R$, $\delta \ll 1$.
+\end{enumerate}
+We now apply both of these assumptions and seek solutions of the form
+\begin{equation}w=w(x,z;\varepsilon,\delta)=\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}w_{n,m}(x,z)\varepsilon^n\delta^m, \end{equation}
+which we will show are strongly convergent in Theorems $3.7.1$ and $3.8.1$. Inserting these into $(3.15)$ produces the TFE recursions
+\begin{subequations}
+\begin{align}
+\Delta w_{n,m} +2i\underline{\alpha}\partial_{x}w_{n,m}+(\underline{\gamma}^w)^2w_{n,m}&=\tilde{Y}_{n,m}\left(x,z;f,w,\underline{\alpha},\underline{\gamma}^w\right), && \text{$-b<z<0$}, \\
+w_{n,m}(x,0)&=\zeta^w_{n,m}(x),&& \text{at $z=0$},\\
+w_{n,m}(x+d,z)&=w_{n,m}(x,z), \\
+\partial_z \left[w_{n,m}(x,-b)\right] - T_0^w[w_{n,m}(x,-b)]&=\tilde{Q}_{n,m}(x),&& \text{at $z=-b$}, 
+\end{align}
+\end{subequations}
+where
+\begin{align}
+%\begin{split}
+\tilde{Y}_{n,m}\left(x,z;f,w,\underline{\alpha},\underline{\gamma}^w\right)&=-\text{div}[A_1\nabla w_{n-1,m}]-\text{div}[A_2\nabla w_{n-2,m}]-B_1\nabla w_{n-1,m} 
+\nonumber\\&~~- B_2\nabla w_{n-2,m}-2i\underline{\alpha}\partial_xw_{n,m-1}-(\underline{\gamma}^w)^2w_{n,m-2}
+\nonumber\\&~~-2(\underline{\gamma}^w)^2w_{n,m-1}-2S_1i\underline{\alpha}\partial_xw_{n-1,m}-2S_1i\underline{\alpha}\partial_xw_{n-1,m-1}
+\\&~~-S_1(\underline{\gamma}^w)^2w_{n-1,m-2}-2S_1(\underline{\gamma}^w)^2w_{n-1,m-1}-S_1(\underline{\gamma}^w)^2w_{n-1,m}
+\nonumber\\&~~-2S_2i\underline{\alpha}\partial_xw_{n-2,m}-2S_2i\underline{\alpha}\partial_xw_{n-2,m-1}-S_2(\underline{\gamma}^w)^2w_{n-2,m-2}
+\nonumber\\&~~-2S_2(\underline{\gamma}^w)^2w_{n-2,m-1}-S_2(\underline{\gamma}^w)^2w_{n-2,m},\nonumber
+%\end{split}
+\end{align}
+and
+
+\begin{equation}\tilde{Q}_{n,m}(x)=\frac{f}{b} \sum_{r=0}^m T^w_{m-r}[w_{n-1,r}(x,-b)] + \sum_{r=0}^{m-1}T_{m-r}^w[w_{n,r}(x,-b)]. \end{equation}
+This is a method for computing the transformed corrections to the scattered field, $w_{n,m}$, with respect to both interfacial and frequency deformations. As stated in $\S 2.6$, a major advantage of the TFE recursions is that $(3.17)$ never takes derivatives of $w_{n,m}$ higher than second order. To make use of this advantage, we will once again turn to classical elliptic theory.

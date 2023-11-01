@@ -1,0 +1,59 @@
+\section{Fourier Multipliers and the Dirichlet--Neumann Operator}
+\label{intro:dno}
+In this section we examine the concept of a Fourier Multiplier and its relation to the DNO $\tilde{T}^u$ defined in $\S 1.8$ by $(1.32)$. Our goal is to give an explicit representation of the DNO $\tilde{T}^u$ and Transparent Boundary Condition, $(2.1\text{d})$, when we remove the phase.
+\newline
+\\
+We define a Fourier Multiplier, $m(D)$, as the operator with the property that
+$$m(D)\left[\psi(x)\right]:=\sum_{p=-\infty}^{\infty}m(p)\hat{\psi}_p e^{i\alpha_p x}.$$
+A classical derivative can be expressed as
+$$\partial_x \psi = \sum_{p=-\infty}^{\infty} (i\alpha_p)\hat{\psi}_p e^{i\alpha_p x} = (i\alpha_D)\psi,$$
+and similarly for the operator $\tilde{T}^u$
+$$\tilde{T}^u\left[\psi\right] = \sum_{p=-\infty}^{\infty} (i\gamma_p^u)\hat{\psi}_p e^{i\alpha_p x} = (i\gamma_D)\psi.$$
+Due to the linear growth of $\alpha_p$ and $\gamma_p^u$, it is easy to show that each maps the Sobolev Space $H^{s+1}$ to $H^s$. We recall our earlier definition of the DNO in $\S 1.8$ as
+\begin{align}
+\tilde{T}^u:\tilde{u}(x,a) \to \left(\partial_z \tilde{u}\right)(x,a),
+\end{align}
+where, above $z=a$,
+\begin{align}
+\tilde{u}(x,z)=\sum_{p=-\infty}^{\infty}\left(a_pe^{i\gamma_p^ua}\right)e^{i\alpha_px + i\gamma_p^u (z-a)}=\sum_{p=-\infty}^{\infty}\hat{\psi}_pe^{i\alpha_px + i\gamma_p^u (z-a)},
+\end{align}
+and
+\begin{align}
+\tilde{u}(x,a)= \sum_{p=-\infty}^{\infty}\hat{\psi}_pe^{i\alpha_px}=\psi(x),\quad \partial_z \tilde{u}(x,a)=\sum_{p=-\infty}^{\infty}(i\gamma_p^u)\hat{\psi}_pe^{i\alpha_px}.
+\end{align}
+We now define
+\begin{align}
+\alpha_p=\alpha + \left(\frac{2\pi}{d}\right)p :=\alpha+\tilde{p},\quad \tilde{p}:=\left(\frac{2\pi}{d}\right)p,
+\end{align}
+so that
+$$
+\psi(x)=\sum_{p=-\infty}^{\infty}\hat{\psi}_pe^{i(\alpha + \tilde{p})x}=
+e^{i\alpha x}\sum_{p=-\infty}^{\infty}\hat{\psi}_pe^{i\tilde{p} x}=e^{i\alpha x}\zeta^u(x),$$
+where
+$$\zeta^u(x):= \sum_{p=-\infty}^{\infty}\hat{\psi}_pe^{i\tilde{p} x}.$$
+Writing
+\begin{align*}
+\zeta^u(x+d)=e^{-i\alpha(x+d)}\psi(x+d)=\sum_{p=-\infty}^{\infty}\hat{\psi}_pe^{i\tilde{p} (x+d)}=
+\sum_{p=-\infty}^{\infty}\hat{\psi}_pe^{i\tilde{p} x}
+\end{align*}
+shows that $\zeta^u(x+d)=\zeta^u(x)$ and therefore $\zeta^u$ is $d$--periodic. As in $\S 2.2$, we perform the phase extraction
+\begin{align*}
+u(x,z):=e^{-i\alpha x}\tilde{u}(x,z),
+\end{align*}
+where, above $z=a$, equation $(2.7)$ delivers
+$$u(x,z)=e^{-i\alpha x}\tilde{u}(x,z)=\sum_{p=-\infty}^{\infty}\hat{\psi}_p e^{i\tilde{p}x+i\gamma_p^u(z-a)}.$$
+and, by equation $(2.8)$,
+\begin{align}
+u(x,a)=\sum_{p=-\infty}^{\infty}\hat{\psi}_pe^{i\tilde{p}x},\quad
+\partial_z u(x,a)=\sum_{p=-\infty}^{\infty}(i\gamma_p^u)\hat{\psi}_pe^{i\tilde{p}x}.
+\end{align}
+We then define the upper layer DNO without phase as
+\begin{align}
+T^u:u(x,a) \to \left(\partial_z u\right)(x,a),
+\end{align}
+so that by equation $(2.10)$
+\begin{align}
+T^u\left[u(x,a)\right]=T^u\Bigg[\sum_{p=-\infty}^{\infty}\hat{\psi}_pe^{i\tilde{p} x}\Bigg]=\sum_{p=-\infty}^{\infty}(i\gamma_p^u)\hat{\psi}_pe^{i\tilde{p} x}.
+\end{align}
+With this, we see that equations $(2.10)$ and $(2.12)$ satisfy the Transparent Boundary Condition
+\begin{equation}\partial_z u(x,a)-T^u[u(x,a)]=0. \end{equation}

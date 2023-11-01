@@ -1,0 +1,69 @@
+\section{Computational Complexity}
+\label{Sec: Computational Complexity}
+
+One of the fundamental reasons for developing our HOPS/AWE algorithm is its advantageous computational complexity for problems within its domain of applicability.
+In comparison with other classical methods, our HOPS/AWE approach has several advantages for computing quantities such as the Reflectivity Map, $R=R(\varepsilon,\delta)$. To demonstrate this we begin
+by fixing the problem of computing $R$ for $N_{\Eps}$ many values of 
+$\Eps$ and $N_{\delta}$ many values of $\delta$.
+
+In the case of computing the DNOs $G$ and $J$, we recall from $\S 2.11$ and $\S 3.10$ that our HOPS/AWE algorithm requires
+$N_x \times N_z$ unknowns at every perturbation order, $(n,m)$, corresponding to
+the $N_x$ equally--spaced gridpoints in the lateral direction and the $N_z + 1$ collocation points in the vertical dimension. In $\S 4.5$ we saw that we could write our scattering problem as $\bA(\Eps,\delta) \bV(\Eps,\delta) = \bR(\Eps,\delta)$ where
+\bes
+    \bA(\Eps,\delta)=\sumn \summ \bA_{n,m}\Eps^n\delta^m, \quad \bR(\Eps,\delta) = \sumn \summ \bR_{n,m}\Eps^{n}\delta^m,
+\ees
+and
+\bes
+\label{Eqn:Soln:Two_Param_Append}
+\bV(\Eps,\delta) = \sumn \summ \bV_{n,m}\Eps^{n}\delta^m.
+\ees
+At order $\mathcal{O}(\Eps^n,\delta^m)$ this becomes
+\begin{align}
+\begin{split}
+\bA_{0,0}\bV_{n,m}=&~\bR_{n,m}-\sum_{\ell=0}^{n-1}\bA_{n-\ell,0}\bV_{\ell,m}-\sum_{r=0}^{m-1}\bA_{0,m-r}\bV_{n,r}\\&
+-\sum_{\ell=0}^{n-1}\sum_{r=0}^{m-1}\bA_{n-\ell,m-r}\bV_{\ell,r}.
+\end{split}
+\end{align}
+A careful study of $(7.6)$
+reveals that the computational complexity of forming the
+right--hand side at order $(n,m)$ is
+\bes
+\BigOh{n m N_x \log(N_x) N_z \log(N_z)}.
+\ees
+Inverting the operator $\bA_{0,0}$ has complexity $\BigOh{N_x \log(N_x) N_z \log(N_z)}$
+so the full cost of computing the $\bV_{n,m}$, 
+$\{ 0 \leq n \leq N, 0 \leq m \leq M \}$, is
+\bes
+\BigOh{N^2 M^2 N_x \log(N_x) N_z \log(N_z)}.
+\ees
+Once these coefficients are recovered, the cost of summing the series in 
+$(\Eps,\delta)$ is minimal, provided it is done in an efficient manner 
+(e.g., by Horner's rule \cite{BurdenFaires,AtkinsonHan01}). Our algorithm then 
+requires an additional $\BigOh{N_{\Eps} N_{\delta}}$ steps to sum 
+over every value of $(\Eps,\delta)$, therefore the full cost of 
+computing the Reflectivity Map by our HOPS/AWE method is
+\be
+\BigOh{N^2 M^2 N_x \log(N_x) N_z \log(N_z) + N_{\Eps} N_{\delta}}.
+\ee
+In contrast, for a single $(\Eps,\delta)$ pair, a Boundary Integral Method solver with $N_x$ lateral
+gridpoints requires time proportional to $\BigOh{N_x^3}$ for Gaussian elimination
+to solve the resulting dense system of $N_x$ equations in $N_x$ unknowns
+\cite{BurdenFaires,AtkinsonHan01,ColtonKress13}. Applying this 
+$N_{\Eps} \times N_{\delta}$ times results in a total computational complexity of
+\be
+\BigOh{N_x^3 N_{\Eps} N_{\delta}}.
+\ee
+Thus, once $N_{\Eps}$ and $N_{\delta}$ become large, e.g.,
+
+\bes
+N_{\Eps} N_{\delta} > \frac{N^2 M^2 N_x \log(N_x) N_z \log(N_z)}{N_x^3},
+\ees
+our new algorithm becomes far more efficient. We speculate that the cost of $(7.7)$ could be reduced to
+\be
+\BigOh{N M \log(NM)N_x \log(N_x) N_z \log(N_z) + N_{\Eps} N_{\delta}},
+\ee
+provided that we develop a more efficient method of computing the $\bV_{n,m}$, 
+$\{ 0 \leq n \leq N, 0 \leq m \leq M \}$, such as reducing the problem space at every step. Alternative approaches to layered media problems have also been proposed by other authors \cite{bai2004reduction,chew2005fast}, including interpolation \cite{atkins2010fast} and Green's function \cite{konno2016fast}.
+\newline
+\\
+\textbf{Predictions:} The combination of implementing parallel programming techniques (through, e.g., OpenMP or CUDA) and reducing the problem space at every step will greatly enhance the speed and fidelity of our HOPS/AWE algorithm. Considering the natural advantage surface methods have over conventional methods, such as finite difference, finite element, and spectral element methods, we expect that our HOPS/AWE algorithm will be among the most competitive available for periodic layered media problems.

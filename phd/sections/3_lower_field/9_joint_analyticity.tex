@@ -1,0 +1,260 @@
+\section{Joint Analyticity of the Lower Field}
+\label{intro:joint analyticity of the lower field}
+
+\vskip 0.1in
+\begin{theorem}
+
+Given any integer $s\ge 0$, if $f\in C^{s+2}([0,d])$ and $\zeta^w_{n,m}\in H^{s+3/2}([0,d])$ such that
+\be
+\|\zeta^w_{n,m}\|_{H^{s+3/2}} \le K_{\zeta}B_{\zeta}^nD_{\zeta}^m, 
+\ee
+for constants $K_{\zeta},B_{\zeta},D_{\zeta} > 0$, then $w_{n,m}\in H^{s+2}([0,d]\times[-b,0])$ and
+\begin{equation}\|w_{n,m}\|_{H^{s+2}} \le KB^nD^m , \end{equation}
+for constants $K,B,D>0$.
+\end{theorem}
+\begin{flushleft}
+To establish this result we work by induction. The key estimate is encapsulated in the following lemma.
+\end{flushleft}
+\vskip 0.1in
+\begin{lemma} Given an integer $s\ge 0$, if $f\in C^{s+2}([0,d])$ and
+\begin{equation}\|w_{n,m}\|_{H^{s+2}} \le KB^nD^m, ~~\forall ~n\ge 0,~ m < \overline{m}, \end{equation}
+for constants $K,B,D>0$ then there exists a constant $\overline{C}>0$ such that
+\begin{align*}\max\big\{\|\tilde{Y}_{n, \overline{m}}\|_{H^s},& \|\tilde{Q}_{n, \overline{m}}\|_{H^{s+1/2}}\big\}   \le K \overline{C}\bigg\{B^nD^{\overline{m}-1}+B^nD^{\overline{m}-2} + |f|_{C^{s+2}}B^{n-1}D^{\overline{m}} ~+\\&\qquad
+|f|_{C^{s+2}}B^{n-1}D^{\overline{m}-1} +  |f|_{C^{s+2}}B^{n-1}D^{\overline{m}-2} +
+  |f|_{C^{s+2}}^2B^{n-2}D^{\overline{m}} ~+ \\&\qquad
+|f|_{C^{s+2}}^2B^{n-2}D^{\overline{m}-1} +
+|f|_{C^{s+2}}^2B^{n-2}D^{\overline{m}-2} \bigg\}.
+\end{align*}
+\end{lemma}
+\vskip 0.1in
+\begin{proof}{[Lemma 3.8.2]} We begin with $\tilde{Y}_{n,\overline{m}}$ and recall from $(3.18)$ that
+\begin{align}
+\tilde{Y}_{n,\overline{m}}\left(x,z;g,w,\underline{\alpha},\underline{\gamma}^w\right)&=-\text{div}[A_1\nabla w_{n-1,\overline{m}}]-\text{div}[A_2\nabla w_{n-2,\overline{m}}]-B_1\nabla w_{n-1,\overline{m}} 
+\nonumber\\&~~- B_2\nabla w_{n-2,\overline{m}}-2i\underline{\alpha}\partial_xw_{n,\overline{m}-1}-(\underline{\gamma}^w)^2w_{n,\overline{m}-2}
+\nonumber\\&~~-2(\underline{\gamma}^w)^2w_{n,\overline{m}-1}-2S_1i\underline{\alpha}\partial_xw_{n-1,\overline{m}}-2S_1i\underline{\alpha}\partial_xw_{n-1,\overline{m}-1}
+\\&~~-S_1(\underline{\gamma}^w)^2w_{n-1,\overline{m}-2}-2S_1(\underline{\gamma}^w)^2w_{n-1,\overline{m}-1}-S_1(\underline{\gamma}^w)^2w_{n-1,\overline{m}}
+\nonumber\\&~~-2S_2i\underline{\alpha}\partial_xw_{n-2,\overline{m}}-2S_2i\underline{\alpha}\partial_xw_{n-2,\overline{m}-1}-S_2(\underline{\gamma}^w)^2w_{n-2,\overline{m}-2}
+\nonumber\\&~~-2S_2(\underline{\gamma}^w)^2w_{n-2,\overline{m}-1}-S_2(\underline{\gamma}^w)^2w_{n-2,\overline{m}}.\nonumber
+\end{align}
+Then from $(3.6)$ we have
+\begin{align*}
+\|\tilde{Y}_{n,\overline{m}}\|_{H^{s}}^2&\le \|A_1^{xx}\partial_x w_{n-1,\overline{m}}\|_{H^{s+1}}^2 + \|A_1^{xz}\partial_z w_{n-1,\overline{m}}\|_{H^{s+1}}^2 + \|A_1^{zx}\partial_x w_{n-1,\overline{m}}\|_{H^{s+1}}^2 \\&+
+\|A_1^{zz}\partial_z w_{n-1,\overline{m}}\|_{H^{s+1}}^2 + \|A_2^{xx}\partial_x w_{n-2,\overline{m}}\|_{H^{s+1}}^2 + \|A_2^{xz}\partial_z w_{n-2,\overline{m}}\|_{H^{s+1}}^2 \\&+
+\|A_2^{zx}\partial_x w_{n-2,\overline{m}}\|_{H^{s+1}}^2 + \|A_2^{zz}\partial_z w_{n-2,\overline{m}}\|_{H^{s+1}}^2 + \|B_1^{x}\partial_x w_{n-1,\overline{m}}\|_{H^{s}}^2 \\&+
+\|B_1^{z}\partial_z w_{n-1,\overline{m}}\|_{H^{s}}^2 +
+\|B_2^{x}\partial_x w_{n-2,\overline{m}}\|_{H^{s}}^2 +
+\|B_2^{z}\partial_z w_{n-2,\overline{m}}\|_{H^{s}}^2 \\&+
+\|2i\underline{\alpha}\partial_xw_{n,\overline{m}-1}\|_{H^{s}}^2 +
+\|(\underline{\gamma}^w)^2w_{n,\overline{m}-2}\|_{H^{s}}^2 +
+\|2(\underline{\gamma}^w)^2w_{n,\overline{m}-1}\|_{H^{s}}^2 \\&+
+\|2S_1i\underline{\alpha}\partial_xw_{n-1,\overline{m}}\|_{H^{s}}^2 +
+\|2S_1i\underline{\alpha}\partial_xw_{n-1,\overline{m}-1}\|_{H^{s}}^2 +
+\|S_1(\underline{\gamma}^w)^2w_{n-1,\overline{m}-2}\|_{H^{s}}^2 \\&+
+\|2S_1(\underline{\gamma}^w)^2w_{n-1,\overline{m}-1}\|_{H^{s}}^2 +
+\|S_1(\underline{\gamma}^w)^2w_{n-1,\overline{m}}\|_{H^{s}}^2 +
+\|2S_2i\underline{\alpha}\partial_xw_{n-2,\overline{m}}\|_{H^{s}}^2 \\&+
+\|2S_2i\underline{\alpha}\partial_xw_{n-2,\overline{m}-1}\|_{H^{s}}^2 +
+\|S_2(\underline{\gamma}^w)^2w_{n-2,\overline{m}-2}\|_{H^{s}}^2 +
+\|2S_2(\underline{\gamma}^w)^2w_{n-2,\overline{m}-1}\|_{H^{s}}^2 \\&+
+\|S_2(\underline{\gamma}^w)^2w_{n-2,\overline{m}}\|_{H^{s}}^2.
+\end{align*}
+We now estimate each of these and apply Lemmas $2.8.1$ (with $u=w$), $3.6.1$, and $3.6.3$, beginning with
+\begin{align*}
+\|A_1^{xx}\partial_x w_{n-1,\overline{m}}\|_{H^{s+1}} &= 
+\|(2/b)f\partial_xw_{n-1,\overline{m}}\|_{H^{s+1}}\\&\le
+(2/b)\mathcal{M}|f|_{C^{s+1}}\|w_{n-1,\overline{m}}\|_{H^{s+2}}\\&\le
+(2/b)\mathcal{M}|f|_{C^{s+1}}KB^{n-1}D^{\overline{m}},
+\end{align*}
+and in a similar fashion
+\begin{align*}
+\|A_1^{xz}\partial_z w_{n-1,\overline{m}}\|_{H^{s+1}} &= 
+\|-((b+z)/b)(\partial_x f)\partial_z w_{n-1,\overline{m}}\|_{H^{s+1}}\\&\le
+(Z_b/b)\mathcal{M}|\partial_x f|_{C^{s+1}}\|w_{n-1, \overline{m}}\|_{H^{s+2}} \\&\le
+(Z_b/b)\mathcal{M}|f|_{C^{s+2}}KB^{n-1}D^{\overline{m}}.
+\end{align*}
+Also,
+\begin{align*}
+\|A_1^{zx}\partial_x w_{n-1,\overline{m}}\|_{H^{s+1}} &= 
+\|-((b+z)/b)(\partial_x f)\partial_x w_{n-1,\overline{m}}\|_{H^{s+1}}\\&\le
+(Z_b/b)\mathcal{M}|\partial_x f|_{C^{s+1}}\|w_{n-1, \overline{m}}\|_{H^{s+2}} \\&\le
+(Z_b/b)\mathcal{M}|f|_{C^{s+2}}KB^{n-1}D^{\overline{m}},
+\end{align*}
+and we recall that $A_1^{zz}\equiv 0$. Moving to the second order
+\begin{align*}
+\|A_2^{xx}\partial_x w_{n-2,\overline{m}}\|_{H^{s+1}} &= 
+\|(1/b^2)f^2\partial_x w_{n-2,\overline{m}}\|_{H^{s+1}}\\&\le
+(1/b^2)\mathcal{M}^2|f|_{C^{s+1}}^2\|w_{n-2, \overline{m}}\|_{H^{s+2}} \\&\le
+(1/b^2)\mathcal{M}^2|f|_{C^{s+1}}^2KB^{n-2}D^{\overline{m}}.
+\end{align*}
+Also,
+\begin{align*}
+\|A_2^{xz}\partial_z w_{n-2,\overline{m}}\|_{H^{s+1}} &= 
+\|(-(b+z)/b^2)f(\partial_x f)\partial_x w_{n-2,\overline{m}}\|_{H^{s+1}}\\&\le
+(Z_b/b^2)\mathcal{M}^2|f|_{C^{s+1}}|\partial_x f|_{C^{s+1}}\|w_{n-2, \overline{m}}\|_{H^{s+2}} \\&\le
+(Z_b/b^2)\mathcal{M}^2|f|_{C^{s+2}}^2KB^{n-2}D^{\overline{m}},
+\end{align*}
+and
+\begin{align*}
+\|A_2^{zx}\partial_x w_{n-2,\overline{m}}\|_{H^{s+1}} &= 
+\|(-(b+z)/b^2)f(\partial_x f)\partial_z w_{n-2,\overline{m}}\|_{H^{s+1}}\\&\le
+(Z_b/b^2)\mathcal{M}^2|f|_{C^{s+1}}|\partial_x f|_{C^{s+1}}\|w_{n-2, \overline{m}}\|_{H^{s+2}} \\&\le
+(Z_b/b^2)\mathcal{M}^2|f|_{C^{s+2}}^2KB^{n-2}D^{\overline{m}},
+\end{align*}
+and
+\begin{align*}
+\|A_2^{zz}\partial_z w_{n-2,\overline{m}}\|_{H^{s+1}} &= 
+\|((b+z)^2/b^2)(\partial_x f)^2\partial_z w_{n-2,\overline{m}}\|_{H^{s+1}}\\&\le
+(Z_b^2/b^2)\mathcal{M}^2|\partial_x f|_{C^{s+1}}^2\|w_{n-2, \overline{m}}\|_{H^{s+2}} \\&\le
+(Z_b^2/b^2)\mathcal{M}^2|f|_{C^{s+2}}^2KB^{n-2}D^{\overline{m}}.
+\end{align*}
+Next for the $B_1$ terms
+\begin{align*}
+\|B_1^{x}\partial_x w_{n-1,\overline{m}}\|_{H^{s}} &= 
+\|(-1/b)(\partial_x f)\partial_x w_{n-1,\overline{m}}\|_{H^{s}}\\&\le
+(1/b)\mathcal{M}|\partial_x f|_{C^{s}}\|w_{n-1, \overline{m}}\|_{H^{s+1}} \\&\le
+(1/b)\mathcal{M}|f|_{C^{s+1}}KB^{n-1}D^{\overline{m}},
+\end{align*}
+and $B_1^z\equiv 0$. Moving to the second order
+\begin{align*}
+\|B_2^{x}\partial_x w_{n-2,\overline{m}}\|_{H^{s}} &= 
+\|(-1/b^2)f(\partial_x f)\partial_x w_{n-2,\overline{m}}\|_{H^{s}}\\&\le
+(1/b^2)\mathcal{M}^2|f|_{C^{s}}|\partial_x f|_{C^{s}}\|w_{n-2, \overline{m}}\|_{H^{s+1}} \\&\le
+(1/b^2)\mathcal{M}^2|f|_{C^{s+1}}^2KB^{n-2}D^{\overline{m}},
+\end{align*}
+and
+\begin{align*}
+\|B_2^{z}\partial_z w_{n-2,\overline{m}}\|_{H^{s}} &= 
+\|(1/b^2)(b+z)(\partial_x f)^2\partial_z w_{n-2,\overline{m}}\|_{H^{s}}\\&\le
+(Z_b/b^2)\mathcal{M}^2|\partial_x f|_{C^{s}}^2\|w_{n-2, \overline{m}}\|_{H^{s+1}} \\&\le
+(Z_b/b^2)\mathcal{M}^2|f|_{C^{s+1}}^2KB^{n-2}D^{\overline{m}}.
+\end{align*}
+To address the $S_0,S_1,S_2$ terms we have
+\begin{align*}
+\|2i\underline{\alpha}\partial_xw_{n,\overline{m}-1}\|_{H^{s}}&\le
+2\underline{\alpha}\|w_{n, \overline{m}-1}\|_{H^{s+1}}\\&\le
+2\underline{\alpha}KB^{n}D^{\overline{m}-1},
+\end{align*}
+and
+\begin{align*}
+\|(\underline{\gamma}^w)^2w_{n,\overline{m}-2}\|_{H^{s}}&\le
+(\underline{\gamma}^w)^2\|w_{n,\overline{m}-2}\|_{H^{s}}\\&\le
+(\underline{\gamma}^w)^2KB^{n}D^{\overline{m}-2},
+\end{align*}
+and
+\begin{align*}
+\|2(\underline{\gamma}^w)^2w_{n,\overline{m}-1}\|_{H^{s}}&\le
+2(\underline{\gamma}^w)^2\|w_{n,\overline{m}-1}\|_{H^{s}}\\&\le
+2(\underline{\gamma}^w)^2KB^{n}D^{\overline{m}-1},
+\end{align*}
+and
+\begin{align*}
+\|2S_1i\underline{\alpha}\partial_xw_{n-1,\overline{m}}\|_{H^{s}}&=\|(4/b)i\underline{\alpha}f\partial_xw_{n-1,\overline{m}}\|_{H^{s}}\\&\le
+(4/b)\underline{\alpha}\mathcal{M}|f|_{C^{s}}\|w_{n-1, \overline{m}}\|_{H^{s+1}}\\&\le
+(4/b)\underline{\alpha}\mathcal{M}|f|_{C^{s}}KB^{n-1}D^{\overline{m}},
+\end{align*}
+and
+\begin{align*}
+\|2S_1i\underline{\alpha}\partial_xw_{n-1,\overline{m}-1}\|_{H^{s}}&=\|(4/b)i\underline{\alpha}f\partial_xw_{n-1,\overline{m}-1}\|_{H^{s}}\\&\le
+(4/b)\underline{\alpha}\mathcal{M}|f|_{C^{s}}\|w_{n-1, \overline{m}-1}\|_{H^{s+1}}\\&\le
+(4/b)\underline{\alpha}\mathcal{M}|f|_{C^{s}}KB^{n-1}D^{\overline{m}-1},
+\end{align*}
+and
+\begin{align*}
+\|S_1(\underline{\gamma}^w)^2w_{n-1,\overline{m}-2}\|_{H^{s}}&=\|(2/b)(\underline{\gamma}^w)^2fw_{n-1,\overline{m}-2}\|_{H^{s}}\\&\le
+(2/b)(\underline{\gamma}^w)^2\mathcal{M}|f|_{C^{s}}\|w_{n-1, \overline{m}-2}\|_{H^{s}}\\&\le
+(2/b)(\underline{\gamma}^w)^2\mathcal{M}|f|_{C^{s}}KB^{n-1}D^{\overline{m}-2},
+\end{align*}
+and
+\begin{align*}
+\|2S_1(\underline{\gamma}^w)^2w_{n-1,\overline{m}-1}\|_{H^{s}}&=\|(4/b)(\underline{\gamma}^w)^2fw_{n-1,\overline{m}-1}\|_{H^{s}}\\&\le
+(4/b)(\underline{\gamma}^w)^2\mathcal{M}|f|_{C^{s}}\|w_{n-1, \overline{m}-1}\|_{H^{s}}\\&\le
+(4/b)(\underline{\gamma}^w)^2\mathcal{M}|f|_{C^{s}}KB^{n-1}D^{\overline{m}-1},
+\end{align*}
+and
+\begin{align*}
+\|S_1(\underline{\gamma}^w)^2w_{n-1,\overline{m}}\|_{H^{s}}&=\|(2/b)(\underline{\gamma}^w)^2fw_{n-1,\overline{m}}\|_{H^{s}}\\&\le
+(2/b)(\underline{\gamma}^w)^2\mathcal{M}|f|_{C^{s}}\|w_{n-1, \overline{m}}\|_{H^{s}}\\&\le
+(2/b)(\underline{\gamma}^w)^2\mathcal{M}|f|_{C^{s}}KB^{n-1}D^{\overline{m}},
+\end{align*}
+and
+\begin{align*}
+\|2S_2i\underline{\alpha}\partial_xw_{n-2,\overline{m}}\|_{H^{s}}&=\|(2/b^2)i\underline{\alpha}f^2\partial_xw_{n-2,\overline{m}}\|_{H^{s}}\\&\le
+(2/b^2)\underline{\alpha}\mathcal{M}^2|f|_{C^{s}}^2\|w_{n-2, \overline{m}}\|_{H^{s+1}}\\&\le
+(2/b^2)\underline{\alpha}\mathcal{M}^2|f|_{C^{s}}^2KB^{n-2}D^{\overline{m}},
+\end{align*}
+and
+\begin{align*}
+\|2S_2i\underline{\alpha}\partial_xw_{n-2,\overline{m}-1}\|_{H^{s}}&=\|(2/b^2)i\underline{\alpha}f^2\partial_xw_{n-2,\overline{m}-1}\|_{H^{s}}\\&\le
+(2/b^2)\underline{\alpha}\mathcal{M}^2|f|_{C^{s}}^2\|w_{n-2, \overline{m}-1}\|_{H^{s+1}}\\&\le
+(2/b^2)\underline{\alpha}\mathcal{M}^2|f|_{C^{s}}^2KB^{n-2}D^{\overline{m}-1},
+\end{align*}
+and
+\begin{align*}
+\|S_2(\underline{\gamma}^w)^2w_{n-2,\overline{m}-2}\|_{H^{s}}&=\|(1/b^2)(\underline{\gamma}^w)^2f^2w_{n-2,\overline{m}-2}\|_{H^{s}}\\&\le
+(1/b^2)(\underline{\gamma}^w)^2\mathcal{M}^2|f|_{C^{s}}^2\|w_{n-2, \overline{m}-2}\|_{H^{s}}\\&\le
+(1/b^2)(\underline{\gamma}^w)^2\mathcal{M}^2|f|_{C^{s}}^2KB^{n-2}D^{\overline{m}-2},
+\end{align*}
+and
+\begin{align*}
+\|2S_2(\underline{\gamma}^w)^2w_{n-2,\overline{m}-1}\|_{H^{s}}&=\|(2/b^2)(\underline{\gamma}^w)^2f^2w_{n-2,\overline{m}-1}\|_{H^{s}}\\&\le
+(2/b^2)(\underline{\gamma}^w)^2\mathcal{M}^2|f|_{C^{s}}^2\|w_{n-2, \overline{m}-1}\|_{H^{s}}\\&\le
+(2/b^2)(\underline{\gamma}^w)^2\mathcal{M}^2|f|_{C^{s}}^2KB^{n-2}D^{\overline{m}-1},
+\end{align*}
+and
+\begin{align*}
+\|S_2(\underline{\gamma}^w)^2w_{n-2,\overline{m}}\|_{H^{s}}&=\|(1/b^2)(\underline{\gamma}^w)^2f^2w_{n-2,\overline{m}}\|_{H^{s}}\\&\le
+(1/b^2)(\underline{\gamma}^w)^2\mathcal{M}^2|f|_{C^{s}}^2\|w_{n-2, \overline{m}}\|_{H^{s}}\\&\le
+(1/b^2)(\underline{\gamma}^w)^2\mathcal{M}^2|f|_{C^{s}}^2KB^{n-2}D^{\overline{m}}.
+\end{align*}
+We satisfy the estimate for $\|\tilde{Y}_{n,\overline{m}}\|_{H^{s}}$ provided that we choose
+\begin{align*}\overline{C} &> \max\Bigg\{\bigg(2\underline{\alpha}+3(\underline{\gamma}^w)^2\bigg),\left(\frac{3+2Z_b+8\underline{\alpha}+8(\underline{\gamma}^w)^2}{b}\right)\mathcal{M},\\&\qquad\qquad\left(\frac{2+3Z_b+Z^2_b+4\underline{\alpha}+4(\underline{\gamma}^w)^2}{b^2} \right)\mathcal{M}^2    \Bigg\}.\end{align*}
+The estimate for $\tilde{Q}_{n,\overline{m}}$ follows from Lemma $2.8.2$
+\begin{align*}
+\left\|\tilde{Q}_{n,\overline{m}}\right\|_{H^{s+1/2}}&=\left\|\frac{1}{b} f(x) \sum_{r=0}^{\overline{m}} T^w_{\overline{m}-r}\left[w_{n-1,r}\right] + \sum_{r=0}^{\overline{m}-1}T_{\overline{m}-r}^w\left[w_{n,r}\right]\right\|_{H^{s+1/2}}\\&\le
+(1/b)\mathcal{M}|f|_{C^{s+1/2+\eta}}\sum_{r=0}^{\overline{m}}\left\|T^w_{\overline{m}-r}\left[w_{n-1,r}\right]\right\|_{H^{s+1/2}}+
+\sum_{r=0}^{\overline{m}-1}\left\|T^w_{\overline{m}-r}\left[w_{n,r}\right]\right\|_{H^{s+1/2}}
+\\&\le
+(1/b)\mathcal{M}|f|_{C^{s+1/2+\eta}}C_{T^w}\sum_{r=0}^{\overline{m}}\left\|w_{n-1,r}\right\|_{H^{s+3/2}}+
+C_{T^w}\sum_{r=0}^{\overline{m}-1}\left\|w_{n,r}\right\|_{H^{s+3/2}}
+\\&\le
+(1/b)\mathcal{M}|f|_{C^{s+1/2+\eta}} C_{T^w} KB^{n-1}\left(\frac{D^{\overline{m}+1}-1}{D-1}\right) + C_{T^w}KB^{n}\left(\frac{D^{\overline{m}}-1}{D-1}\right)
+\\&\le
+(1/b)\mathcal{M}|f|_{C^{s+1/2+\eta}} C_{T^w} KB^{n-1}D^{\overline{m}}\left(\frac{D}{D-1}\right) + C_{T^w}KB^{n}D^{\overline{m}-1}\left(\frac{D}{D-1}\right),
+\end{align*}
+and we are done provided that $D>2$ and 
+\bes
+\overline{C} > \max\big\{(1/b)\mathcal{M} C_{T^w},C_{T^w}\big\}.
+\qedhere
+\ees
+\end{proof}
+
+\begin{flushleft}
+With this information, we can now prove Theorem $3.8.1.$
+\end{flushleft}
+\vskip 0.1in
+\begin{proof}{[Theorem 3.8.1]} We proceed by induction in $m$. At order $m=0$ $(3.17)$ becomes
+\begin{subequations}
+\begin{align}
+\Delta w_{n,0} +2i\underline{\alpha}\partial_{x}w_{n,0}+(\underline{\gamma}^w)^2w_{n,0}&=\tilde{Y}_{n,0}\left(x,z;f,w,\underline{\alpha},\underline{\gamma}^w\right),&&\text{$-b<z<0$}, \\
+w_{n,0}(x,g)&=\zeta^w_{n,0}(x),&&\text{at $z=0$}\\
+w_{n,0}(x+d,z)&=w_{n,0}(x,z), \\
+\partial_z \left[w_{n,0}(x,-b)\right] - T_0^w[w_{n,0}(x,-b)]&=\tilde{Q}_{n,0}(x),&& \text{at $z=-b$},
+\end{align}
+\end{subequations}
+and Theorem $3.7.1$ guarantees a unique solution such that 
+$$\|w_{n,0}\|_{H^{s+2}}\le KB^n,\quad \text{$\forall n\ge 0$}.  $$
+We now assume the estimate $(3.31)$ for all $n, m < \overline{m}$ and study $w_{n,\overline{m}}$. From Theorem $3.6.2$ we have a unique solution satisfying 
+$$\|w_{n,\overline{m}}\|_{H^{s+2}}\le C_e\{\|\tilde{Y}_{n,\overline{m}}\|_{H^{s}}+\|\zeta^w_{n,\overline{m}}\|_{H^{s+3/2}}+\|\tilde{Q}_{n,\overline{m}}\|_{H^{s+1/2}}  \}, $$
+and appealing to Lemmas $2.9.1$ (with $\zeta^u=\zeta^w$ and the hypothesis $(3.30)$) and $3.8.2$ we find
+\begin{align*}\|w_{n,\overline{m}}\|_{H^{s+2}}\le & ~C_e\Bigg\{K_{\zeta}B_{\zeta}^{n}D_{\zeta}^{\overline{m}} + 2K\overline{C}\bigg(B^nD^{\overline{m}-1}+B^nD^{\overline{m}-2} + |f|_{C^{s+2}}B^{n-1}D^{\overline{m}} ~+\nonumber\\&~\qquad
+|f|_{C^{s+2}}B^{n-1}D^{\overline{m}-1} +  |f|_{C^{s+2}}B^{n-1}D^{\overline{m}-2} +
+  |f|_{C^{s+2}}^2B^{n-2}D^{\overline{m}} ~+ \nonumber\\&~\qquad
+|f|_{C^{s+2}}^2B^{n-2}D^{\overline{m}-1} +
+|f|_{C^{s+2}}^2B^{n-2}D^{\overline{m}-2}
+\bigg)\Bigg\}.
+\end{align*}
+We are done provided we choose $K \ge 9C_eK_{\zeta}$ and
+\begin{align*}&B  > \max\Big\{B_{\zeta},18C_e\overline{C}|f|_{C^{s+2}},\sqrt{18C_e\overline{C}}|f|_{C^{s+2}}\Big\},\\&
+D  > \max\Big\{1,D_{\zeta},18C_e\overline{C},\sqrt{18C_e\overline{C}} \Big\}.
+\end{align*}
+\end{proof}
